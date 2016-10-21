@@ -20,4 +20,9 @@ class Admin extends CI_controller
 		// header('Location:'.base_url());
 		# code...
 	}
+
+	public function compose()
+	{
+		$this->load->view('compose_view');
+	}
 }
