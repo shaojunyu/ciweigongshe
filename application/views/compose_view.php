@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>刺猬公社——内容产业第一报道媒体</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url();?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -27,6 +27,8 @@
     <link href="<?php echo base_url();?>/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
     <link href="<?php echo base_url();?>/vendor/ckeditor/neo.css" rel="stylesheet">
+
+    <link href="<?php echo base_url();?>/vendor/styles/compose.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -100,6 +102,49 @@
     </div>
 
     <div id="page-wrapper">
+        <form class="form-horizontal compose-info" role="form">
+          <div class="form-group">
+            <label for="inputTitle" class="col-sm-1 control-label">标题</label>
+            <div class="col-sm-11">
+              <input type="text" class="form-control" id="inputTitle" placeholder="文章标题">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="inputAuthor" class="col-sm-1 control-label">作者</label>
+            <div class="col-sm-11">
+              <input type="text" class="form-control" id="inputAuthor" placeholder="文章作者">
+            </div>
+          </div>
+          <label class="control-label">文章摘要</label>
+          <textarea class="form-control" rows="4"></textarea>
+
+            <label class="control-label" style="padding: 7px 10px 0 0; vertical-align: middle;">文章分类</label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox1" value="option1"> FEED流
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox2" value="option2"> 深报道
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox3" value="option3"> 热公司
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox4" value="option4"> 新闻学院
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox5" value="option5"> 未来内容
+            </label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox6" value="option6"> 会议/培训
+            </label>
+          
+          <div>  
+            <label class="control-label" style="padding: 7px 10px 0 0; vertical-align: middle;">展示选择</label>
+            <label class="checkbox-inline">
+              <input type="checkbox" id="inlineCheckbox7" value="option7"> 首页轮播展示
+            </label>
+          </div>
+        </form>
         <div class="adjoined-bottom">
             <div class="grid-container">
                 <div class="grid-width-100">
@@ -109,6 +154,7 @@
                 </div>
             </div>
         </div>
+        <button type="button" class="btn btn-primary compose-artical">发布文章</button>
     </div>
 
 
@@ -121,11 +167,6 @@
     <!-- Metis Menu Plugin JavaScript -->
     <script src="<?php echo base_url();?>/vendor/metisMenu/metisMenu.min.js"></script>
 
-    <!-- Morris Charts JavaScript -->
-    <script src="<?php echo base_url();?>/vendor/raphael/raphael.min.js"></script>
-    <script src="<?php echo base_url();?>/vendor/morrisjs/morris.min.js"></script>
-    <script src="<?php echo base_url();?>/data/morris-data.js"></script>
-
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo base_url();?>/dist/js/sb-admin-2.js"></script>
 
@@ -133,6 +174,10 @@
     <script src="<?php echo base_url();?>/vendor/ckeditor/sample.js"></script>
     <script>
         initSample();
+
+        /*setInterval(function () {
+            console.log(CKEDITOR.instances.editor.getData());
+        }, 3000);*/
     </script>
 
 </body>
