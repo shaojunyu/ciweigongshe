@@ -8,7 +8,8 @@ class Admin_login extends CI_Controller
 {
 	public function index()
 	{
-		$this->session->set_userdata(['user'=>'admin']);
+		//$this->session->set_userdata(['user'=>'admin']);
+		$this->load->view('admin_login_view');
 	}
 
 	public function login(){

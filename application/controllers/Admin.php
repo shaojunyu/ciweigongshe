@@ -10,7 +10,7 @@ class Admin extends CI_controller
 	{
 		parent::__construct();
 		if ( $this->session->userdata('user') !== 'admin' ){
-			header('Location:'.base_url());
+			header('Location:'.base_url('admin_login'));
 		}
 	}
 
