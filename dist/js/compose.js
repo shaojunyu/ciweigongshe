@@ -9,7 +9,6 @@ $(function () {
 	var articalContent = "";
 
 	$(".compose-artical").click(function () {
-		$(".compose-info").attr("action", "./store_post");
 		if ($("#inputTitle").val() === "") {
 			$(".show-msg").html("请输入文章标题！");
 			$('#myModal').modal({});
@@ -51,25 +50,6 @@ $(function () {
 		$(".compose-info").submit();
 	});
 
-
-	$(".draft").click(function () {
-		$(".compose-info").attr("action", "./store_draft");
-		if ($("#inputTitle").val() === "") {
-			$(".show-msg").html("请输入文章标题！");
-			$('#myModal').modal({});
-			return;
-		}
-		
-		$(".hide").val(CKEDITOR.instances.editor.getData());
-		if ($('input[name="type"]:checked').length === 1) {
-        	$("#inlineCheckbox7").attr("value", "nav");
-        }
-        else {
-        	$("#inlineCheckbox7").attr("value", "");
-        }
-
-		$(".compose-info").submit();
-	});
 
 	$(".view-img").click(function () {
 		$(".cover").show();
