@@ -62,7 +62,7 @@ class Admin extends CI_controller
 
 	public function comment_list()
 	{
-		# code...
+		$this->load->view('');
 	}
 
 	public function data(){
