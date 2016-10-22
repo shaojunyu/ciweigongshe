@@ -45,6 +45,16 @@
 
     <?php $this->load->view('public_nav'); ?>
         <div id="page-wrapper">
+         <div class="row">
+                <div class="col-lg-12">
+                    <ul class="nav nav-pills" role="tablist" style="margin: 50px 0 30px 0;">
+                      <li role="presentation" class="<?php echo $status=='draft'?'active':''; ?>"><a href="<?php echo base_url('admin/post_list/draft');?>">待处理</a></li>
+
+                      <li role="presentation" class="<?php echo $status=='published'?'active':''; ?>"><a href="<?php echo base_url('admin/post_list/published');?>">已处理</a></li>
+                    </ul>
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-12">
