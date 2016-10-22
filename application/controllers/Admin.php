@@ -53,7 +53,8 @@ class Admin extends CI_controller
 			$this->load->view('post_list_view',[
 				'status'=>$status,
 				'total'=>$total,
-				'posts'=>$res
+				'posts'=>$res,
+				'page'=>$page
 				]);
 		}else{
 			header('Location:'.base_url('admin/post_list/draft/1'));
@@ -62,7 +63,7 @@ class Admin extends CI_controller
 
 	public function comment_list()
 	{
-		$this->load->view('');
+		$this->load->view('comment_list_view');
 	}
 
 	public function data(){
@@ -160,7 +161,7 @@ class Admin extends CI_controller
 		header('Location:'.base_url('admin/post_list/published'));
 	}
 
-	public function unpublish_post($post_id){
+	public function restore_post($post_id){
 		$this->db->where('post_id',$post_id);
 		$this->db->update('post',[
 			'status'=>'draft'

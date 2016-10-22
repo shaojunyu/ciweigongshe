@@ -12,21 +12,25 @@ class Post extends CI_Controller{
         parent::__construct();
     }
 
-    public function index($id){
-        $this->db->where('id',$id);
-        $res = $this->db->get('post')->result_array();
-        if ( count($res) == 0){
-            header('Location:'.base_url());
-        }else{
-            $res = $res[0];
-        }
+    public function index(){
+//        $this->db->where('id',$id);
+//        $res = $this->db->get('post')->result_array();
+//        if ( count($res) == 0){
+//            header('Location:'.base_url());
+//        }else{
+//            $res = $res[0];
+//        }
+//
+//        //更新阅读量数据
+//        if (get_cookie('ci_session') == null){
+//
+//        }
+//        $this->db->where('id',$id);
+//        $this->db->update('post',['read_count'=>$res['read_count'] + 1]);
 
-        //更新阅读量数据
-        if (get_cookie('ci_session') == null){
-            
-        }
-        $this->db->where('id',$id);
-        $this->db->update('post',['read_count'=>$res['read_count'] + 1]);
+    }
+
+    public function show($id){
 
     }
 }
