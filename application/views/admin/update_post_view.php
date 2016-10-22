@@ -41,7 +41,7 @@
 <?php $this->load->view('public_nav');?>
 
     <div id="page-wrapper">
-        <form class="compose-info" role="form" method="POST" action="">
+        <form class="compose-info" role="form" method="POST" action="<?php echo base_url('admin/update_post')?>">
           <div class="form-group">
             <label for="inputTitle" class="control-label">标题</label>
             <input type="text" name="title" class="form-control" id="inputTitle" placeholder="文章标题" value="<?php echo $post['title']; ?>">
@@ -59,30 +59,39 @@
           <textarea class="form-control summary" name="abstract" rows="4" ><?php echo $post['abstract']; ?></textarea>
 
             <div><label class="control-label" style="padding: 7px 10px 0 0; vertical-align: middle;">文章分类</label></div>
+            <?php 
+            $this->db->where('post_id',$post['post_id']);
+            $res = $this->db->get('post_category')->result_array();
+            $category_array = [];
+            foreach($res as $category){
+              $category_array[] = $category['category_id'];
+            }
+            //var_dump($category_array);
+            ?>
            <div class="category-box">
             <label class="checkbox-inline">
-              <input type="checkbox" name="category[]" value="1"> FEED流
+              <input type="checkbox" <?php echo in_array('1',$category_array)?'checked':''; ?> name="category[]" value="1"> FEED流
             </label>
             <label class="checkbox-inline">
-              <input type="checkbox" name="category[]" value="2"> 深报道
+              <input type="checkbox" <?php echo in_array('2',$category_array)?'checked':''; ?> name="category[]" value="2"> 深报道
             </label>
             <label class="checkbox-inline">
-              <input type="checkbox" name="category[]" value="3"> 热公司
+              <input type="checkbox" <?php echo in_array('3',$category_array)?'checked':''; ?> name="category[]" value="3"> 热公司
             </label>
             <label class="checkbox-inline">
-              <input type="checkbox" name="category[]" value="4"> 新闻学院
+              <input type="checkbox" <?php echo in_array('4',$category_array)?'checked':''; ?> name="category[]" value="4"> 新闻学院
             </label>
             <label class="checkbox-inline">
-              <input type="checkbox" name="category[]" value="5"> 未来内容
+              <input type="checkbox" <?php echo in_array('5',$category_array)?'checked':''; ?> name="category[]" value="5"> 未来内容
             </label>
             <label class="checkbox-inline">
-              <input type="checkbox" name="category[]" value="6"> 会议/培训
+              <input type="checkbox" <?php echo in_array('6',$category_array)?'checked':''; ?> name="category[]" value="6"> 会议/培训
             </label>
            </div>
           <div>  
             <div><label class="control-label" style="padding: 7px 10px 0 0; vertical-align: middle;">展示选择</label></div>
             <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox7" name="type" value=""> 首页轮播展示
+              <input type="checkbox" <?php echo ($post['type'] == 'nav')?'checked':''; ?> id="inlineCheckbox7" name="type" value=""> 首页轮播展示
             </label>
           </div>
 
@@ -90,14 +99,16 @@
             <div class="grid-container">
                 <div class="grid-width-100">
                     <div id="editor">
-                        
+                        <?php echo $post['content']; ?>
                     </div>
                 </div>
             </div>
           </div>
 
           <input type="text" class="hide" name="content" style="display: none;">
+            <input type="hidden" name="post_id" value="<?php echo $post['post_id']?>">
           <button type="button" class="btn btn-primary compose-artical">更新文章</button>
+            
         </form>
     </div>
 

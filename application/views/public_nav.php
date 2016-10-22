@@ -36,7 +36,7 @@
                             <a href="<?php echo base_url('admin');?>"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
                         </li>
                         <li>
-                            <a href="<?php echo base_url('admin/post_list');?>"><i class="fa fa-bar-chart-o fa-fw"></i> 数据分析</a>
+                            <a href="<?php echo base_url('admin/data');?>"><i class="fa fa-bar-chart-o fa-fw"></i> 数据分析</a>
                         </li>
                         <li>
                             <a href="<?php echo base_url('admin/post_list');?>"><i class="fa fa-table fa-fw"></i> 文章管理</a>
@@ -45,7 +45,7 @@
                             <a href="<?php echo base_url('admin/compose');?>"><i class="fa fa-edit fa-fw"></i> 文章编辑</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> 评论管理</a>
+                            <a href="<?php echo base_url('admin/comment_list');?>"><i class="fa fa-edit fa-fw"></i> 评论管理</a>
                         </li>
                         <li>
                             <a href="#"><i class="fa fa-wrench fa-fw"></i> 素材管理</a>

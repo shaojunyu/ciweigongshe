@@ -33,7 +33,8 @@ class Admin extends CI_controller
 					'post'=>$res[0]
 					]);
 			}else{
-				$this->load->view('compose_view');
+				header('Location:'.base_url('admin/compose'));
+//				$this->load->view('compose_view');
 			}
 		}
 	}
@@ -47,6 +48,11 @@ class Admin extends CI_controller
 		}else{
 			// header('Location:'.base_url('admin/post_list'));
 		}
+	}
+
+	public function comment_list()
+	{
+		# code...
 	}
 
 
@@ -77,7 +83,7 @@ class Admin extends CI_controller
 	public function store_post()
 	{
 		try {
-			var_dump($this->input->post());
+//			var_dump($this->input->post());
 
 			$this->db->insert('post',[
 				'title'=>$this->input->post('title'),
@@ -104,6 +110,7 @@ class Admin extends CI_controller
 
 	public function update_post()
 	{
+		var_dump($this->input->post());
 		# code...
 	}
 
