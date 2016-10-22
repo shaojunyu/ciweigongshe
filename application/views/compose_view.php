@@ -97,7 +97,7 @@
           </div>
 
           <input type="text" class="hide" name="content" style="display: none;">
-          <button type="button" class="btn btn-primary compose-artical">发布文章</button>
+          <button type="button" class="btn btn-primary compose-artical">存储文章</button>
           <button type="button" class="btn btn-warning draft">存为草稿</button>
         </form>
     </div>
