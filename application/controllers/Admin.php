@@ -61,6 +61,9 @@ class Admin extends CI_controller
 		# code...
 	}
 
+	public function data(){
+		$this->load->view('data_view');
+	}
 
 	public function logout()
 	{
