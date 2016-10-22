@@ -1,0 +1,57 @@
+/* Write your styles */
+body {
+	background-color: #ccc;
+}
+header.am-header {
+	height: 5rem;
+	line-height: 5rem;
+	background: url('../images/logo.png') no-repeat 100% 100%;
+	background-size: 100% 100%;
+}
+#nav {
+	height: 4rem;
+	line-height: 4rem;
+	top: -4.5rem;
+}
+.wrapper {
+	width: 100%;
+	max-width: 768px;
+	margin: 0 auto;
+	background-color: rgb(242,245,248);
+}
+.my-clear {
+	width: 0;
+	height: 0;
+	clear: both;
+}
+.my-date {
+	height: 1.5rem;
+	font-size: 1.1rem;
+	color: #ac4c66;
+}
+.my-title {
+	border-bottom: 1px solid #dedede;
+}
+.my-news-title {
+	color: #9e2f50;
+	font-size: 1.42rem;
+}
+.my-single-item {
+	margin-bottom: -1rem;
+	border-top: 1px solid #dedede;
+}
+.am-list-news-bd .am-list>li {
+	background-color: rgb(242,245,248);
+}
+
+.footer {
+	width: 100%;
+	height: 6rem;
+	background-color: #4c4c4c;
+}
+.footer p {
+	margin: 0 0 0 10px;
+	color: #fff;
+	font-size: 1.2rem;
+	line-height: 2rem;
+}
