@@ -140,6 +140,30 @@
                 // chart.
                 labels: ['Value']
             });
+
+            new Morris.Line({
+                // ID of the element in which to draw the chart.
+                element: 'mysecondchart',
+                // Chart data records -- each entry in this array corresponds to a point on
+                // the chart.
+                data: [
+                <?php
+                $i = 0;
+                foreach ($month_data as $day => $count) {
+                    $i++;
+                    echo "{ day: '$day', value: $count }";
+                    if ($i < 30) {echo ",";}
+                }
+                ?>
+                ],
+                // The name of the data record attribute that contains x-values.
+                xkey: 'day',
+                // A list of names of data record attributes that contain y-values.
+                ykeys: ['value'],
+                // Labels for the ykeys -- will be displayed when you hover over the
+                // chart.
+                labels: ['Value']
+            });
         });
     </script>
 

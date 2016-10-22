@@ -95,16 +95,24 @@ class Admin extends CI_controller
 	public function data(){
 		//一周阅读量
 		$week_data;
+		$month_data;
 		for ($i = 0; $i<=6; $i++){
-			$day = date('m-d',strtotime("-$i day"));
+			$day = date('Y-m-d',strtotime("-$i day"));
 			$this->db->like('create_at',$day);
 			$count = $this->db->count_all_results('page_view');
 			$week_data[$day] = $count;
+			$month_data[$day] = $count;
 		}
-		// var_dump($week_data);
+		for ($i=7; $i <= 29 ; $i++) { 
+			$day = date('Y-m-d',strtotime("-$i day"));
+			$this->db->like('create_at',$day);
+			$count = $this->db->count_all_results('page_view');
+			$month_data[$day] = $count;
+		}
 
 		$this->load->view('data_view',[
-			'week_data'=>$week_data
+			'week_data'=>$week_data,
+			'month_data'=>$month_data
 			]);
 	}
 
