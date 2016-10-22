@@ -9,7 +9,16 @@ $(function () {
 	var articalContent = "";
 
 	$(".compose-artical").click(function () {
-		title = $("#inputTitle").val();
+		$(".compose-info").attr("action", "./store_post");
+		$(".hide").val(CKEDITOR.instances.editor.getData());
+		if ($('input[name="type"]:checked').length === 1) {
+        	$("#inlineCheckbox7").attr("value", "nav");
+        }
+        else {
+        	$("#inlineCheckbox7").attr("value", "");
+        }
+		$(".compose-info").submit();
+		/*title = $("#inputTitle").val();
 		author = $("#inputAuthor").val();
 		summary = $(".summary").val();
 		$('input[name="sort"]:checked').each(function(){
@@ -28,7 +37,6 @@ $(function () {
         	isShow: isShow,
         	articalContent: articalContent
         };
-
-        //发表时出错需要对数组sort置空
+*/
 	});
 });
