@@ -52,32 +52,33 @@
           </div>
           <div class="form-group">
             <label for="inputImg" class="control-label">封面图地址</label>
-            <input type="text" name="image_url" class="form-control" id="inputAuthor" placeholder="输入封面图地址">
-            <a href=""><button type="button" class="btn btn-primary">查看图片</button></a>
+            <input type="text" name="image_url" class="form-control" id="inputImg" placeholder="输入封面图地址">
+            <button type="button" class="btn btn-primary view-img">查看图片</button>
           </div>
           <label class="control-label">文章摘要</label>
           <textarea class="form-control summary" name="abstract" rows="4"></textarea>
 
             <div><label class="control-label" style="padding: 7px 10px 0 0; vertical-align: middle;">文章分类</label></div>
+           <div class="category-box">
             <label class="checkbox-inline">
-              <input type="checkbox" name="category" value="1"> FEED流
+              <input type="checkbox" name="category[]" value="1"> FEED流
             </label>
             <label class="checkbox-inline">
-              <input type="checkbox" name="category" value="2"> 深报道
+              <input type="checkbox" name="category[]" value="2"> 深报道
             </label>
             <label class="checkbox-inline">
-              <input type="checkbox" name="category" value="3"> 热公司
+              <input type="checkbox" name="category[]" value="3"> 热公司
             </label>
             <label class="checkbox-inline">
-              <input type="checkbox" name="category" value="4"> 新闻学院
+              <input type="checkbox" name="category[]" value="4"> 新闻学院
             </label>
             <label class="checkbox-inline">
-              <input type="checkbox" name="category" value="5"> 未来内容
+              <input type="checkbox" name="category[]" value="5"> 未来内容
             </label>
             <label class="checkbox-inline">
-              <input type="checkbox" name="category" value="6"> 会议/培训
+              <input type="checkbox" name="category[]" value="6"> 会议/培训
             </label>
-          
+           </div>
           <div>  
             <div><label class="control-label" style="padding: 7px 10px 0 0; vertical-align: middle;">展示选择</label></div>
             <label class="checkbox-inline">
@@ -96,11 +97,32 @@
           </div>
 
           <input type="text" class="hide" name="content" style="display: none;">
-          <button type="button" class="btn btn-primary compose-artical">发布文章</button>
+          <button type="button" class="btn btn-primary compose-artical">存储文章</button>
           <button type="button" class="btn btn-warning draft">存为草稿</button>
         </form>
     </div>
 
+    <div class="cover"></div>
+    <div class="img-box">
+        
+    </div>
+
+    <div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel"></h4>
+          </div>
+          <div class="modal-body">
+            <p class="show-msg"></p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- jQuery -->
     <script src="<?php echo base_url();?>/vendor/jquery/jquery.min.js"></script>
