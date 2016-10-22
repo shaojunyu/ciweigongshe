@@ -13,6 +13,8 @@
             </div>
             <!-- /.navbar-header -->
 
+            <h3 class="page-title">页面标题</h3>
+
             <ul class="nav navbar-top-links navbar-right">
                 <!-- /.dropdown -->
                 <li class="dropdown">
