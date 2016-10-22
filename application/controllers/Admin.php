@@ -34,8 +34,6 @@ class Admin extends CI_controller
 				$this->load->view('compose_view');
 			}
 		}
-
-		
 	}
 
 
@@ -45,12 +43,28 @@ class Admin extends CI_controller
 		header('Location:'.base_url());
 	}
 
+	public function test()
+	{
+		// $res = $this->db->insert('post',[
+		// 	'title'=>'dasdas',
+		// 	'author'=>'yusj',
+		// 	'image_url'=>'url'
+		// 	]);
+		// var_dump($res);
+		// var_dump($this->db->insert_id());
+		# code...
+		$this->db->order_by('update_at','DESC');
+		$res = $this->db->get('post');
+		var_dump($res->result_array());
+	}
 
+///////////////////////////////////////////////////////////////////////////////////////
 	//api
 	public function store_post()
 	{
 		try {
 			var_dump($this->input->post());
+
 			// $this->db->insert('post',[
 			// 	'title'=>$this->input->post('title'),
 			// 	'author'=>$this->input->post('author'),
@@ -59,6 +73,7 @@ class Admin extends CI_controller
 			// 	'type'=>$this->input->post('abstract'),
 			// 	'abstract'=>$this->input->post('abstract'),
 			// 	]);
+			// $id = $this->db->insert_id();
 		} catch (exception $e) {
 			
 		}
@@ -76,6 +91,7 @@ class Admin extends CI_controller
 
 	public function publish_post()
 	{
+
 		# code...
 	}
 
@@ -85,4 +101,14 @@ class Admin extends CI_controller
 	}
 
 
+	//api 评论管理
+	public function approve_commment($value='')
+	{
+		# code...
+	}
+
+	public function refuse_comment($value='')
+	{
+		# code...
+	}
 }
