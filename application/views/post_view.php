@@ -68,9 +68,8 @@
 
   <div class="am-article-bd">
     <p class="am-article-lead">鲍勃•迪伦获得诺贝尔文学奖引起了争议，但这也说明迪伦宝刀未老。另外一个热门话题是：他会不会拒绝领奖？</p>
+    <div class="author-info">by 鲍勃</div>
     <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" alt="某天 也许会相遇 相遇在这个好地方" />
-
-    <div class="my-newspaper-office"><span class="my-time">更新于2016年10月18日 05:57</span><span class="my-newspaper">  英国《金融时报》 </span><span class="my-author">加里•西尔弗曼</span></div>
 
     <p>那时候刚好下着雨，柏油路面湿冷冷的，还闪烁着青、黄、红颜色的灯火。我们就在骑楼下躲雨，看绿色的邮筒孤独地站在街的对面。我白色风衣的大口袋里有一封要寄给南部的母亲的信。樱子说她可以撑伞过去帮我寄信。我默默点头。</p>
     <p>“谁叫我们只带来一把小伞哪。”她微笑着说，一面撑起伞，准备过马路帮我寄信。从她伞骨渗下来的小雨点，溅在我的眼镜玻璃上。</p>
@@ -109,7 +108,7 @@
 <ul class="am-comments-list am-comments-list-flip">
   <li class="am-comment">
     <a href="#link-to-user-home">
-      <img src="images/tx.png" class="am-comment-avatar" width="48" height="48"/>
+      <img src="../../images/tx.png" class="am-comment-avatar" width="48" height="48"/>
     </a>
     <div class="am-comment-main">
       <header class="am-comment-hd">
@@ -127,7 +126,7 @@
 
   <li class="am-comment">
     <a href="#link-to-user-home">
-      <img src="images/tx.png" class="am-comment-avatar" width="48" height="48"/>
+      <img src="../../images/tx.png" class="am-comment-avatar" width="48" height="48"/>
     </a>
     <div class="am-comment-main">
       <header class="am-comment-hd">
