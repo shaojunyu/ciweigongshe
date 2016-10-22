@@ -21,6 +21,7 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		//$this->load->view('welcome_message');
-		var_dump($_COOKIE);
+		// var_dump($_COOKIE);
+		$this->load->view('index_view');
 	}
 }

@@ -30,8 +30,16 @@ class Post extends CI_Controller{
 
     }
 
-    public function show($id){
-
+    public function show($post_id){
+        $this->db->where('post_id',$post_id);
+        $res = $this->db->get('post')->result_array();
+        if (count($res) == 1) {
+            $this->load->view('post_view',[
+                'post'=>$res[0]
+                ]);
+        }else{
+            header('Location:'.base_url());
+        }
     }
 
     public function category($id){
