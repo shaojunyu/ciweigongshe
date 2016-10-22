@@ -48,9 +48,9 @@
          <div class="row">
                 <div class="col-lg-12">
                     <ul class="nav nav-pills" role="tablist" style="margin: 50px 0 30px 0;">
-                      <li role="presentation" class="<?php echo $status=='draft'?'active':''; ?>"><a href="<?php echo base_url('admin/post_list/draft');?>">待处理</a></li>
+                      <li role="presentation" class="<?php echo $is_read=='unread'?'active':''; ?>"><a href="<?php echo base_url('admin/comment_list/unread');?>">待处理</a></li>
 
-                      <li role="presentation" class="<?php echo $status=='published'?'active':''; ?>"><a href="<?php echo base_url('admin/post_list/published');?>">已处理</a></li>
+                      <li role="presentation" class="<?php echo $is_read=='read'?'active':''; ?>"><a href="<?php echo base_url('admin/comment_list/read');?>">已处理</a></li>
                     </ul>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -108,20 +108,20 @@
     <!-- /#wrapper -->
 
     <!-- jQuery -->
-    <script src="<?php echo base_url();?>/vendor/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url();?>vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="<?php echo base_url();?>/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url();?>vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="<?php echo base_url();?>/vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="<?php echo base_url();?>vendor/metisMenu/metisMenu.min.js"></script>
 
     <!-- DataTables JavaScript -->
     
 
     <!-- Custom Theme JavaScript -->
-    <script src="<?php echo base_url();?>/dist/js/sb-admin-2.js"></script>
-    <script src="<?php echo base_url();?>/dist/js/jqPaginator.min.js"></script>
+    <script src="<?php echo base_url();?>dist/js/sb-admin-2.js"></script>
+    <script src="<?php echo base_url();?>dist/js/jqPaginator.min.js"></script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>

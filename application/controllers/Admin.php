@@ -61,10 +61,37 @@ class Admin extends CI_controller
 		}
 	}
 
-	public function comment_list($status = 'unread', $page = 1)
+	public function comment_list($is_read = 'unread', $page = 1)
 	{
-		if (in_array($status))
-		$this->load->view('comment_list_view');
+		if ( in_array($is_read,['read','unread']) and $page >= 1){
+			if ($is_read == 'unread'){
+				$this->db->where('status',null);
+				$total = $this->db->count_all_results('comment');
+
+				$this->db->where('status',null);
+				$this->db->order_by('update_at','DESC');
+				$this->db->limit(25,($page - 1) * 25);
+				$res = $this->db->get('post')->result_array();
+			}else{
+				$this->db->where('status !=',null);
+				$total = $this->db->count_all_results('comment');
+
+				$this->db->where('status !=',null);
+				$this->db->order_by('update_at','DESC');
+				$this->db->limit(25,($page - 1) * 25);
+				$res = $this->db->get('post')->result_array();
+			}
+//			echo $total;
+			$this->load->view('comment_list_view',[
+				'is_read'=>$is_read,
+				'total'=>$total,
+				'comments'=>$res,
+				'page'=>$page
+			]);
+		}else{
+			header('Location:'.base_url('admin/comment_list/unread/1'));
+		}
+//
 	}
 
 	public function data(){
