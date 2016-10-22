@@ -42,14 +42,14 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Dashboard</h1>
+                    <h1 class="page-header">Chart</h1>
                 </div>
             </div>
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Area Chart Example
+                            <i class="fa fa-bar-chart-o fa-fw"></i> 最近一周阅读量
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -65,7 +65,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-bar-chart-o fa-fw"></i> Area Chart Example
+                            <i class="fa fa-bar-chart-o fa-fw"></i> 最近一月阅读量
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
@@ -123,14 +123,17 @@
                 // Chart data records -- each entry in this array corresponds to a point on
                 // the chart.
                 data: [
-                    { year: '2008', value: 20 },
-                    { year: '2009', value: 10 },
-                    { year: '2010', value: 5 },
-                    { year: '2011', value: 5 },
-                    { year: '2012', value: 20 }
+                <?php
+                $i = 0;
+                foreach ($week_data as $day => $count) {
+                    $i++;
+                    echo "{ day: '$day', value: $count }";
+                    if ($i < 7) {echo ",";}
+                }
+                ?>
                 ],
                 // The name of the data record attribute that contains x-values.
-                xkey: 'year',
+                xkey: 'day',
                 // A list of names of data record attributes that contain y-values.
                 ykeys: ['value'],
                 // Labels for the ykeys -- will be displayed when you hover over the

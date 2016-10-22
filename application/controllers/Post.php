@@ -37,4 +37,8 @@ class Post extends CI_Controller{
     public function category($id){
 
     }
+
+    public function load_more(){
+        
+    }
 }

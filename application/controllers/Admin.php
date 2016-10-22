@@ -16,9 +16,7 @@ class Admin extends CI_controller
 
 	public function index($value='')
 	{
-		var_dump($this->session->userdata());
-		// header('Location:'.base_url());
-		# code...
+		$this->load->view('dashborad_view');
 	}
 
 	public function compose($post_id = '')
@@ -95,7 +93,19 @@ class Admin extends CI_controller
 	}
 
 	public function data(){
-		$this->load->view('data_view');
+		//一周阅读量
+		$week_data;
+		for ($i = 0; $i<=6; $i++){
+			$day = date('m-d',strtotime("-$i day"));
+			$this->db->like('create_at',$day);
+			$count = $this->db->count_all_results('page_view');
+			$week_data[$day] = $count;
+		}
+		// var_dump($week_data);
+
+		$this->load->view('data_view',[
+			'week_data'=>$week_data
+			]);
 	}
 
 	public function logout()
