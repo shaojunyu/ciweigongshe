@@ -28,7 +28,7 @@
 
     <link href="<?php echo base_url();?>/vendor/ckeditor/neo.css" rel="stylesheet">
 
-    <link href="<?php echo base_url();?>/vendor/styles/compose.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>/dist/css/compose.css" rel="stylesheet">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -112,32 +112,32 @@
             <input type="text" class="form-control" id="inputAuthor" placeholder="文章作者">
           </div>
           <label class="control-label">文章摘要</label>
-          <textarea class="form-control" rows="4"></textarea>
+          <textarea class="form-control summary" rows="4"></textarea>
 
             <div><label class="control-label" style="padding: 7px 10px 0 0; vertical-align: middle;">文章分类</label></div>
             <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox1" value="option1"> FEED流
+              <input type="checkbox" id="inlineCheckbox1" name="sort" value="FEED流"> FEED流
             </label>
             <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox2" value="option2"> 深报道
+              <input type="checkbox" id="inlineCheckbox2" name="sort" value="深报道"> 深报道
             </label>
             <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox3" value="option3"> 热公司
+              <input type="checkbox" id="inlineCheckbox3" name="sort" value="热公司"> 热公司
             </label>
             <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox4" value="option4"> 新闻学院
+              <input type="checkbox" id="inlineCheckbox4" name="sort" value="新闻学院"> 新闻学院
             </label>
             <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox5" value="option5"> 未来内容
+              <input type="checkbox" id="inlineCheckbox5" name="sort" value="未来内容"> 未来内容
             </label>
             <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox6" value="option6"> 会议/培训
+              <input type="checkbox" id="inlineCheckbox6" name="sort" value="会议/培训"> 会议/培训
             </label>
           
           <div>  
             <div><label class="control-label" style="padding: 7px 10px 0 0; vertical-align: middle;">展示选择</label></div>
             <label class="checkbox-inline">
-              <input type="checkbox" id="inlineCheckbox7" value="option7"> 首页轮播展示
+              <input type="checkbox" id="inlineCheckbox7" name="is-show" value="option7"> 首页轮播展示
             </label>
           </div>
         </form>
@@ -168,13 +168,7 @@
 
     <script src="<?php echo base_url();?>/vendor/ckeditor/ckeditor.js"></script>
     <script src="<?php echo base_url();?>/vendor/ckeditor/sample.js"></script>
-    <script>
-        initSample();
-
-        /*setInterval(function () {
-            console.log(CKEDITOR.instances.editor.getData());
-        }, 3000);*/
-    </script>
+    <script src="<?php echo base_url();?>/dist/js/compose.js"></script>
 
 </body>
 
