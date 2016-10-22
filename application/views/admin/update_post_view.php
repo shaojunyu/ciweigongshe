@@ -44,19 +44,19 @@
         <form class="compose-info" role="form" method="POST" action="">
           <div class="form-group">
             <label for="inputTitle" class="control-label">标题</label>
-            <input type="text" name="title" class="form-control" id="inputTitle" placeholder="文章标题">
+            <input type="text" name="title" class="form-control" id="inputTitle" placeholder="文章标题" value="<?php echo $post['title']; ?>">
           </div>
           <div class="form-group">
             <label for="inputAuthor" class="control-label">作者</label>
-            <input type="text" name="author" class="form-control" id="inputAuthor" placeholder="文章作者">
+            <input type="text" name="author" class="form-control" id="inputAuthor" placeholder="文章作者" value="<?php echo $post['author']; ?>">
           </div>
           <div class="form-group">
             <label for="inputImg" class="control-label">封面图地址</label>
-            <input type="text" name="image_url" class="form-control" id="inputImg" placeholder="输入封面图地址">
+            <input type="text" name="image_url" class="form-control" id="inputImg" placeholder="输入封面图地址" value="<?php echo $post['image_url']; ?>">
             <button type="button" class="btn btn-primary view-img">查看图片</button>
           </div>
           <label class="control-label">文章摘要</label>
-          <textarea class="form-control summary" name="abstract" rows="4"></textarea>
+          <textarea class="form-control summary" name="abstract" rows="4" ><?php echo $post['abstract']; ?></textarea>
 
             <div><label class="control-label" style="padding: 7px 10px 0 0; vertical-align: middle;">文章分类</label></div>
            <div class="category-box">
@@ -97,7 +97,7 @@
           </div>
 
           <input type="text" class="hide" name="content" style="display: none;">
-          <button type="button" class="btn btn-primary compose-artical">存储文章</button>
+          <button type="button" class="btn btn-primary compose-artical">更新文章</button>
         </form>
     </div>
 

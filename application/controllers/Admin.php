@@ -27,13 +27,21 @@ class Admin extends CI_controller
 			$this->load->view('compose_view');
 		}else{
 			$this->db->where('post_id',$post_id);
-			$this->db->get('post');
+			$res = $this->db->get('post')->result_array();
 			if ($this->db->affected_rows() == 1) {
-				# code...
+				$this->load->view('admin/update_post_view',[
+					'post'=>$res[0]
+					]);
 			}else{
 				$this->load->view('compose_view');
 			}
 		}
+	}
+
+	public function post_list()
+	{
+
+		# code...
 	}
 
 
@@ -65,17 +73,27 @@ class Admin extends CI_controller
 		try {
 			var_dump($this->input->post());
 
-			// $this->db->insert('post',[
-			// 	'title'=>$this->input->post('title'),
-			// 	'author'=>$this->input->post('author'),
-			// 	'abstract'=>$this->input->post('abstract'),
-			// 	'content'=>$this->input->post('content'),
-			// 	'type'=>$this->input->post('abstract'),
-			// 	'abstract'=>$this->input->post('abstract'),
-			// 	]);
-			// $id = $this->db->insert_id();
+			$this->db->insert('post',[
+				'title'=>$this->input->post('title'),
+				'author'=>$this->input->post('author'),
+				'abstract'=>$this->input->post('abstract'),
+				'content'=>$this->input->post('content'),
+				'type'=>$this->input->post('type') == '' ? 'post':$this->input->post('type'),
+				'image_url'=>$this->input->post('image_url')
+				]);
+
+			$post_id = $this->db->insert_id();
+			foreach ($this->input->post('category') as $category_id) {
+				$this->db->insert('post_category',[
+					'post_id'=>$post_id,
+					'category_id'=>$category_id
+					]);
+			}
+
+			// header('Location:'.base_url('admin/post_list'));
+
 		} catch (exception $e) {
-			
+			header('Location:'.base_url('admin/post_list'));
 		}
 	}
 
