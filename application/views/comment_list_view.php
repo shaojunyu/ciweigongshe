@@ -72,20 +72,24 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <?php foreach ($comments as $comment){?>
                                     <tr>
-                                        <td>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</td>
-                                        <td>呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵</td>
-                                        <td>哗哗哗哗哗哗哗哗哗哗哗哗哗哗哗</td>
-                                        <td>吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼</td>
-                                        <td><a href="javascript:;">通过</a><a href="javascript:;">拒绝</a></td>
+                                        <td><?php echo $comment['post_id']; ?></td>
+                                        <td><?php echo $comment['author']; ?></td>
+                                        <td><?php echo $comment['content']; ?></td>
+                                        <td><?php echo $comment['create_at']; ?></td>
+                                        <td>
+                                            <?php
+                                            if ($is_read == 'unread'){
+                                            ?>
+                                            <a href="<?php echo base_url('admin/approve_commment/'.$comment['post_id']); ?>">通过</a>
+                                            <a href="<?php echo base_url('admin/refuse_comment/'.$comment['post_id']); ?>">拒绝</a>
+                                            <?php }else{
+                                                echo $comment['status'] == 'approved' ? '已通过':'已拒绝';
+                                            }?>
+                                        </td>
                                     </tr>
-                                    <tr>
-                                        <td>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</td>
-                                        <td>呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵</td>
-                                        <td>哗哗哗哗哗哗哗哗哗哗哗哗哗哗哗</td>
-                                        <td>吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼</td>
-                                        <td><a href="javascript:;">通过</a><a href="javascript:;">拒绝</a></td>
-                                    </tr>
+                                <?php } ?>
                                 </tbody>
                             </table>
 
@@ -124,18 +128,24 @@
     <script src="<?php echo base_url();?>dist/js/jqPaginator.min.js"></script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <?php
+    $totalPages = floor($total / 25) + 1;
+    $visiblePages = ($totalPages > 10)?10:$totalPages;
+    //    var_dump($totalPages);
+    ?>
     <script>
     var count = true;
     var currentPage = 1;
     $('#pagination1').jqPaginator({
-        totalPages: 100,
-        visiblePages: 10,
-        currentPage: currentPage,
+        totalPages: <?php echo $totalPages; ?>,
+        visiblePages:<?php echo $visiblePages; ?>,
+        currentPage: <?php echo $visiblePages; ?>,
         onPageChange: function (num, type) {
             if(count) {
                 count = false;
                 return;
             }
+            window.location.href = "<?php echo base_url('admin/comment_list/'.$is_read.'/')?>" + num;
         }
     });
     </script>

@@ -71,7 +71,7 @@ class Admin extends CI_controller
 				$this->db->where('status',null);
 				$this->db->order_by('update_at','DESC');
 				$this->db->limit(25,($page - 1) * 25);
-				$res = $this->db->get('post')->result_array();
+				$res = $this->db->get('comment')->result_array();
 			}else{
 				$this->db->where('status !=',null);
 				$total = $this->db->count_all_results('comment');
@@ -79,7 +79,7 @@ class Admin extends CI_controller
 				$this->db->where('status !=',null);
 				$this->db->order_by('update_at','DESC');
 				$this->db->limit(25,($page - 1) * 25);
-				$res = $this->db->get('post')->result_array();
+				$res = $this->db->get('comment')->result_array();
 			}
 //			echo $total;
 			$this->load->view('comment_list_view',[
@@ -214,6 +214,7 @@ class Admin extends CI_controller
 		$this->db->update('comment',[
 			'status'=>'approved'
 		]);
+		header('Location:'.base_url('admin/comment_list/unread'));
 	}
 
 	public function refuse_comment($comment_id)
@@ -222,5 +223,6 @@ class Admin extends CI_controller
 		$this->db->update('comment',[
 			'status'=>'refused'
 		]);
+		header('Location:'.base_url('admin/comment_list/unread'));
 	}
 }

@@ -14,7 +14,7 @@
             <!-- /.navbar-header -->
 
             <h3 class="page-title">
-                <?php echo isset($tile)?$title:'管理后台'; ?>
+                <?php echo isset($title)?$title:'管理后台'; ?>
             </h3>
 
             <ul class="nav navbar-top-links navbar-right">
