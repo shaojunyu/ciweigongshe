@@ -42,11 +42,17 @@ class Admin extends CI_controller
 	public function post_list($status = 'draft', $page = 1)
 	{
 		if (in_array($status,['draft','published','closed']) and $page >= 1) {
+			$this->db->where('status',$status);
+			$total = $this->db->count_all_results('post',false);
+			echo $total;
+			$this->db->order_by('update_at','DESC');
+			$this->db->limit(25,($page - 1) * 25);
+//			$this->db->get('post');
 			$this->load->view('post_list_view',[
 				'status'=>$status
 				]);
 		}else{
-			// header('Location:'.base_url('admin/post_list'));
+			header('Location:'.base_url('admin/post_list/draft/1'));
 		}
 	}
 
