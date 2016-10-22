@@ -25,4 +25,22 @@ class Admin extends CI_controller
 	{
 		$this->load->view('compose_view');
 	}
+
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		header('Location:'.base_url());
+	}
+
+
+	//api
+	public function store_post()
+	{
+		try {
+			var_dump($this->input->post());
+			//$this->db->insert('post',);
+		} catch (exception $e) {
+			
+		}
+	}
 }
