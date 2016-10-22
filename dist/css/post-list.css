@@ -7,16 +7,16 @@ th, td {
 	word-break: normal;
 }
 thead tr th:nth-child(1), tbody tr td:nth-child(1) {
-	width: 21%
+	width: 22%
 }
 thead tr th:nth-child(2), tbody tr td:nth-child(2) {
-	width: 21%
+	width: 22%
 }
 thead tr th:nth-child(3), tbody tr td:nth-child(3) {
-	width: 21%
+	width: 22%
 }
 thead tr th:nth-child(4), tbody tr td:nth-child(4) {
-	width: 21%
+	width: 18%
 }
 thead tr th:nth-child(5), tbody tr td:nth-child(5) {
 	width: 16%
