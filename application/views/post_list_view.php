@@ -80,10 +80,21 @@
                                         <td><?php echo $post['abstract']; ?></td>
                                         <td><?php echo $post['update_at']; ?></td>
                                         <td>
-                                            <a href="javascript:;">发布</a>
-                                            <a href="javascript:;">预览</a>
-                                            <a href="javascript:;">编辑</a>
-                                            <a href="javascript:;">删除</a>
+                                            <?php if ($status == 'draft'){?>
+                                            <a href="<?php echo base_url('admin/publish_post/'.$post['post_id']); ?>">发布</a>
+                                            <?php } ?>
+
+                                            <?php if ($status == 'closed'){?>
+                                                <a href="<?php echo base_url('admin/restore_post/'.$post['post_id']); ?>">恢复</a>
+                                            <?php } ?>
+
+                                            <a href="<?php echo base_url('post/show/'.$post['post_id']); ?>" target="_blank">预览</a>
+                                            <a href="<?php echo base_url('admin/compose/'.$post['post_id']); ?>">编辑</a>
+
+                                            <?php if ($status != 'closed'){?>
+                                            <a href="<?php echo base_url('admin/close_post/'.$post['post_id']); ?>">删除</a>
+                                            <?php } ?>
+
                                         </td>
                                     </tr>
                                 <?php } ?>
@@ -125,18 +136,25 @@
     <script src="<?php echo base_url();?>/dist/js/jqPaginator.min.js"></script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
+    <?php
+    $totalPages = floor($total / 25) + 1;
+    $visiblePages = ($totalPages > 10)?10:$totalPages;
+//    var_dump($totalPages);
+    ?>
     <script>
+
     var count = true;
     var currentPage = 1;
     $('#pagination1').jqPaginator({
-        totalPages: 100,
-        visiblePages: 10,
-        currentPage: currentPage,
+        totalPages: <?php echo $totalPages; ?>,
+        visiblePages: <?php echo $visiblePages; ?>,
+        currentPage: <?php echo $page; ?>,
         onPageChange: function (num, type) {
             if(count) {
                 count = false;
                 return;
             }
+            window.location.href = "<?php echo base_url('admin/post_list/'.$status.'/')?>" + num;
         }
     });
     </script>
