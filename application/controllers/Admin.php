@@ -43,13 +43,17 @@ class Admin extends CI_controller
 	{
 		if (in_array($status,['draft','published','closed']) and $page >= 1) {
 			$this->db->where('status',$status);
-			$total = $this->db->count_all_results('post',false);
-			echo $total;
+			$total = $this->db->count_all_results('post');
+			$this->db->where('status',$status);
 			$this->db->order_by('update_at','DESC');
 			$this->db->limit(25,($page - 1) * 25);
-//			$this->db->get('post');
+			$res = $this->db->get('post')->result_array();
+//			var_dump($res);
+
 			$this->load->view('post_list_view',[
-				'status'=>$status
+				'status'=>$status,
+				'total'=>$total,
+				'posts'=>$res
 				]);
 		}else{
 			header('Location:'.base_url('admin/post_list/draft/1'));

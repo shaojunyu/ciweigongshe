@@ -73,20 +73,20 @@
                                     </tr>
                                 </thead>
                                 <tbody>
+                                <?php foreach ($posts as $post){?>
                                     <tr>
-                                        <td>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</td>
-                                        <td>呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵</td>
-                                        <td>哗哗哗哗哗哗哗哗哗哗哗哗哗哗哗</td>
-                                        <td>吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼</td>
-                                        <td><a href="javascript:;">发布</a><a href="javascript:;">编辑</a><a href="javascript:;">删除</a></td>
+                                        <td><?php echo $post['title']; ?></td>
+                                        <td><?php echo $post['author']; ?></td>
+                                        <td><?php echo $post['abstract']; ?></td>
+                                        <td><?php echo $post['update_at']; ?></td>
+                                        <td>
+                                            <a href="javascript:;">发布</a>
+                                            <a href="javascript:;">预览</a>
+                                            <a href="javascript:;">编辑</a>
+                                            <a href="javascript:;">删除</a>
+                                        </td>
                                     </tr>
-                                    <tr>
-                                        <td>哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</td>
-                                        <td>呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵</td>
-                                        <td>哗哗哗哗哗哗哗哗哗哗哗哗哗哗哗</td>
-                                        <td>吼吼吼吼吼吼吼吼吼吼吼吼吼吼吼</td>
-                                        <td><a href="javascript:;">发布</a><a href="javascript:;">编辑</a><a href="javascript:;">删除</a></td>
-                                    </tr>
+                                <?php } ?>
                                 </tbody>
                             </table>
 
