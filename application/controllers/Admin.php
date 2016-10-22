@@ -41,9 +41,11 @@ class Admin extends CI_controller
 	public function post_list($status = 'draft', $page = 1)
 	{
 		if (in_array($status,['draft','published','closed']) and $page >= 1) {
-			
+			$this->load->view('post_list_view',[
+				'status'=>$status
+				]);
 		}else{
-			header('Location:'.base_url('admin/post_list'));
+			// header('Location:'.base_url('admin/post_list'));
 		}
 	}
 

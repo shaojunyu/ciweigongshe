@@ -45,9 +45,11 @@
             <div class="row">
                 <div class="col-lg-12">
                     <ul class="nav nav-pills" role="tablist" style="margin: 50px 0 30px 0;">
-                      <li role="presentation" class="active"><a href="#">待发布</a></li>
-                      <li role="presentation"><a href="#">已发布</a></li>
-                      <li role="presentation"><a href="#">回收站</a></li>
+                      <li role="presentation" class="<?php echo $status=='draft'?'active':''; ?>"><a href="<?php echo base_url('admin/post_list/draft');?>">待发布</a></li>
+
+                      <li role="presentation" class="<?php echo $status=='published'?'active':''; ?>"><a href="<?php echo base_url('admin/post_list/published');?>">已发布</a></li>
+
+                      <li role="presentation" class="<?php echo $status=='closed'?'active':''; ?>"><a href="<?php echo base_url('admin/post_list/closed');?>">回收站</a></li>
                     </ul>
                 </div>
                 <!-- /.col-lg-12 -->
