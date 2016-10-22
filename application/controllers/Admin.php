@@ -38,10 +38,13 @@ class Admin extends CI_controller
 		}
 	}
 
-	public function post_list()
+	public function post_list($status = 'draft', $page = 1)
 	{
-		$this->load->view('post_list_view');
-		# code...
+		if (in_array($status,['draft','published','closed']) and $page >= 1) {
+			
+		}else{
+			header('Location:'.base_url('admin/post_list'));
+		}
 	}
 
 
@@ -79,8 +82,9 @@ class Admin extends CI_controller
 				'author'=>$this->input->post('author'),
 				'abstract'=>$this->input->post('abstract'),
 				'content'=>$this->input->post('content'),
-				'type'=>$this->input->post('type') == '' ? 'post':$this->input->post('type'),
-				'image_url'=>$this->input->post('image_url')
+				'type'=>$this->input->post('type') == '' ? 'post':'nav',
+				'image_url'=>$this->input->post('image_url'),
+				'status'=>'draft'
 				]);
 
 			$post_id = $this->db->insert_id();
@@ -90,17 +94,10 @@ class Admin extends CI_controller
 					'category_id'=>$category_id
 					]);
 			}
-
-			// header('Location:'.base_url('admin/post_list'));
-
+			header('Location:'.base_url('admin/post_list/draft'));
 		} catch (exception $e) {
 			header('Location:'.base_url('admin/post_list'));
 		}
-	}
-
-	public function store_draft()
-	{
-		# code...
 	}
 
 	public function update_post()
@@ -110,7 +107,6 @@ class Admin extends CI_controller
 
 	public function publish_post()
 	{
-
 		# code...
 	}
 
