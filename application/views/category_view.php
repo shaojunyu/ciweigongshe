@@ -55,33 +55,12 @@
   </nav>
 
 
-<!-- Slider -->
-<div data-am-widget="slider" class="am-slider am-slider-default" data-am-slider='{&quot;animation&quot;:&quot;slide&quot;,&quot;slideshow&quot;:false}' >
-  <ul class="am-slides">
-      <li>
-          <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg">
-          <div class="am-slider-desc">这是标题标题标题标题标题标题标题0</div>
-         
-      </li>
-      <li>
-          <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg">
-          <div class="am-slider-desc">这是标题标题标题标题标题标题标题1</div>
-         
-      </li>
-      <li>
-          <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg">
-          <div class="am-slider-desc">这是标题标题标题标题标题标题标题2</div>
-         
-      </li>
-      <li>
-          <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg">
-          <div class="am-slider-desc">这是标题标题标题标题标题标题标题3</div>
-         
-      </li>
-  </ul>
-</div>
-
-
+  
+<ol class="am-breadcrumb am-breadcrumb-slash my-breadcrumb-style">
+  <li><a href="#">首页</a></li>
+  <li><a href="#">分类</a></li>
+  <li class="am-active">文章</li>
+</ol>
 
 <!-- List -->
 <div data-am-widget="list_news" class="am-list-news am-list-news-default">
