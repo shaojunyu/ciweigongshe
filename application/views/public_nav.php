@@ -39,7 +39,22 @@
                             <a href="#"><i class="fa fa-bar-chart-o fa-fw"></i> 数据分析</a>
                         </li>
                         <li>
-                            <a href="tables.html"><i class="fa fa-table fa-fw"></i> 文章管理</a>
+                            <a href="#"><i class="fa fa-sitemap fa-fw"></i> 文章管理<span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="#">待发布</a>
+                                </li>
+                                <li>
+                                    <a href="#">已发布</a>
+                                </li>
+                                <li>
+                                    <a href="#">草稿箱</a>
+                                </li>
+                                <li>
+                                    <a href="#">回收站</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
                         </li>
                         <li>
                             <a href="./compose"><i class="fa fa-edit fa-fw"></i> 文章发布</a>
