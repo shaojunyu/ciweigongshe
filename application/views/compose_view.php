@@ -85,7 +85,7 @@
                             <a href="tables.html"><i class="fa fa-table fa-fw"></i> 文章管理</a>
                         </li>
                         <li>
-                            <a href="forms.html"><i class="fa fa-edit fa-fw"></i> 文章发布</a>
+                            <a href="./compose"><i class="fa fa-edit fa-fw"></i> 文章发布</a>
                         </li>
                         <li>
                             <a href="forms.html"><i class="fa fa-edit fa-fw"></i> 评论管理</a>
@@ -102,23 +102,19 @@
     </div>
 
     <div id="page-wrapper">
-        <form class="form-horizontal compose-info" role="form">
+        <form class="compose-info" role="form">
           <div class="form-group">
-            <label for="inputTitle" class="col-sm-1 control-label">标题</label>
-            <div class="col-sm-11">
-              <input type="text" class="form-control" id="inputTitle" placeholder="文章标题">
-            </div>
+            <label for="inputTitle" class="control-label">标题</label>
+            <input type="text" class="form-control" id="inputTitle" placeholder="文章标题">
           </div>
           <div class="form-group">
-            <label for="inputAuthor" class="col-sm-1 control-label">作者</label>
-            <div class="col-sm-11">
-              <input type="text" class="form-control" id="inputAuthor" placeholder="文章作者">
-            </div>
+            <label for="inputAuthor" class="control-label">作者</label>
+            <input type="text" class="form-control" id="inputAuthor" placeholder="文章作者">
           </div>
           <label class="control-label">文章摘要</label>
           <textarea class="form-control" rows="4"></textarea>
 
-            <label class="control-label" style="padding: 7px 10px 0 0; vertical-align: middle;">文章分类</label>
+            <div><label class="control-label" style="padding: 7px 10px 0 0; vertical-align: middle;">文章分类</label></div>
             <label class="checkbox-inline">
               <input type="checkbox" id="inlineCheckbox1" value="option1"> FEED流
             </label>
@@ -139,7 +135,7 @@
             </label>
           
           <div>  
-            <label class="control-label" style="padding: 7px 10px 0 0; vertical-align: middle;">展示选择</label>
+            <div><label class="control-label" style="padding: 7px 10px 0 0; vertical-align: middle;">展示选择</label></div>
             <label class="checkbox-inline">
               <input type="checkbox" id="inlineCheckbox7" value="option7"> 首页轮播展示
             </label>

@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>刺猬公社——内容产业第一报道媒体</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo base_url();?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -60,6 +60,24 @@
         </div>
     </div>
 
+
+    <div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+            <h4 class="modal-title" id="myModalLabel"></h4>
+          </div>
+          <div class="modal-body">
+            <p>用户名或密码错误！</p>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <!-- jQuery -->
     <script src="<?php echo base_url();?>/vendor/jquery/jquery.min.js"></script>
 
@@ -71,6 +89,18 @@
 
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo base_url();?>/dist/js/sb-admin-2.js"></script>
+
+    <script>
+        $(function () {
+            var url = window.location.href;
+            var reg = /\?(\w+)$/;
+            var result = reg.exec(url);
+            if(result !== null) {
+                $('#myModal').modal({});
+                return;
+            }
+        });
+    </script>
 
 </body>
 
