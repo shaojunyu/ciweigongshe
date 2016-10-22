@@ -110,29 +110,75 @@ class Admin extends CI_controller
 
 	public function update_post()
 	{
-		var_dump($this->input->post());
+//		var_dump($this->input->post());
+		try{
+			$this->db->where('post_id',$this->input->post('post_id'));
+			$this->db->update('post',[
+				'title'=>$this->input->post('title'),
+				'author'=>$this->input->post('author'),
+				'abstract'=>$this->input->post('abstract'),
+				'content'=>$this->input->post('content'),
+				'type'=>$this->input->post('type') == '' ? 'post':'nav',
+				'image_url'=>$this->input->post('image_url')
+				]);
+
+			$this->db->where('post_id',$this->input->post('post_id'));
+			$this->db->delete('post_category');
+			foreach ($this->input->post('category') as $category_id) {
+				$this->db->insert('post_category',[
+					'post_id'=>$this->input->post('post_id'),
+					'category_id'=>$category_id
+				]);
+			}
+
+		}catch (exception $e){
+
+		}
+		header('Location:'.base_url('admin/post_list/').$this->input->post('status'));
 		# code...
 	}
 
-	public function publish_post()
+	public function publish_post($post_id)
 	{
-		# code...
+		$this->db->where('post_id',$post_id);
+		$this->db->update('post',[
+			'status'=>'published'
+		]);
+		header('Location:'.base_url('admin/post_list/published'));
 	}
 
-	public function close_post()
+	public function unpublish_post($post_id){
+		$this->db->where('post_id',$post_id);
+		$this->db->update('post',[
+			'status'=>'draft'
+		]);
+		header('Location:'.base_url('admin/post_list/draft'));
+	}
+
+	public function close_post($post_id)
 	{
-		# code...
+		$this->db->where('post_id',$post_id);
+		$this->db->update('post',[
+			'status'=>'closed'
+		]);
+		header('Location:'.base_url('admin/post_list/closed'));
 	}
 
 
 	//api 评论管理
-	public function approve_commment($value='')
+	public function approve_commment($comment_id)
 	{
-		# code...
+		$this->db->where('comment_id',$comment_id);
+		$this->db->update('comment',[
+			'status'=>'approved'
+		]);
 	}
 
-	public function refuse_comment($value='')
+	public function refuse_comment($comment_id)
 	{
-		# code...
+		$this->db->where('comment_id',$comment_id);
+		$this->db->update('comment',[
+			'status'=>'refused'
+		]);
 	}
 }

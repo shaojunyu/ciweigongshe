@@ -53,7 +53,7 @@
           <div class="form-group">
             <label for="inputImg" class="control-label">封面图地址</label>
             <input type="text" name="image_url" class="form-control" id="inputImg" placeholder="输入封面图地址" value="<?php echo $post['image_url']; ?>">
-            <button type="button" class="btn btn-primary view-img">查看图片</button>
+            <button type="button" class="btn btn-primary view-img">查看封面图片</button>
           </div>
           <label class="control-label">文章摘要</label>
           <textarea class="form-control summary" name="abstract" rows="4" ><?php echo $post['abstract']; ?></textarea>
@@ -106,7 +106,8 @@
           </div>
 
           <input type="text" class="hide" name="content" style="display: none;">
-            <input type="hidden" name="post_id" value="<?php echo $post['post_id']?>">
+          <input type="hidden" name="post_id" value="<?php echo $post['post_id']?>">
+          <input type="hidden" name="status" value="<?php echo $post['status']?>">
           <button type="button" class="btn btn-primary compose-artical">更新文章</button>
             
         </form>
