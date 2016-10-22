@@ -1,4 +1,9 @@
 .page-title {
+	width: 200px;
 	position: absolute;
-	
+	margin-top: 15px;
+	top: 0;
+	left: 50%;
+	margin-left: -100px;
+	text-align: center;
 }
