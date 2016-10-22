@@ -61,7 +61,7 @@ class Admin extends CI_controller
 		}
 	}
 
-	public function comment_list()
+	public function comment_list($page)
 	{
 		$this->load->view('comment_list_view');
 	}
