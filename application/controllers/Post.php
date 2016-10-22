@@ -33,4 +33,8 @@ class Post extends CI_Controller{
     public function show($id){
 
     }
+
+    public function category($id){
+
+    }
 }
