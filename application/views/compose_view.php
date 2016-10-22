@@ -41,7 +41,7 @@
 <?php $this->load->view('public_nav');?>
 
     <div id="page-wrapper">
-        <form class="compose-info" role="form" method="POST" action="<?php echo base_url('admin/update_post')?>">
+        <form class="compose-info" role="form" method="POST" action="<?php echo base_url('admin/store_post')?>">
           <div class="form-group">
             <label for="inputTitle" class="control-label">标题</label>
             <input type="text" name="title" class="form-control" id="inputTitle" placeholder="文章标题">
