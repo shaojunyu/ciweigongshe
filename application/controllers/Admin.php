@@ -61,8 +61,9 @@ class Admin extends CI_controller
 		}
 	}
 
-	public function comment_list($page)
+	public function comment_list($status = 'unread', $page = 1)
 	{
+		if (in_array($status))
 		$this->load->view('comment_list_view');
 	}
 
