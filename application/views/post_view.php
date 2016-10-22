@@ -56,50 +56,171 @@
 
 <ol class="am-breadcrumb am-breadcrumb-slash my-breadcrumb-style">
   <li><a href="#">首页</a></li>
-  <li class="am-active">FEED流</li>
+  <li><a href="#">分类</a></li>
+  <li class="am-active">文章</li>
 </ol>
+
+<!-- artical -->
+<article class="am-article my-artical-style">
+  <div class="am-article-hd">
+    <h1 class="am-article-title">“游吟诗人”鲍勃•迪伦</h1>
+  </div>
+
+  <div class="am-article-bd">
+    <p class="am-article-lead">鲍勃•迪伦获得诺贝尔文学奖引起了争议，但这也说明迪伦宝刀未老。另外一个热门话题是：他会不会拒绝领奖？</p>
+    <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" alt="某天 也许会相遇 相遇在这个好地方" />
+
+    <div class="my-newspaper-office"><span class="my-time">更新于2016年10月18日 05:57</span><span class="my-newspaper">  英国《金融时报》 </span><span class="my-author">加里•西尔弗曼</span></div>
+
+    <p>那时候刚好下着雨，柏油路面湿冷冷的，还闪烁着青、黄、红颜色的灯火。我们就在骑楼下躲雨，看绿色的邮筒孤独地站在街的对面。我白色风衣的大口袋里有一封要寄给南部的母亲的信。樱子说她可以撑伞过去帮我寄信。我默默点头。</p>
+    <p>“谁叫我们只带来一把小伞哪。”她微笑着说，一面撑起伞，准备过马路帮我寄信。从她伞骨渗下来的小雨点，溅在我的眼镜玻璃上。</p>
+    <p>她只是过马路去帮我寄信。这简单的行动，却要叫我终身难忘了。我缓缓睁开眼，茫然站在骑楼下，眼里裹着滚烫的泪水。世上所有的车子都停了下来，人潮涌向马路中央。没有人知道那躺在街面的，就是我的，蝴蝶。这时她只离我五公尺，竟是那么遥远。更大的雨点溅在我的眼镜上，溅到我的生命里来。</p>
+  </div>
+</article>
+
+
+<div class="bdsharebuttonbox" data-tag="share_1">
+  <a class="bds_weixin" data-cmd="weixin"></a>
+  <a class="bds_tsina" data-cmd="tsina"></a>
+  <a class="bds_tqq" data-cmd="tqq"></a>
+  <a class="bds_qzone" data-cmd="qzone" href="#"></a>
+  <a class="bds_baidu" data-cmd="baidu"></a>
+  <a class="bds_renren" data-cmd="renren"></a>
+  <a class="bds_more" data-cmd="more">更多</a>
+  <a class="bds_count" data-cmd="count"></a>
+</div>
+<script>
+  window._bd_share_config = {
+    common : {
+      bdText : '自定义分享内容', 
+      bdDesc : '自定义分享摘要', 
+      bdUrl : '自定义分享url地址',   
+      bdPic : '自定义分享图片'
+    },
+    share : [{
+      "bdSize" : 24
+    }]
+  };
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+
+<!-- 评论列表 -->
+<ul class="am-comments-list am-comments-list-flip">
+  <li class="am-comment">
+    <a href="#link-to-user-home">
+      <img src="images/tx.png" class="am-comment-avatar" width="48" height="48"/>
+    </a>
+    <div class="am-comment-main">
+      <header class="am-comment-hd">
+        <div class="am-comment-meta">
+          <a href="#link-to-user" class="am-comment-author">路人甲</a>
+          评论于 <time>2014-7-12 15:30</time>
+        </div>
+      </header>
+
+      <div class="am-comment-bd">
+        哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+      </div>
+    </div>
+  </li>
+
+  <li class="am-comment">
+    <a href="#link-to-user-home">
+      <img src="images/tx.png" class="am-comment-avatar" width="48" height="48"/>
+    </a>
+    <div class="am-comment-main">
+      <header class="am-comment-hd">
+        <div class="am-comment-meta">
+          <a href="#link-to-user" class="am-comment-author">路人乙</a>
+          评论于 <time>2014-7-12 15:30</time>
+        </div>
+      </header>
+
+      <div class="am-comment-bd">
+        呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵
+      </div>
+    </div>
+  </li>
+</ul>
 
 <!-- List -->
 <div data-am-widget="list_news" class="am-list-news am-list-news-default">
+  <!--列表标题-->
+  <div class="am-list-news-hd am-cf">
+    <!--带更多链接-->
+    <a href="###">
+      <h2>相关文章</h2>
+    </a>
+  </div>
   <div class="am-list-news-bd">
     <ul class="am-list">
-     <!--缩略图在标题下方居左-->
-      <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-bottom-left">
-        <a href="javascript:;" class="my-news-title">旅行</a>
-        <h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11614662/" class="">我很囧，你保重....晒晒旅行中的那些囧！</a></h3>
-        <div class="am-u-sm-5 am-list-thumb">
-          <a href="http://www.douban.com/online/11614662/" class="">
-            <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" alt="我很囧，你保重....晒晒旅行中的那些囧！"/>
-          </a>
-        </div>
-
-        <div class="am-u-sm-7  am-list-main">
-          <div class="am-list-item-text">囧人囧事囧照，人在囧途，越囧越萌。标记《带你出发，陪我回家》http://book.douban.com/subject/25711202/为“想读”“在读”或“读过”，有机会获得此书本活动进行3个月，每月送出三本书。会有不定期bonus！</div>
-        </div>
-
-        <div class="my-clear"></div>
-        <span class="my-date">1小时前</span>
+      <li class="am-g">
+        <a href="http://www.douban.com/online/11614662/" class="am-list-item-hd">我很囧，你保重....晒晒旅行中的那些囧！</a>
       </li>
-      <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-bottom-left">
-          <a href="javascript:;" class="my-news-title">生活</a>
-          <h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/" class="">我最喜欢的一张画</a></h3>
-          <div class="am-u-sm-5 am-list-thumb">
-            <a href="http://www.douban.com/online/11624755/" class="">
-              <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" alt="我最喜欢的一张画"/>
-            </a>
-          </div>
-
-          <div class=" am-u-sm-7  am-list-main">
-            <div class="am-list-item-text">你最喜欢的艺术作品，告诉大家它们的------名图画，色彩，交织，撞色，线条雕塑装置当代古代现代作品的照片美我最喜欢的画群296795413进群发画，少说多发图，</div>
-          </div>
-
-          <div class="my-clear"></div>
-          <span class="my-date">1小时前</span>
+      <li class="am-g">
+        <a href="http://www.douban.com/online/11624755/" class="am-list-item-hd">我最喜欢的一张画</a>
+      </li>
+      <li class="am-g">
+        <a href="http://www.douban.com/online/11645411/" class="am-list-item-hd">“你的旅行，是什么颜色？” 晒照片，换北欧梦幻极光之旅！</a>
       </li>
     </ul>
   </div>
 </div>
 
+<!-- Gallery -->
+<div data-am-widget="list_news" class="am-list-news am-list-news-default">
+  <!--列表标题-->
+  <div class="am-list-news-hd am-cf my-title">
+    <!--带更多链接-->
+    <a href="###">
+      <h2>您可能感兴趣的文章</h2>
+    </a>
+  </div>
+
+  <ul data-am-widget="gallery" class="am-gallery am-avg-sm-2
+    am-avg-md-3 am-avg-lg-4 am-gallery-default">
+    <li>
+      <div class="am-gallery-item">
+        <a href="javascript:;" class="">
+          <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" alt="某天 也许会相遇 相遇在这个好地方" />
+          <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
+          <div class="am-gallery-desc">2375-09-26</div>
+        </a>
+      </div>
+    </li>
+    <li>
+      <div class="am-gallery-item">
+        <a href="javascript:;"  class="">
+          <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg"
+               alt="某天 也许会相遇 相遇在这个好地方" />
+          <h3 class="am-gallery-title">某天 也许会相遇 相遇在这个好地方</h3>
+          <div class="am-gallery-desc">2375-09-26</div>
+        </a>
+      </div>
+    </li>
+    <li>
+      <div class="am-gallery-item">
+        <a href="javascript:;" class="">
+          <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg"
+               alt="不要太担心 只因为我相信" />
+          <h3 class="am-gallery-title">不要太担心 只因为我相信</h3>
+          <div class="am-gallery-desc">2375-09-26</div>
+        </a>
+      </div>
+    </li>
+    <li>
+      <div class="am-gallery-item">
+        <a href="javascript:;" class="">
+          <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg"
+               alt="终会走过这条遥远的道路" />
+          <h3 class="am-gallery-title">终会走过这条遥远的道路</h3>
+          <div class="am-gallery-desc">2375-09-26</div>
+        </a>
+      </div>
+    </li>
+  </ul>
+</div>
 
 
   <div data-am-widget="gotop" class="am-gotop am-gotop-fixed" >
