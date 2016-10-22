@@ -21,10 +21,23 @@ class Admin extends CI_controller
 		# code...
 	}
 
-	public function compose()
+	public function compose($post_id = '')
 	{
-		$this->load->view('compose_view');
+		if ($post_id == null) {
+			$this->load->view('compose_view');
+		}else{
+			$this->db->where('post_id',$post_id);
+			$this->db->get('post');
+			if ($this->db->affected_rows() == 1) {
+				# code...
+			}else{
+				$this->load->view('compose_view');
+			}
+		}
+
+		
 	}
+
 
 	public function logout()
 	{
@@ -38,9 +51,38 @@ class Admin extends CI_controller
 	{
 		try {
 			var_dump($this->input->post());
-			//$this->db->insert('post',);
+			// $this->db->insert('post',[
+			// 	'title'=>$this->input->post('title'),
+			// 	'author'=>$this->input->post('author'),
+			// 	'abstract'=>$this->input->post('abstract'),
+			// 	'content'=>$this->input->post('content'),
+			// 	'type'=>$this->input->post('abstract'),
+			// 	'abstract'=>$this->input->post('abstract'),
+			// 	]);
 		} catch (exception $e) {
 			
 		}
 	}
+
+	public function store_draft()
+	{
+		# code...
+	}
+
+	public function update_post()
+	{
+		# code...
+	}
+
+	public function publish_post()
+	{
+		# code...
+	}
+
+	public function close_post()
+	{
+		# code...
+	}
+
+
 }
