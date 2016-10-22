@@ -40,7 +40,7 @@ class Admin extends CI_controller
 
 	public function post_list()
 	{
-
+		$this->load->view('post_list_view');
 		# code...
 	}
 
@@ -53,6 +53,7 @@ class Admin extends CI_controller
 
 	public function test()
 	{
+		$this->load->view('post_list_view');
 		// $res = $this->db->insert('post',[
 		// 	'title'=>'dasdas',
 		// 	'author'=>'yusj',
@@ -61,9 +62,9 @@ class Admin extends CI_controller
 		// var_dump($res);
 		// var_dump($this->db->insert_id());
 		# code...
-		$this->db->order_by('update_at','DESC');
-		$res = $this->db->get('post');
-		var_dump($res->result_array());
+		// $this->db->order_by('update_at','DESC');
+		// $res = $this->db->get('post');
+		// var_dump($res->result_array());
 	}
 
 ///////////////////////////////////////////////////////////////////////////////////////
