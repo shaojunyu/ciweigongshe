@@ -44,7 +44,11 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">待发布文章</h1>
+                    <ul class="nav nav-pills" role="tablist" style="margin: 50px 0 30px 0;">
+                      <li role="presentation" class="active"><a href="#">待发布</a></li>
+                      <li role="presentation"><a href="#">已发布</a></li>
+                      <li role="presentation"><a href="#">回收站</a></li>
+                    </ul>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -52,9 +56,6 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="panel panel-default">
-                        <div class="panel-heading">
-                            DataTables Advanced Tables
-                        </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
                             <table width="100%" class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -505,7 +506,8 @@
     <script>
     $(document).ready(function() {
         $('#dataTables-example').DataTable({
-            responsive: true
+            responsive: true,
+            "pageLength": 25
         });
     });
     </script>
