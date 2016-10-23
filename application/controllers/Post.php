@@ -91,6 +91,16 @@ class Post extends CI_Controller{
 ///////////////ajax api
     public function comment()
     {
-        # code...
+        $name = $this->input->post('name');
+        $content = $this->input->post('content');
+        $post_id = $this->input->post('post_id');
+        if (empty($name)) {
+            $name = '匿名用户';
+        }
+        $this->db->insert('comment',[
+            'author'=>$name,
+            'content'=>$content,
+            'post_id'=>$post_id
+            ])
     }
 }
