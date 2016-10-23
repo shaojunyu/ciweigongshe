@@ -36,6 +36,8 @@ header.am-header {
 .my-news-title {
 	color: #9e2f50;
 	font-size: 1.42rem;
+	margin-right: 5px;
+	display: inline!important;
 }
 .my-single-item {
 	margin-bottom: -1rem;
