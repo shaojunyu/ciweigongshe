@@ -72,9 +72,14 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                <?php foreach ($comments as $comment){?>
+                                <?php foreach ($comments as $comment){
+                                    $this->db->where('post_id',$comment['post_id']);
+                                    $this->db->select('title');
+                                    $res = $this->db->get('post')->result_array();
+                                    $res = $res[0];
+                                    ?>
                                     <tr>
-                                        <td><?php echo $comment['post_id']; ?></td>
+                                        <td><?php echo $res['title']; ?></td>
                                         <td><?php echo $comment['author']; ?></td>
                                         <td><?php echo $comment['content']; ?></td>
                                         <td><?php echo $comment['create_at']; ?></td>

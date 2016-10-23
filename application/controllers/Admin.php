@@ -16,7 +16,19 @@ class Admin extends CI_controller
 
 	public function index($value='')
 	{
-		$this->load->view('dashborad_view');
+		$total_read = $this->db->count_all_results('page_view');
+
+		$this->db->where('status',null);
+		$unread =  $this->db->count_all_results('comment');
+
+		$this->db->where('status','published');
+		$total_post = $this->db->count_all_results('post');
+
+		$this->load->view('dashborad_view',[
+			'total_read'=>$total_read,
+			'unread'=>$unread,
+			'total_post'=>$total_post
+			]);
 	}
 
 	public function compose($post_id = '')
@@ -114,6 +126,33 @@ class Admin extends CI_controller
 			'week_data'=>$week_data,
 			'month_data'=>$month_data
 			]);
+	}
+
+	public function data_export()
+	{
+		echo "正在生成报表，请稍后。。。";
+		$this->load->dbutil();
+		$reads_per_day_file = __DIR__.'/../../data/read_count_per_day.csv';
+		$post_read_count_file = __DIR__.'/../../data/post_read_count.csv';
+		$data_zip_file = __DIR__.'/../../data/ciwei_data.zip';
+
+		$query = $this->db->query("select day as date,count(*) as read_count from page_view group by day");
+
+		$delimiter = ",";
+		$newline = "\r\n";
+		$enclosure = '"';
+		file_put_contents($reads_per_day_file, $this->dbutil->csv_from_result($query, $delimiter, $newline, $enclosure));
+	
+		$query = $this->db->query("select post_id as id, title, read_count from post order by post_id DESC");
+		file_put_contents($post_read_count_file, $this->dbutil->csv_from_result($query, $delimiter, $newline, $enclosure));
+
+		 $zip = new ZipArchive();
+		 $zip->open($data_zip_file, ZIPARCHIVE::CREATE);
+		 $zip->addFile($reads_per_day_file,'read_count_per_day.csv');
+		 $zip->addFile($post_read_count_file,'post_read_count.csv');
+		 $zip->close();
+
+		 header('Location:'.base_url('/data/ciwei_data.zip'));
 	}
 
 	public function logout()

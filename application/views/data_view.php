@@ -42,7 +42,7 @@
         <div id="page-wrapper">
             <div class="row">
                 <div class="col-lg-12">
-                    <h1 class="page-header">Chart</h1>
+                    <h3 class="page-header"><a target="__blank" href="<?php echo base_url('/admin/data_export'); ?>">下载完整报表</a></h3>
                 </div>
             </div>
             <div class="row">

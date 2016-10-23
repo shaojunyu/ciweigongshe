@@ -9,7 +9,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">刺猬公社</a>
+                <a class="navbar-brand" href="">刺猬公社</a>
             </div>
             <!-- /.navbar-header -->
 

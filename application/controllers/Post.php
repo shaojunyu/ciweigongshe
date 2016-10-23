@@ -37,6 +37,43 @@ class Post extends CI_Controller{
             $this->load->view('post_view',[
                 'post'=>$res[0]
                 ]);
+
+            $read_count = $res[0]['read_count'];
+//        //更新阅读量数据
+       if (get_cookie('ci_session') == null){
+            try{
+                $this->db->trans_start();
+                $this->db->where('post_id',$post_id);
+                $this->db->update('post',['read_count'=>$read_count + 1]);
+
+                $this->db->insert('page_view',[
+                    'post_id'=>$post_id,
+                    'day'=>date('Y-m-d')         
+                    ]);
+                $this->db->trans_complete();
+            }catch(exception $e){}
+        }else{
+            $this->db->where('session',get_cookie('ci_session'));
+            $this->db->where('post_id',$post_id);
+            if ($this->db->count_all_results('page_view') == 0) {
+                try{
+                    $this->db->trans_start();
+                    $this->db->where('post_id',$post_id);
+                    $this->db->update('post',['read_count'=>$read_count + 1]);
+
+                    $this->db->insert('page_view',[
+                        'post_id'=>$post_id,
+                        'day'=>date('Y-m-d'),
+                        'session'=>get_cookie('ci_session')
+                        ]);
+                    $this->db->trans_complete();
+                }catch(exception $e){}
+            }
+
+        }
+
+
+
         }else{
             header('Location:'.base_url());
         }
@@ -48,5 +85,12 @@ class Post extends CI_Controller{
 
     public function load_more(){
         
+    }
+
+
+///////////////ajax api
+    public function comment()
+    {
+        # code...
     }
 }
