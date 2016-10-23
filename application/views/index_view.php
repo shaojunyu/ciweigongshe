@@ -124,6 +124,12 @@
   </div>
 </div>
 
+  <button type="button" class="am-btn am-btn-default my-load">加载更多</button>
+  <button class="am-btn am-btn-default my-loading">
+    <i class="am-icon-spinner am-icon-spin"></i>
+    加载中
+  </button>
+
   <div data-am-widget="gotop" class="am-gotop am-gotop-fixed" >
     <a href="#top" title="回到顶部">
         <span class="am-gotop-title">回到顶部</span>
@@ -139,5 +145,6 @@
 </div>
 <script src="<?php echo base_url();?>/vendor/jquery/jquery.min.js"></script>
 <script src="<?php echo base_url();?>/dist/js/amazeui.min.js"></script>
+<script src="<?php echo base_url();?>/dist/js/main.js"></script>
 </body>
 </html>
