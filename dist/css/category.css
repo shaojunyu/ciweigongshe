@@ -20,6 +20,10 @@ header.am-header {
 	margin: 0 auto;
 	background-color: rgb(242,245,248);
 }
+.my-breadcrumb-style {
+	padding: 0 0 0 0.2rem;
+	margin: 0.5rem 0 1rem 0;
+}
 .my-clear {
 	width: 0;
 	height: 0;
