@@ -124,6 +124,9 @@ fieldset {
 	margin-bottom: 5px;
 	padding-bottom: 0;
 }
+#doc-ta-1 {
+	width: 98%;
+}
 .my-button-box, .nickname-box {
 	margin: 5px 0;
 }

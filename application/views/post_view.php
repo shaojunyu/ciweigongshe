@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp" />
-  <meta post_id="<?php echo $post['post_id']; ?>">
+  <meta name="post-id" content="<?php echo $post['post_id']; ?>">
   <link rel="stylesheet" href="<?php echo base_url();?>/dist/css/amazeui.min.css">
   <link rel="stylesheet" href="<?php echo base_url();?>/dist/css/artical.css">
 </head>
@@ -53,18 +53,25 @@
   <a class="bds_count" data-cmd="count"></a>
 </div>
 <script>
+window.onload = function () {
+  var bdText = $(".am-article-title").html();
+  var bdDesc = $(".am-article-lead").html();
+  var bdUrl = window.location.href;
+  var bdPic = $("img:eq(0)").attr("src");
   window._bd_share_config = {
     common : {
-      bdText : '自定义分享内容', 
-      bdDesc : '自定义分享摘要', 
-      bdUrl : '自定义分享url地址',   
-      bdPic : '自定义分享图片'
+      bdText : bdText, 
+      bdDesc : bdDesc, 
+      bdUrl : bdUrl,   
+      bdPic : bdPic
     },
     share : [{
       "bdSize" : 24
     }]
   };
   with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+};
+  
 </script>
 
 
@@ -197,23 +204,37 @@
 <!-- 评论 -->
   <div class="my-cover"></div>
   <div class="comment-box">
-    <p class="nickname-box"><input type="text" id="nickname" placeholder="输入昵称"> <label for="anonymous"><input type="checkbox" id="anonymous">匿名评论</label></p>
-    <form class="am-form">
+  <form action="./base_url/post/comment" method="POST">
+    <p class="nickname-box"><input type="text" id="nickname" name="name" placeholder="输入昵称"> <label for="anonymous"><input type="checkbox" id="anonymous">匿名评论</label></p>
       <fieldset>
         <div class="am-form-group">
           <label for="doc-ta-1">评论</label>
-          <textarea class="comment" rows="4" id="doc-ta-1" style="resize: none;"></textarea>
+          <textarea class="comment" name="content" rows="4" id="doc-ta-1" style="resize: none;"></textarea>
         </div>
       </fieldset>
-    </form>
     <p class="my-button-box">
       <button type="button" id="published" class="am-btn am-btn-primary">发表</button>
       <button type="button" id="cancel" class="am-btn am-btn-dange am-radius">取消</button>
     </p>
+    <input type="text" style="display: none;" name="post_id" id="post-id">
+  </form>
   </div>
   <div class="comment-fixed">
     <input class="comment-bottom-btn" readonly="readonly" type="text" placeholder="发表评论">
   </div>
+
+<!-- 模态框 -->
+<button type="button" id="my-btn-primary" class="am-btn am-btn-primary" data-am-modal="{target: '#my-alert'}" style="display: none;"></button>
+<div class="am-modal am-modal-alert" tabindex="-1" id="my-alert" style="z-index: 22222">
+  <div class="am-modal-dialog">
+    <div class="am-modal-bd">
+      
+    </div>
+    <div class="am-modal-footer">
+      <span class="am-modal-btn">确定</span>
+    </div>
+  </div>
+</div>
 
   <div class="footer">
     <p>Copyright &copy; 2016 刺猬公社 京ICP备16021745号</p>
