@@ -133,7 +133,9 @@ class Post extends CI_Controller{
                 echo json_encode($res);
                 // var_dump($res);
             }else{
-
+                $query = $this->db->query("select post.post_id,title,image_url,abstract,publish_at from post inner join post_category on post.post_id = post_category.post_id where category_id = ".$category_id." and post.post_id < ".$post_id." and status = 'published' limit 10 ");
+                $res = $query->result_array();
+                echo json_encode($res);
             }
         }
     }

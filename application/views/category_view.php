@@ -34,7 +34,7 @@
     <ul class="am-list">
 
     <?php
-    $query = $this->db->query("select post.post_id,title,image_url,abstract,publish_at from post inner join post_category on post.post_id = post_category.post_id where category_id = ".$category_id." and status = 'published' limit 10 ");
+    $query = $this->db->query("select post.post_id,title,image_url,abstract,publish_at from post inner join post_category on post.post_id = post_category.post_id where category_id = ".$category_id." and status = 'published' order by post.post_id DESC  limit 10 ");
     $res = $query->result_array();
     // var_dump($res);
     foreach ($res as $post) {
@@ -71,11 +71,16 @@
   </div>
 </div>
 
+
+<?php
+if (count($res) > 10) {
+?>
 <button type="button" class="am-btn am-btn-default my-load">加载更多</button>
   <button class="am-btn am-btn-default my-loading">
     <i class="am-icon-spinner am-icon-spin"></i>
     加载中
   </button>
+<?php } ?>
 
   <div data-am-widget="gotop" class="am-gotop am-gotop-fixed" >
     <a href="#top" title="回到顶部">

@@ -111,82 +111,39 @@ if (count($res) > 0) {
 </ul>
 <?php } ?>
 
-
-<!-- List -->
-<div data-am-widget="list_news" class="am-list-news am-list-news-default">
-  <!--列表标题-->
-  <div class="am-list-news-hd am-cf">
-    <!--带更多链接-->
-    <a href="###">
-      <h2>相关文章</h2>
-    </a>
-  </div>
-  <div class="am-list-news-bd">
-    <ul class="am-list">
-      <li class="am-g">
-        <a href="http://www.douban.com/online/11614662/" class="am-list-item-hd">我很囧，你保重....晒晒旅行中的那些囧！</a>
-      </li>
-      <li class="am-g">
-        <a href="http://www.douban.com/online/11624755/" class="am-list-item-hd">我最喜欢的一张画</a>
-      </li>
-      <li class="am-g">
-        <a href="http://www.douban.com/online/11645411/" class="am-list-item-hd">“你的旅行，是什么颜色？” 晒照片，换北欧梦幻极光之旅！</a>
-      </li>
-    </ul>
-  </div>
-</div>
-
 <!-- Gallery -->
 <div data-am-widget="list_news" class="am-list-news am-list-news-default">
   <!--列表标题-->
   <div class="am-list-news-hd am-cf my-title">
     <!--带更多链接-->
-    <a href="###">
-      <h2>您可能感兴趣的文章</h2>
+    <a>
+      <h2>相关推荐</h2>
     </a>
   </div>
 
   <ul data-am-widget="gallery" class="am-gallery am-avg-sm-2
     am-avg-md-3 am-avg-lg-4 am-gallery-default">
+
+<?php
+$sql = "select post.post_id,post.title,post.image_url from post where status = 'published' and post_id in
+(select distinct post_category.post_id from post_category where  post_category.category_id in 
+(select post_category.category_id from post_category where post_id = ".$post['post_id'].") and post_id != ".$post['post_id'].") order by post_id DESC limit 4";
+$query = $this->db->query($sql);
+$res = $query->result_array();
+// var_dump($res);
+foreach ($res as $relative_post) {
+?>
     <li>
+    <a href="<?php echo base_url('post/show/'.$relative_post['post_id']); ?>">
       <div class="am-gallery-item">
-        <a href="javascript:;" class="">
-          <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" alt="某天 也许会相遇 相遇在这个好地方" />
-          <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
-          <div class="am-gallery-desc">2375-09-26</div>
-        </a>
+          <img src="<?php echo $relative_post['image_url']; ?>" alt="" />
+          <h3 class="am-gallery-title"><?php echo $relative_post['title']; ?></h3>
+          <div class="am-gallery-desc"></div>
       </div>
+      </a>
     </li>
-    <li>
-      <div class="am-gallery-item">
-        <a href="javascript:;"  class="">
-          <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg"
-               alt="某天 也许会相遇 相遇在这个好地方" />
-          <h3 class="am-gallery-title">某天 也许会相遇 相遇在这个好地方</h3>
-          <div class="am-gallery-desc">2375-09-26</div>
-        </a>
-      </div>
-    </li>
-    <li>
-      <div class="am-gallery-item">
-        <a href="javascript:;" class="">
-          <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg"
-               alt="不要太担心 只因为我相信" />
-          <h3 class="am-gallery-title">不要太担心 只因为我相信</h3>
-          <div class="am-gallery-desc">2375-09-26</div>
-        </a>
-      </div>
-    </li>
-    <li>
-      <div class="am-gallery-item">
-        <a href="javascript:;" class="">
-          <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg"
-               alt="终会走过这条遥远的道路" />
-          <h3 class="am-gallery-title">终会走过这条遥远的道路</h3>
-          <div class="am-gallery-desc">2375-09-26</div>
-        </a>
-      </div>
-    </li>
+<?php } ?>
+
   </ul>
 </div>
 
