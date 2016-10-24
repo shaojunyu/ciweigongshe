@@ -46,10 +46,7 @@
 <div class="bdsharebuttonbox" data-tag="share_1">
   <a class="bds_weixin" data-cmd="weixin"></a>
   <a class="bds_tsina" data-cmd="tsina"></a>
-  <a class="bds_tqq" data-cmd="tqq"></a>
   <a class="bds_qzone" data-cmd="qzone" href="#"></a>
-  <a class="bds_baidu" data-cmd="baidu"></a>
-  <a class="bds_more" data-cmd="more">更多</a>
   <a class="bds_count" data-cmd="count"></a>
 </div>
 <script>
@@ -75,44 +72,40 @@ window.onload = function () {
 </script>
 
 
+<?php
+$this->db->where('post_id',$post['post_id']);
+$this->db->where('status','approved');
+$this->db->limit(10);
+$this->db->order_by('comment_id','DESC');
+$res = $this->db->get('comment')->result_array();
+
+if (count($res) > 0) {
+
+?>
 <!-- 评论列表 -->
 <ul class="am-comments-list am-comments-list-flip">
+  <?php foreach ($res as $comment) {
+    ?>
   <li class="am-comment">
     <a href="#link-to-user-home">
-      <img src="../../images/tx.png" class="am-comment-avatar" width="48" height="48"/>
+      <img src="<?php  echo base_url(); ?>images/tx.png" class="am-comment-avatar" width="48" height="48"/>
     </a>
     <div class="am-comment-main">
       <header class="am-comment-hd">
         <div class="am-comment-meta">
-          <a href="#link-to-user" class="am-comment-author">路人甲</a>
-          评论于 <time>2014-7-12 15:30</time>
+          <a href="#link-to-user" class="am-comment-author"><?php echo $comment['author']; ?></a>
+          评论于 <time><?php echo $comment['create_at']; ?></time>
         </div>
       </header>
-
       <div class="am-comment-bd">
-        哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈
+      <?php echo $comment['content']; ?>
       </div>
     </div>
   </li>
-
-  <li class="am-comment">
-    <a href="#link-to-user-home">
-      <img src="../../images/tx.png" class="am-comment-avatar" width="48" height="48"/>
-    </a>
-    <div class="am-comment-main">
-      <header class="am-comment-hd">
-        <div class="am-comment-meta">
-          <a href="#link-to-user" class="am-comment-author">路人乙</a>
-          评论于 <time>2014-7-12 15:30</time>
-        </div>
-      </header>
-
-      <div class="am-comment-bd">
-        呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵呵
-      </div>
-    </div>
-  </li>
+  <?php } ?>
 </ul>
+<?php } ?>
+
 
 <!-- List -->
 <div data-am-widget="list_news" class="am-list-news am-list-news-default">
