@@ -52,23 +52,24 @@
 
 
     <?php
-    $this->db->select('update_at');
+    $this->db->select('post_id,publish_at,title,image_url,abstract');
+    $this->db->where('type','post');
     $this->db->where('status','published')->order_by('post_id','DESC')->limit(10);
     $res = $this->db->get('post')->result_array();
     foreach ($res as $post) {
     ?>
      <!--缩略图在标题下方居左-->
       <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-bottom-left">
-        <a>
-        <h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11614662/" class="">我很囧，你保重....晒晒旅行中的那些囧！</a></h3>
+        <a href="<?php echo base_url('/post/show/'.$post['post_id']); ?>">
+        <h3 class="am-list-item-hd"><?php echo $post['title']; ?></a></h3>
         <div class="am-u-sm-5 am-list-thumb">
-            <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" alt="我很囧，你保重....晒晒旅行中的那些囧！"/>
+            <img src="<?php echo $post['image_url']; ?>" alt=""/>
         </div>
         <div class="am-u-sm-7  am-list-main">
-          <div class="am-list-item-text">囧人囧事囧照，人在囧途，越囧越萌。标记《带你出发，陪我回家》http://book.douban.com/subject/25711202/为“想读”“在读”或“读过”，有机会获得此书本活动进行3个月，每月送出三本书。会有不定期bonus！</div>
+          <div class="am-list-item-text"><?php echo $post['abstract']; ?> </div>
         </div>
         <div class="my-clear"></div>
-        <span class="my-date"><?php ?></span>
+        <span class="my-date"><?php echo $post['publish_at']; ?></span>
         </a>
       </li>
       <?php } ?>
