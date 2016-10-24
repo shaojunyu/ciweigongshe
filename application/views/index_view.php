@@ -59,7 +59,7 @@
     foreach ($res as $post) {
     ?>
      <!--缩略图在标题下方居左-->
-      <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-bottom-left" post_id="<?php echo $post['post_id'];?>">
+      <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-bottom-left" data-post-id="<?php echo $post['post_id'];?>">
         <a href="<?php echo base_url('/post/show/'.$post['post_id']); ?>">
         <h3 class="am-list-item-hd"><?php echo $post['title']; ?></h3>
         <div class="am-u-sm-5 am-list-thumb">
@@ -75,6 +75,19 @@
       <?php } ?>
 
     </ul>
+  </div>
+</div>
+
+<!-- 模态框 -->
+<button type="button" id="my-btn-primary" class="am-btn am-btn-primary" data-am-modal="{target: '#my-alert'}" style="display: none;"></button>
+<div class="am-modal am-modal-alert" tabindex="-1" id="my-alert" style="z-index: 22222">
+  <div class="am-modal-dialog">
+    <div class="am-modal-bd">
+      
+    </div>
+    <div class="am-modal-footer">
+      <span class="am-modal-btn">确定</span>
+    </div>
   </div>
 </div>
 
