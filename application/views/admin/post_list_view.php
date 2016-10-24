@@ -89,7 +89,7 @@
                                                 <a href="<?php echo base_url('admin/restore_post/'.$post['post_id']); ?>">恢复</a>
                                             <?php } ?>
 
-                                            <a href="<?php echo base_url('post/show/'.$post['post_id']); ?>" target="_blank">预览</a>
+                                            <a href="<?php echo base_url('post/preview/'.$post['post_id']); ?>" target="_blank">预览</a>
                                             <a href="<?php echo base_url('admin/compose/'.$post['post_id']); ?>">编辑</a>
 
                                             <?php if ($status != 'closed'){?>

@@ -163,7 +163,9 @@ class Admin extends CI_controller
 
 	public function test()
 	{
-		$this->load->view('admin/post_list_view');
+		// date_default_timezone_set('Asia/Shanghai');
+		echo date('H:i:s');
+		// $this->load->view('admin/post_list_view');
 		// $res = $this->db->insert('post',[
 		// 	'title'=>'dasdas',
 		// 	'author'=>'yusj',
@@ -239,9 +241,11 @@ class Admin extends CI_controller
 
 	public function publish_post($post_id)
 	{
+		date_default_timezone_set('Asia/Shanghai');
 		$this->db->where('post_id',$post_id);
 		$this->db->update('post',[
-			'status'=>'published'
+			'status'=>'published',
+			'publish_at'=>date('Y-m-d h:i:s',time())
 		]);
 		header('Location:'.base_url('admin/post_list/published'));
 	}

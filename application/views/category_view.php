@@ -20,41 +20,7 @@
   
 </header>
 
-<!-- Menu -->
-  <nav data-am-widget="menu" class="am-menu  am-menu-offcanvas1" data-am-menu-offcanvas> 
-    <a href="javascript: void(0)" class="am-menu-toggle" id="nav">
-          <i class="am-menu-toggle-icon am-icon-bars"></i>
-    </a>
-
-    <div class="am-offcanvas" >
-      <div class="am-offcanvas-bar">
-
-      <ul class="am-menu-nav am-avg-sm-1">
-          <li class="">
-            <a href="javascript:;" class="" >FEED流</a>
-          </li>
-          <li class="">
-            <a href="javascript:;" class="" >深报道</a>
-          </li>
-          <li class="">
-            <a href="javascript:;" class="" >热公司</a>
-          </li>
-          <li class="">
-            <a href="javascript:;" class="" >新闻学院</a>
-          </li>
-          <li class="">
-            <a href="javascript:;" class="" >未来内容</a>
-          </li>
-          <li class="">
-            <a href="javascript:;" class="" >会议/培训</a>
-          </li>
-      </ul>
-
-      </div>
-    </div>
-  </nav>
-
-
+<?php $this->load->view('menu'); ?>
   
 <ol class="am-breadcrumb am-breadcrumb-slash my-breadcrumb-style">
   <li><a href="#">首页</a></li>
@@ -66,6 +32,7 @@
 <div data-am-widget="list_news" class="am-list-news am-list-news-default">
   <div class="am-list-news-bd">
     <ul class="am-list">
+
      <!--缩略图在标题下方居左-->
       <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-bottom-left">
         <a href="javascript:;" class="my-news-title">旅行</a>
@@ -83,6 +50,7 @@
         <div class="my-clear"></div>
         <span class="my-date">1小时前</span>
       </li>
+
       <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-bottom-left">
           <a href="javascript:;" class="my-news-title">生活</a>
           <h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/" class="">我最喜欢的一张画</a></h3>
