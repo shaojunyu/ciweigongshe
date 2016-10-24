@@ -83,9 +83,6 @@ class Post extends CI_Controller{
 
     }
 
-    public function load_more(){
-        
-    }
 
 
 ///////////////ajax api
@@ -101,6 +98,24 @@ class Post extends CI_Controller{
             'author'=>$name,
             'content'=>$content,
             'post_id'=>$post_id
-            ])
+            ]);
+    }
+
+    public function load_more($post_id = '', $category_id = '')
+    {
+        if (empty($post_id)) {
+            // echo '{"data":null}';
+        }else{
+            if (empty($category_id)) {
+                $this->db->limit(10);
+                $this->db->where('post_id >', $post_id);
+                $this->db->where('status','published');
+                $res = $this->db->get('post')->result_array();
+                // var_dump($res);
+                var_dump($res);
+            }else{
+
+            }
+        }
     }
 }
