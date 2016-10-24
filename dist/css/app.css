@@ -57,6 +57,42 @@ header.am-header {
 	outline: none;
 }
 
+.am-slider .am-slides>li {
+	height: 15rem;
+}
+.am-slider .am-slides img {
+	height: 100%;
+}
+
+
+@media screen and (max-width: 1500px) {
+	.am-slider .am-slides>li {
+		height: 25rem;
+	}
+}
+@media screen and (max-width: 768px) {
+	.am-slider .am-slides>li {
+		height: 25rem;
+	}
+}
+@media screen and (max-width: 640px) {
+	.am-slider .am-slides>li {
+		height: 22rem;
+	}
+}
+@media screen and (max-width: 435px) {
+	.am-slider .am-slides>li {
+		height: 19rem;
+	}
+}
+@media screen and (max-width: 375px) {
+	.am-slider .am-slides>li {
+		height: 15rem;
+	}
+}
+
+
+
 .footer {
 	width: 100%;
 	height: 6rem;
