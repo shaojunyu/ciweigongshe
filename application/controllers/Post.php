@@ -90,8 +90,13 @@ class Post extends CI_Controller{
         if (empty($category_id)) {
             header('Location:'.base_url());
         }
-
-        $this->load->view('category_view');
+        $this->db->where('category_id',$category_id);
+        $res = $this->db->get('category')->result_array();
+        $category = $res[0]['name'];
+        $this->load->view('category_view',[
+            'category'=>$category,
+            'category_id'=>$category_id
+            ]);
     }
 
 
@@ -119,9 +124,9 @@ class Post extends CI_Controller{
         }else{
             if (empty($category_id)) {
                 $this->db->limit(10);
-                $this->db->where('post_id >', $post_id);
+                $this->db->where('post_id <', $post_id);
                 $this->db->where('status','published');
-                $this->db->select('post_id,abstract,image_url,publish_at');
+                $this->db->select('post_id,abstract,image_url,publish_at,title');
                 $res = $this->db->get('post')->result_array();
                 // var_dump($res);
                 echo json_encode(['data'=>$res]);
