@@ -115,15 +115,17 @@ class Post extends CI_Controller{
     public function load_more($post_id = '', $category_id = '')
     {
         if (empty($post_id)) {
-            // echo '{"data":null}';
+            echo '{"data":null}';
         }else{
             if (empty($category_id)) {
                 $this->db->limit(10);
                 $this->db->where('post_id >', $post_id);
                 $this->db->where('status','published');
+                $this->db->select('post_id,abstract,image_url,publish_at');
                 $res = $this->db->get('post')->result_array();
                 // var_dump($res);
-                var_dump($res);
+                echo json_encode(['data'=>$res]);
+                // var_dump($res);
             }else{
 
             }
