@@ -34,26 +34,26 @@
     <ul class="am-list">
 
     <?php
-    $query = $this->db->query("select post.post_id,title,image_url,abstract from post inner join post_category on post.post_id = post_category.post_id where category_id = ".$category_id." and status = 'published' limit 10 ");
+    $query = $this->db->query("select post.post_id,title,image_url,abstract,publish_at from post inner join post_category on post.post_id = post_category.post_id where category_id = ".$category_id." and status = 'published' limit 10 ");
     $res = $query->result_array();
-    var_dump($res);
+    // var_dump($res);
+    foreach ($res as $post) {
     ?>
      <!--缩略图在标题下方居左-->
       <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-bottom-left">
-        <h3 class="am-list-item-hd">我很囧，你保重....晒晒旅行中的那些囧</h3>
+       <a href="<?php echo base_url('post/show/'.$post['post_id']); ?>">
+        <h3 class="am-list-item-hd"><?php echo $post['title']; ?></h3>
         <div class="am-u-sm-5 am-list-thumb">
-          <a href="http://www.douban.com/online/11614662/" class="">
-            <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" alt="我很囧，你保重....晒晒旅行中的那些囧！"/>
-          </a>
+            <img src="<?php echo $post['image_url']; ?>" alt=""/>
         </div>
         <div class="am-u-sm-7  am-list-main">
-          <div class="am-list-item-text">囧人囧事囧照，人在囧途，越囧越萌。标记《带你出发，陪我回家》http://book.douban.com/subject/25711202/为“想读”“在读”或“读过”，有机会获得此书本活动进行3个月，每月送出三本书。会有不定期bonus！</div>
+          <div class="am-list-item-text"><?php echo $post['abstract']; ?></div>
         </div>
-
         <div class="my-clear"></div>
-        <span class="my-date">1小时前</span>
+        <span class="my-date"><?php echo $post['publish_at']; ?></span>
+        </a>
       </li>
-
+      <?php } ?>
     </ul>
   </div>
 </div>
