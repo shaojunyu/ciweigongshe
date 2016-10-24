@@ -59,7 +59,7 @@
     ?>
      <!--缩略图在标题下方居左-->
       <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-bottom-left">
-        <a>
+        <a href="javascript:;" class="my-news-title">旅行</a>
         <h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11614662/" class="">我很囧，你保重....晒晒旅行中的那些囧！</a></h3>
         <div class="am-u-sm-5 am-list-thumb">
             <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" alt="我很囧，你保重....晒晒旅行中的那些囧！"/>

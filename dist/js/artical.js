@@ -29,15 +29,17 @@ $(function () {
 		}
 
 		$.ajax({
-           type: "POST",
-           url: "../comment",
-           data: $("#my-form").serialize(), // serializes the form's elements.
-           success: function (data) {
-               alert(data);
-           },
-           error: function () {
-
-           }
+        	type: "POST",
+        	url: "../comment",
+        	data: $("#my-form").serialize(), // serializes the form's elements.
+        	success: function (data) {
+            	$(".am-modal-bd").html("提交成功，审核中");
+				$("#my-btn-primary").click();
+        	},
+        	error: function () {
+        		$(".am-modal-bd").html("请求失败！请重试");
+				$("#my-btn-primary").click();
+        	}
         });
 
 		$(".my-cover").hide();
