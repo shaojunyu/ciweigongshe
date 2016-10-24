@@ -87,10 +87,10 @@
                                             <?php
                                             if ($is_read == 'unread'){
                                             ?>
-                                            <a href="<?php echo base_url('admin/approve_commment/'.$comment['post_id']); ?>">通过</a>
-                                            <a href="<?php echo base_url('admin/refuse_comment/'.$comment['post_id']); ?>">拒绝</a>
+                                            <a href="<?php echo base_url('admin/approve_commment/'.$comment['comment_id']); ?>">通过</a>
+                                            <a href="<?php echo base_url('admin/refuse_comment/'.$comment['comment_id']); ?>">拒绝</a>
                                             <?php }else{
-                                                echo $comment['status'] == 'approved' ? '已通过':'已拒绝';
+                                                echo $comment['status'] == 'approved' ? '<font color="blue">已通过</font>':'<font color="red">已拒绝</font>';
                                             }?>
                                         </td>
                                     </tr>
