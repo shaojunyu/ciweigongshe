@@ -48,6 +48,16 @@ header.am-header {
 .am-list-news-bd .am-list>li {
 	background-color: rgb(242,245,248);
 }
+.my-load {
+	display: block;
+	margin: 2rem auto;
+	outline: none;
+}
+.my-loading {
+	display: none;
+	margin: 2rem auto;
+	outline: none;
+}
 
 .footer {
 	width: 100%;

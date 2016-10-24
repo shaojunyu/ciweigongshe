@@ -1,5 +1,4 @@
 $(function () {
-	//name，content，post_id
 	$(".comment-bottom-btn").click(function () {
 		$(".comment-fixed").hide();
 		$(".my-cover").show();
@@ -29,15 +28,18 @@ $(function () {
 		}
 
 		$.ajax({
-           type: "POST",
-           url: "../comment",
-           data: $("#my-form").serialize(), // serializes the form's elements.
-           success: function (data) {
-               alert(data);
-           },
-           error: function () {
-
-           }
+        	type: "POST",
+        	url: "../comment",
+        	data: $("#my-form").serialize(), // serializes the form's elements.
+        	success: function (data) {
+            	$(".am-modal-bd").html("提交成功，审核中");
+				$("#my-btn-primary").click();
+				clearForm();
+        	},
+        	error: function () {
+        		$(".am-modal-bd").html("请求失败！请重试");
+				$("#my-btn-primary").click();
+        	}
         });
 
 		$(".my-cover").hide();
@@ -57,7 +59,7 @@ $(function () {
 });
 
 
-
+//trim
 function myTrim(str) {
     if(String.prototype.trim) {
         return str.trim();
@@ -65,4 +67,11 @@ function myTrim(str) {
     return str.replace(/^\s+(.*?)\s+$/g, "$1");
     //or
     //return str.replace(/^\s+/, "").replace(/\s+$/, "");
+}
+
+//clear
+function clearForm() {
+	$("#nickname").val("");
+	$(".comment").val("");
+	$('#anonymous').prop('checked', false);
 }

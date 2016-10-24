@@ -211,7 +211,7 @@ if (count($res) > 0) {
         </div>
       </fieldset>
     <p class="my-button-box">
-      <button type="button" id="published" class="am-btn am-btn-primary">发表</button>
+      <button type="button" id="published" class="am-btn am-btn-primary">提交</button>
       <button type="button" id="cancel" class="am-btn am-btn-dange am-radius">取消</button>
     </p>
     <input type="text" style="display: none;" name="post_id" id="post-id">
