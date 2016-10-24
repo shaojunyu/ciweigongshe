@@ -129,7 +129,7 @@ class Post extends CI_Controller{
                 $this->db->select('post_id,abstract,image_url,publish_at,title');
                 $res = $this->db->get('post')->result_array();
                 // var_dump($res);
-                echo json_encode(['data'=>$res]);
+                echo json_encode($res);
                 // var_dump($res);
             }else{
 

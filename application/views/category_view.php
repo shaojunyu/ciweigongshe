@@ -33,6 +33,11 @@
   <div class="am-list-news-bd">
     <ul class="am-list">
 
+    <?php
+    $query = $this->db->query("select post.post_id,title,image_url,abstract from post inner join post_category on post.post_id = post_category.post_id where category_id = ".$category_id." and status = 'published' limit 10 ");
+    $res = $query->result_array();
+    var_dump($res);
+    ?>
      <!--缩略图在标题下方居左-->
       <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-bottom-left">
         <h3 class="am-list-item-hd">我很囧，你保重....晒晒旅行中的那些囧</h3>
