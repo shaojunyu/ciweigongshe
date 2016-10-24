@@ -20,39 +20,7 @@
 
 </header>
 
-<!-- Menu -->
-  <nav data-am-widget="menu" class="am-menu  am-menu-offcanvas1" data-am-menu-offcanvas> 
-    <a href="javascript: void(0)" class="am-menu-toggle" id="nav">
-          <i class="am-menu-toggle-icon am-icon-bars"></i>
-    </a>
-
-    <div class="am-offcanvas" >
-      <div class="am-offcanvas-bar">
-
-      <ul class="am-menu-nav am-avg-sm-1">
-          <li class="">
-            <a href="javascript:;" class="" >FEED流</a>
-          </li>
-          <li class="">
-            <a href="javascript:;" class="" >深报道</a>
-          </li>
-          <li class="">
-            <a href="javascript:;" class="" >热公司</a>
-          </li>
-          <li class="">
-            <a href="javascript:;" class="" >新闻学院</a>
-          </li>
-          <li class="">
-            <a href="javascript:;" class="" >未来内容</a>
-          </li>
-          <li class="">
-            <a href="javascript:;" class="" >会议/培训</a>
-          </li>
-      </ul>
-
-      </div>
-    </div>
-  </nav>
+<?php $this->load->view('menu'); ?>
 
 
 <ol class="am-breadcrumb am-breadcrumb-slash my-breadcrumb-style">
@@ -64,17 +32,13 @@
 <!-- artical -->
 <article class="am-article my-artical-style">
   <div class="am-article-hd">
-    <h1 class="am-article-title">“游吟诗人”鲍勃•迪伦</h1>
+    <h1 class="am-article-title"><?php echo $post['title']; ?></h1>
   </div>
 
   <div class="am-article-bd">
-    <p class="am-article-lead">鲍勃•迪伦获得诺贝尔文学奖引起了争议，但这也说明迪伦宝刀未老。另外一个热门话题是：他会不会拒绝领奖？</p>
-    <div class="author-info">by 鲍勃</div>
-    <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" alt="某天 也许会相遇 相遇在这个好地方" />
-
-    <p>那时候刚好下着雨，柏油路面湿冷冷的，还闪烁着青、黄、红颜色的灯火。我们就在骑楼下躲雨，看绿色的邮筒孤独地站在街的对面。我白色风衣的大口袋里有一封要寄给南部的母亲的信。樱子说她可以撑伞过去帮我寄信。我默默点头。</p>
-    <p>“谁叫我们只带来一把小伞哪。”她微笑着说，一面撑起伞，准备过马路帮我寄信。从她伞骨渗下来的小雨点，溅在我的眼镜玻璃上。</p>
-    <p>她只是过马路去帮我寄信。这简单的行动，却要叫我终身难忘了。我缓缓睁开眼，茫然站在骑楼下，眼里裹着滚烫的泪水。世上所有的车子都停了下来，人潮涌向马路中央。没有人知道那躺在街面的，就是我的，蝴蝶。这时她只离我五公尺，竟是那么遥远。更大的雨点溅在我的眼镜上，溅到我的生命里来。</p>
+    <p class="am-article-lead"><?php echo $post['abstract']; ?></p>
+    <div class="author-info">by <?php echo $post['author']; ?></div>
+    <?php echo $post['content']; ?>
   </div>
 </article>
 
@@ -85,7 +49,6 @@
   <a class="bds_tqq" data-cmd="tqq"></a>
   <a class="bds_qzone" data-cmd="qzone" href="#"></a>
   <a class="bds_baidu" data-cmd="baidu"></a>
-  <a class="bds_renren" data-cmd="renren"></a>
   <a class="bds_more" data-cmd="more">更多</a>
   <a class="bds_count" data-cmd="count"></a>
 </div>
