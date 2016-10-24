@@ -24,8 +24,7 @@
   
 <ol class="am-breadcrumb am-breadcrumb-slash my-breadcrumb-style">
   <li><a href="#">首页</a></li>
-  <li><a href="#">分类</a></li>
-  <li class="am-active">文章</li>
+  <li class="am-active">新闻学院</li>
 </ol>
 
 <!-- List -->
@@ -35,7 +34,6 @@
 
      <!--缩略图在标题下方居左-->
       <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-bottom-left">
-        <a href="javascript:;" class="my-news-title">旅行</a>
         <h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11614662/" class="">我很囧，你保重....晒晒旅行中的那些囧！</a></h3>
         <div class="am-u-sm-5 am-list-thumb">
           <a href="http://www.douban.com/online/11614662/" class="">
@@ -52,7 +50,6 @@
       </li>
 
       <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-bottom-left">
-          <a href="javascript:;" class="my-news-title">生活</a>
           <h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/" class="">我最喜欢的一张画</a></h3>
           <div class="am-u-sm-5 am-list-thumb">
             <a href="http://www.douban.com/online/11624755/" class="">
@@ -71,107 +68,11 @@
   </div>
 </div>
 
-
-<!-- Gallery -->
-<div data-am-widget="list_news" class="am-list-news am-list-news-default">
-  <!--列表标题-->
-  <div class="am-list-news-hd am-cf my-title">
-    <!--带更多链接-->
-    <a href="###">
-      <h2>栏目标题</h2>
-    </a>
-  </div>
-
-  <ul data-am-widget="gallery" class="am-gallery am-avg-sm-2
-    am-avg-md-3 am-avg-lg-4 am-gallery-default" data-am-gallery="{ pureview: true }">
-    <li>
-      <div class="am-gallery-item">
-        <a href="http://s.amazeui.org/media/i/demos/bing-1.jpg"
-           class="">
-          <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"
-               alt="远方 有一个地方 那里种有我们的梦想" />
-          <h3 class="am-gallery-title">远方 有一个地方 那里种有我们的梦想</h3>
-          <div class="am-gallery-desc">2375-09-26</div>
-        </a>
-      </div>
-    </li>
-    <li>
-      <div class="am-gallery-item">
-        <a href="http://s.amazeui.org/media/i/demos/bing-2.jpg"
-           class="">
-          <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg"
-               alt="某天 也许会相遇 相遇在这个好地方" />
-          <h3 class="am-gallery-title">某天 也许会相遇 相遇在这个好地方</h3>
-          <div class="am-gallery-desc">2375-09-26</div>
-        </a>
-      </div>
-    </li>
-    <li>
-      <div class="am-gallery-item">
-        <a href="http://s.amazeui.org/media/i/demos/bing-3.jpg"
-           class="">
-          <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg"
-               alt="不要太担心 只因为我相信" />
-          <h3 class="am-gallery-title">不要太担心 只因为我相信</h3>
-          <div class="am-gallery-desc">2375-09-26</div>
-        </a>
-      </div>
-    </li>
-    <li>
-      <div class="am-gallery-item">
-        <a href="http://s.amazeui.org/media/i/demos/bing-4.jpg"
-           class="">
-          <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg"
-               alt="终会走过这条遥远的道路" />
-          <h3 class="am-gallery-title">终会走过这条遥远的道路</h3>
-          <div class="am-gallery-desc">2375-09-26</div>
-        </a>
-      </div>
-    </li>
-  </ul>
-</div>
-
-<!-- List -->
-<div data-am-widget="list_news" class="am-list-news am-list-news-default">
-  <!--列表标题-->
-  <div class="am-list-news-hd am-cf">
-    <!--带更多链接-->
-    <a href="###">
-      <h2>栏目标题</h2>
-    </a>
-  </div>
-  <div class="am-list-news-bd">
-  <ul class="am-list my-single-item">
-      <div class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-bottom-left">
-          <h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11624755/" class="am-list-item-hd">我最喜欢的一张画</a></h3>
-          <div class="am-u-sm-5 am-list-thumb">
-            <a href="http://www.douban.com/online/11624755/" class="">
-              <img src="http://img3.douban.com/lpic/o637240.jpg" alt="我最喜欢的一张画"/>
-            </a>
-          </div>
-
-          <div class=" am-u-sm-7  am-list-main">
-            <div class="am-list-item-text">你最喜欢的艺术作品，告诉大家它们的------名图画，色彩，交织，撞色，线条雕塑装置当代古代现代作品的照片美我最喜欢的画群296795413进群发画，少说多发图，</div>
-          </div>
-      </div>
-    </ul>
-    <ul class="am-list">
-      <li class="am-g">
-        <a href="http://www.douban.com/online/11614662/" class="am-list-item-hd">我很囧，你保重....晒晒旅行中的那些囧！</a>
-      </li>
-      <li class="am-g">
-        <a href="http://www.douban.com/online/11624755/" class="am-list-item-hd">我最喜欢的一张画</a>
-      </li>
-      <li class="am-g">
-        <a href="http://www.douban.com/online/11645411/" class="am-list-item-hd">“你的旅行，是什么颜色？” 晒照片，换北欧梦幻极光之旅！</a>
-      </li>
-    </ul>
-  </div>
-  <!--更多在底部-->
-  <div class="am-list-news-ft">
-    <a class="am-list-news-more am-btn am-btn-default" href="###">查看更多 &raquo;</a>
-  </div>
-</div>
+<button type="button" class="am-btn am-btn-default my-load">加载更多</button>
+  <button class="am-btn am-btn-default my-loading">
+    <i class="am-icon-spinner am-icon-spin"></i>
+    加载中
+  </button>
 
   <div data-am-widget="gotop" class="am-gotop am-gotop-fixed" >
     <a href="#top" title="回到顶部">

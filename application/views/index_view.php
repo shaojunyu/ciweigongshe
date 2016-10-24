@@ -62,7 +62,7 @@
         <a href="javascript:;" class="my-news-title">旅行</a>
         <h3 class="am-list-item-hd"><a href="http://www.douban.com/online/11614662/" class="">我很囧，你保重....晒晒旅行中的那些囧！</a></h3>
         <div class="am-u-sm-5 am-list-thumb">
-            <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" alt="我很囧，你保重....晒晒旅行中的那些囧！"/>
+            <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg" />
         </div>
         <div class="am-u-sm-7  am-list-main">
           <div class="am-list-item-text">囧人囧事囧照，人在囧途，越囧越萌。标记《带你出发，陪我回家》http://book.douban.com/subject/25711202/为“想读”“在读”或“读过”，有机会获得此书本活动进行3个月，每月送出三本书。会有不定期bonus！</div>
