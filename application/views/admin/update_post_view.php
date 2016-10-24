@@ -38,7 +38,7 @@
 
 <body>
 
-<?php $this->load->view('public_nav');?>
+<?php $this->load->view('admin/public_nav',['title'=>'更新文章']);?>
 
     <div id="page-wrapper">
         <form class="compose-info" role="form" method="POST" action="<?php echo base_url('admin/update_post')?>">
@@ -91,7 +91,7 @@
           <div>  
             <div><label class="control-label" style="padding: 7px 10px 0 0; vertical-align: middle;">展示选择</label></div>
             <label class="checkbox-inline">
-              <input type="checkbox" <?php echo ($post['type'] == 'nav')?'checked':''; ?> id="inlineCheckbox7" name="type" value=""> 首页轮播展示
+              <input type="checkbox" <?php echo ($post['type'] == 'slide')?'checked':''; ?> id="inlineCheckbox7" name="type" value=""> 首页轮播展示
             </label>
           </div>
 

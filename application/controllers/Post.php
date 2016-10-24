@@ -79,8 +79,12 @@ class Post extends CI_Controller{
         }
     }
 
-    public function category($id){
+    public function category($category_id){
+        if (empty($category_id)) {
+            header('Location:'.base_url());
+        }
 
+        $this->load->view('category_view');
     }
 
 

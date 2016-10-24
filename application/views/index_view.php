@@ -20,64 +20,26 @@
   
 </header>
 
-<!-- Menu -->
-  <nav data-am-widget="menu" class="am-menu  am-menu-offcanvas1" data-am-menu-offcanvas> 
-    <a href="javascript: void(0)" class="am-menu-toggle" id="nav">
-          <i class="am-menu-toggle-icon am-icon-bars"></i>
-    </a>
-
-    <div class="am-offcanvas" >
-      <div class="am-offcanvas-bar">
-
-      <ul class="am-menu-nav am-avg-sm-1">
-          <li class="">
-            <a href="javascript:;" class="" >FEED流</a>
-          </li>
-          <li class="">
-            <a href="javascript:;" class="" >深报道</a>
-          </li>
-          <li class="">
-            <a href="javascript:;" class="" >热公司</a>
-          </li>
-          <li class="">
-            <a href="javascript:;" class="" >新闻学院</a>
-          </li>
-          <li class="">
-            <a href="javascript:;" class="" >未来内容</a>
-          </li>
-          <li class="">
-            <a href="javascript:;" class="" >会议/培训</a>
-          </li>
-      </ul>
-
-      </div>
-    </div>
-  </nav>
-
+<?php $this->load->view('menu'); ?>
 
 <!-- Slider -->
 <div data-am-widget="slider" class="am-slider am-slider-default" data-am-slider='{}' >
   <ul class="am-slides">
+  <?php
+  $this->db->where('type','slide');
+  $this->db->limit(6);
+  $this->db->select('post_id,title,image_url');
+  $res = $this->db->get('post')->result_array();
+  foreach ($res as $post) {
+  ?>
       <li>
-          <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg">
-          <div class="am-slider-desc">这是标题标题标题标题标题标题标题0</div>
-         
+        <a href="<?php echo base_url('post/show/'.$post['post_id']); ?>">
+          <img src="<?php echo $post['image_url']; ?>">
+          <div class="am-slider-desc"><?php echo $post['title']; ?></div>
+        </a>
       </li>
-      <li>
-          <img src="http://s.amazeui.org/media/i/demos/bing-2.jpg">
-          <div class="am-slider-desc">这是标题标题标题标题标题标题标题1</div>
-         
-      </li>
-      <li>
-          <img src="http://s.amazeui.org/media/i/demos/bing-3.jpg">
-          <div class="am-slider-desc">这是标题标题标题标题标题标题标题2</div>
-         
-      </li>
-      <li>
-          <img src="http://s.amazeui.org/media/i/demos/bing-4.jpg">
-          <div class="am-slider-desc">这是标题标题标题标题标题标题标题3</div>
-         
-      </li>
+      
+  <?php } ?>
   </ul>
 </div>
 

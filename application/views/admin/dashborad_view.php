@@ -36,7 +36,7 @@
 </head>
 
 <body>
-    <?php $this->load->view('public_nav',['title'=>'数据分析']);?>
+    <?php $this->load->view('admin/public_nav',['title'=>'数据分析']);?>
 
         <div id="page-wrapper">
             <div class="row">

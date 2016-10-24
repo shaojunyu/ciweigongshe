@@ -24,7 +24,7 @@ class Admin extends CI_controller
 		$this->db->where('status','published');
 		$total_post = $this->db->count_all_results('post');
 
-		$this->load->view('dashborad_view',[
+		$this->load->view('admin/dashborad_view',[
 			'total_read'=>$total_read,
 			'unread'=>$unread,
 			'total_post'=>$total_post
@@ -34,7 +34,7 @@ class Admin extends CI_controller
 	public function compose($post_id = '')
 	{
 		if ($post_id == null) {
-			$this->load->view('compose_view');
+			$this->load->view('admin/compose_view');
 		}else{
 			$this->db->where('post_id',$post_id);
 			$res = $this->db->get('post')->result_array();
@@ -60,7 +60,7 @@ class Admin extends CI_controller
 			$res = $this->db->get('post')->result_array();
 //			var_dump($res);
 
-			$this->load->view('post_list_view',[
+			$this->load->view('admin/post_list_view',[
 				'status'=>$status,
 				'total'=>$total,
 				'posts'=>$res,
@@ -92,7 +92,7 @@ class Admin extends CI_controller
 				$res = $this->db->get('comment')->result_array();
 			}
 //			echo $total;
-			$this->load->view('comment_list_view',[
+			$this->load->view('admin/comment_list_view',[
 				'is_read'=>$is_read,
 				'total'=>$total,
 				'comments'=>$res,
@@ -122,7 +122,7 @@ class Admin extends CI_controller
 			$month_data[$day] = $count;
 		}
 
-		$this->load->view('data_view',[
+		$this->load->view('admin/data_view',[
 			'week_data'=>$week_data,
 			'month_data'=>$month_data
 			]);
@@ -163,7 +163,7 @@ class Admin extends CI_controller
 
 	public function test()
 	{
-		$this->load->view('post_list_view');
+		$this->load->view('admin/post_list_view');
 		// $res = $this->db->insert('post',[
 		// 	'title'=>'dasdas',
 		// 	'author'=>'yusj',
@@ -189,7 +189,7 @@ class Admin extends CI_controller
 				'author'=>$this->input->post('author'),
 				'abstract'=>$this->input->post('abstract'),
 				'content'=>$this->input->post('content'),
-				'type'=>$this->input->post('type') == '' ? 'post':'nav',
+				'type'=>$this->input->post('type') == '' ? 'post':'slide',
 				'image_url'=>$this->input->post('image_url'),
 				'status'=>'draft'
 				]);
@@ -217,7 +217,7 @@ class Admin extends CI_controller
 				'author'=>$this->input->post('author'),
 				'abstract'=>$this->input->post('abstract'),
 				'content'=>$this->input->post('content'),
-				'type'=>$this->input->post('type') == '' ? 'post':'nav',
+				'type'=>$this->input->post('type') == '' ? 'post':'slide',
 				'image_url'=>$this->input->post('image_url')
 				]);
 

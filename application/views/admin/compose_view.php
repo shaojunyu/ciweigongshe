@@ -39,7 +39,7 @@
 
 <body>
 
-<?php $this->load->view('public_nav',['title'=>'文章编辑']);?>
+<?php $this->load->view('admin/public_nav',['title'=>'文章编辑']);?>
 
     <div id="page-wrapper">
         <form class="compose-info" role="form" method="POST" action="<?php echo base_url('admin/store_post')?>">
