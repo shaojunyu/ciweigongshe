@@ -124,6 +124,7 @@ class Post extends CI_Controller{
         }else{
             if (empty($category_id)) {
                 $this->db->limit(10);
+                $this->db->order_by('post_id','DESC');
                 $this->db->where('post_id <', $post_id);
                 $this->db->where('status','published');
                 $this->db->select('post_id,abstract,image_url,publish_at,title');
