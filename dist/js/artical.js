@@ -16,22 +16,33 @@ $(function () {
 				return;
 			}
 		}
-		else if($("#nickname").val() !== "" && $("input:checked").length === 1) {
+		
+		if($("#nickname").val() !== "" && $("input:checked").length === 1) {
 			$(".am-modal-bd").html("请不要同时填写昵称和选择匿名");
 			$("#my-btn-primary").click();
 			return;
 		}
-		else if($(".comment").val() === "") {
+		else if(!(myTrim($(".comment").val()))) {
 			$(".am-modal-bd").html("评论内容不能为空");
 			$("#my-btn-primary").click();
 			return;
 		}
 
+		$.ajax({
+           type: "POST",
+           url: "../comment",
+           data: $("#my-form").serialize(), // serializes the form's elements.
+           success: function (data) {
+               alert(data);
+           },
+           error: function () {
+
+           }
+        });
+
 		$(".my-cover").hide();
 		$(".comment-box").hide();
 		$(".comment-fixed").show();
-
-		$("form").submit();
 	});
 
 	$("#cancel").click(function () {
@@ -44,3 +55,14 @@ $(function () {
 	$(".comment-fixed").css("margin-left", -width+"px");
 	$(".comment-box").css("margin-left", -width+"px");
 });
+
+
+
+function myTrim(str) {
+    if(String.prototype.trim) {
+        return str.trim();
+    }
+    return str.replace(/^\s+(.*?)\s+$/g, "$1");
+    //or
+    //return str.replace(/^\s+/, "").replace(/\s+$/, "");
+}

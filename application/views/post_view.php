@@ -202,7 +202,7 @@ if (count($res) > 0) {
 <!-- 评论 -->
   <div class="my-cover"></div>
   <div class="comment-box">
-  <form action="./base_url/post/comment" method="POST">
+  <form id="my-form">
     <p class="nickname-box"><input type="text" id="nickname" name="name" placeholder="输入昵称"> <label for="anonymous"><input type="checkbox" id="anonymous">匿名评论</label></p>
       <fieldset>
         <div class="am-form-group">
