@@ -37,7 +37,6 @@ $(function () {
 });
 
 function addPost(data) {
-  console.log( typeof data);
   var domTree = "";
   data.forEach(function (elem, index, arr) {
     domTree += '<li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-bottom-left" data-post-id="'+elem.post_id+'"><a href="./post/show/'+elem.post_id+'"><h3 class="am-list-item-hd">'+elem.title+'</h3><div class="am-u-sm-5 am-list-thumb"><img src="'+elem.image_url+'" /></div><div class="am-u-sm-7  am-list-main"><div class="am-list-item-text">'+elem.abstract+'</div></div><div class="my-clear"></div><span class="my-date">'+elem.publish_at+'</span></a></li>';

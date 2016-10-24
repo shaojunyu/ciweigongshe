@@ -14,7 +14,6 @@ $(function () {
         type: "GET",
         dataType: "json",
         success: function (data) {
-          console.log(data);
           if(data.length === 0) {
             $(".am-modal-bd").html("暂时没有更多文章了~");
             $("#my-btn-primary").click();
