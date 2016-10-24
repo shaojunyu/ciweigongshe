@@ -12,6 +12,7 @@ $(function () {
       $.ajax({
         url: baseUrl+lastPostId+"/"+categoryId,
         type: "GET",
+        dataType: "json",
         success: function (data) {
           console.log(data);
           if(data.length === 0) {
