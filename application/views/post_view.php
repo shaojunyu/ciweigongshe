@@ -24,9 +24,14 @@
 
 
 <ol class="am-breadcrumb am-breadcrumb-slash my-breadcrumb-style">
-  <li><a href="#">首页</a></li>
-  <li><a href="#">分类</a></li>
-  <li class="am-active">文章</li>
+  <li><a href="<?php echo base_url(); ?>">首页</a></li>
+  <?php
+  $query = $this->db->query("select post_id,category.category_id,category.name from category inner join post_category on post_category.category_id = category.category_id where post_id = ". $post['post_id']);
+  $res = $query->result_array();
+  foreach ($res as $category) {
+    echo "<li><a href=\"".base_url('post/category/'.$category['category_id'])."\">".$category['name']."</a></li>";
+  }
+  ?>
 </ol>
 
 <!-- artical -->
