@@ -150,13 +150,22 @@ article img {
 	min-height: 16rem;
 	max-height: 18rem;
 }
-@media screen and (max-width: 1500px) {
+@media screen and (max-width: 2000px) {
 	article img {
 		min-height: 26rem;
 		max-height: 28rem;
 	}
 	.am-gallery-default .am-gallery-item img {
 		height: 12rem;
+	}
+	header.am-header {
+		height: 7rem;
+		line-height: 7rem;
+	}
+	#nav {
+		height: 4rem;
+		line-height: 4rem;
+		top: -5.5rem;
 	}
 }
 @media screen and (max-width: 768px) {
@@ -167,6 +176,15 @@ article img {
 	.am-gallery-default .am-gallery-item img {
 		height: 12rem;
 	}
+	header.am-header {
+		height: 7rem;
+		line-height: 7rem;
+	}
+	#nav {
+		height: 4rem;
+		line-height: 4rem;
+		top: -5.5rem;
+	}
 }
 @media screen and (max-width: 640px) {
 	article img {
@@ -175,6 +193,15 @@ article img {
 	}
 	.am-gallery-default .am-gallery-item img {
 		height: 11.5rem;
+	}
+	header.am-header {
+		height: 6rem;
+		line-height: 6rem;
+	}
+	#nav {
+		height: 4rem;
+		line-height: 4rem;
+		top: -5rem;
 	}
 }
 @media screen and (max-width: 435px) {
@@ -185,6 +212,15 @@ article img {
 	.am-gallery-default .am-gallery-item img {
 		height: 10.5rem;
 	}
+	header.am-header {
+		height: 5.8rem;
+		line-height: 5.8rem;
+	}
+	#nav {
+		height: 4rem;
+		line-height: 4rem;
+		top: -4.9rem;
+	}
 }
 @media screen and (max-width: 375px) {
 	article img {
@@ -193,6 +229,15 @@ article img {
 	}
 	.am-gallery-default .am-gallery-item img {
 		height: 8.5rem;
+	}
+	header.am-header {
+		height: 5rem;
+		line-height: 5rem;
+	}
+	#nav {
+		height: 4rem;
+		line-height: 4rem;
+		top: -4.5rem;
 	}
 }
 
