@@ -59,6 +59,10 @@ header.am-header {
 	outline: none;
 }
 
+.am-list-news-default .am-list .am-list-thumb img {
+	min-height: 7.5rem;
+}
+
 .footer {
 	width: 100%;
 	height: 6rem;
