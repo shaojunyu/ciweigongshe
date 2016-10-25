@@ -26,6 +26,7 @@
 <div data-am-widget="slider" class="am-slider am-slider-default" data-am-slider='{}' >
   <ul class="am-slides">
   <?php
+  $this->db->order_by('publish_at','DESC');
   $this->db->where('type','slide');
   $this->db->limit(6);
   $this->db->select('post_id,title,image_url');

@@ -35,6 +35,14 @@
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <!-- 编辑器 -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <link href="../umeditor/themes/default/_css/umeditor.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript" src="../umeditor/third-party/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../umeditor/umeditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../umeditor/editor_api.js"></script>
+    <script type="text/javascript" src="../umeditor/lang/zh-cn/zh-cn.js"></script>
+
 </head>
 
 <body>
@@ -97,6 +105,9 @@
             </div>
           </div>
 
+<script type="text/plain" id="myEditor" style="width:800px;height:400px;">
+</script>
+
           <input type="text" class="hide" name="content" style="display: none;">
           <button type="button" class="btn btn-primary compose-artical">存储文章</button>
         </form>
@@ -124,9 +135,10 @@
       </div>
     </div>
 
-    <!-- jQuery -->
-    <script src="<?php echo base_url();?>vendor/jquery/jquery.min.js"></script>
-
+<script type="text/javascript">
+    //实例化编辑器
+    var um = UM.getEditor('myEditor');
+</script>
     <!-- Bootstrap Core JavaScript -->
     <script src="<?php echo base_url();?>vendor/bootstrap/js/bootstrap.min.js"></script>
 
@@ -136,11 +148,9 @@
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo base_url();?>dist/js/sb-admin-2.js"></script>
 
-    <script src="<?php echo base_url();?>vendor/ckeditor/ckeditor.js"></script>
-    <script src="<?php echo base_url();?>vendor/ckeditor/sample.js"></script>
     <script src="<?php echo base_url();?>dist/js/compose.js"></script>
-    <script src="http://xiumi.us/connect/ue/xiumi-ue-dialog-v1.js"></script>
-    <link rel="stylesheet" type="text/css" href="http://xiumi.us/connect/ue/xiumi-ue-v1.css">
+
+
 
 </body>
 

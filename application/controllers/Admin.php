@@ -39,7 +39,7 @@ class Admin extends CI_controller
 			$this->db->where('post_id',$post_id);
 			$res = $this->db->get('post')->result_array();
 			if ($this->db->affected_rows() == 1) {
-				$this->load->view('admin/update_post_view',[
+				$this->load->view('admin/update_post_view2',[
 					'post'=>$res[0]
 					]);
 			}else{
@@ -184,13 +184,13 @@ class Admin extends CI_controller
 	public function store_post()
 	{
 		try {
-//			var_dump($this->input->post());
-
+			var_dump($this->input->post());
+			exit();
 			$this->db->insert('post',[
 				'title'=>$this->input->post('title'),
 				'author'=>$this->input->post('author'),
 				'abstract'=>$this->input->post('abstract'),
-				'content'=>$this->input->post('content'),
+				'content'=>$this->input->post('editorValue'),
 				'type'=>$this->input->post('type') == '' ? 'post':'slide',
 				'image_url'=>$this->input->post('image_url'),
 				'status'=>'draft'
@@ -211,14 +211,15 @@ class Admin extends CI_controller
 
 	public function update_post()
 	{
-//		var_dump($this->input->post());
+		// var_dump($this->input->post());
+		// exit();
 		try{
 			$this->db->where('post_id',$this->input->post('post_id'));
 			$this->db->update('post',[
 				'title'=>$this->input->post('title'),
 				'author'=>$this->input->post('author'),
 				'abstract'=>$this->input->post('abstract'),
-				'content'=>$this->input->post('content'),
+				'content'=>$this->input->post('editorValue'),
 				'type'=>$this->input->post('type') == '' ? 'post':'slide',
 				'image_url'=>$this->input->post('image_url')
 				]);

@@ -66,7 +66,6 @@
             foreach($res as $category){
               $category_array[] = $category['category_id'];
             }
-            //var_dump($category_array);
             ?>
            <div class="category-box">
             <label class="checkbox-inline">

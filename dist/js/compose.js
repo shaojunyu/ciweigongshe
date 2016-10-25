@@ -1,4 +1,4 @@
-initSample();
+// initSample();
 
 $(function () {
 	var title = "";
@@ -34,12 +34,12 @@ $(function () {
 			$('#myModal').modal({});
 			return;
 		}
-		else if (!CKEDITOR.instances.editor.getData()) {
+		else if (!UM.getEditor('myEditor').getContent()) {
 			$(".show-msg").html("请输入文章内容！");
 			$('#myModal').modal({});
 			return;
 		}
-		$(".hide").val(CKEDITOR.instances.editor.getData());
+		// $(".hide").val(CKEDITOR.instances.editor.getData());
 		if ($('input[name="type"]:checked').length === 1) {
         	$("#inlineCheckbox7").attr("value", "nav");
         }
