@@ -42,7 +42,9 @@
 
   <div class="am-article-bd">
     <p class="am-article-lead"><?php echo $post['abstract']; ?></p>
+    <br/>
     <div class="author-info">by <?php echo $post['author']; ?></div>
+    <br/>
     <?php echo $post['content']; ?>
   </div>
 </article>

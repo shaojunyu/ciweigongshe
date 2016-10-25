@@ -184,8 +184,8 @@ class Admin extends CI_controller
 	public function store_post()
 	{
 		try {
-			var_dump($this->input->post());
-			exit();
+			// var_dump($this->input->post());
+			// exit();
 			$this->db->insert('post',[
 				'title'=>$this->input->post('title'),
 				'author'=>$this->input->post('author'),

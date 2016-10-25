@@ -6,7 +6,7 @@ header.am-header {
 	height: 5rem;
 	line-height: 5rem;
 	background: url('../../images/logo.png') no-repeat center;
-	background-size: 40% 100%;
+	background-size: 32% 110%;
 	background-color: #3f9d8c;
 }
 #nav {
@@ -57,7 +57,7 @@ header.am-header {
 	margin: 0 auto;
 }
 .author-info {
-	font-size: 1.4rem;
+	font-size: 15px;
 	font-weight: 600;
 	margin-bottom: 5px;
 }
@@ -252,4 +252,8 @@ article img {
 	color: #fff;
 	font-size: 1.2rem;
 	line-height: 2rem;
+}
+
+.am-article-lead{
+	font-size: 15px;
 }
