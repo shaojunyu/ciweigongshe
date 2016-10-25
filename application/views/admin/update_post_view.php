@@ -12,20 +12,21 @@
     <title>刺猬公社——内容产业第一报道媒体</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="<?php echo base_url();?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="<?php echo base_url();?>/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo base_url();?>/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="<?php echo base_url();?>/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url();?>vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <link href="<?php echo base_url();?>/vendor/ckeditor/neo.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>vendor/ckeditor/neo.css" rel="stylesheet">
 
-    <link href="<?php echo base_url();?>/dist/css/compose.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>dist/css/compose.css" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo base_url();?>/dist/css/unite.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -35,7 +36,6 @@
     <![endif]-->
 
 </head>
-
 <body>
 
 <?php $this->load->view('admin/public_nav',['title'=>'更新文章']);?>

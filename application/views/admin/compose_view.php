@@ -12,20 +12,20 @@
     <title>刺猬公社——内容产业第一报道媒体</title>
 
     <!-- Bootstrap Core CSS -->
-    <link href="<?php echo base_url();?>/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- MetisMenu CSS -->
-    <link href="<?php echo base_url();?>/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>vendor/metisMenu/metisMenu.min.css" rel="stylesheet">
 
     <!-- Custom CSS -->
-    <link href="<?php echo base_url();?>/dist/css/sb-admin-2.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
-    <link href="<?php echo base_url();?>/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="<?php echo base_url();?>vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-    <link href="<?php echo base_url();?>/vendor/ckeditor/neo.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>vendor/ckeditor/neo.css" rel="stylesheet">
 
-    <link href="<?php echo base_url();?>/dist/css/compose.css" rel="stylesheet">
+    <link href="<?php echo base_url();?>dist/css/compose.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo base_url();?>/dist/css/unite.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -125,20 +125,22 @@
     </div>
 
     <!-- jQuery -->
-    <script src="<?php echo base_url();?>/vendor/jquery/jquery.min.js"></script>
+    <script src="<?php echo base_url();?>vendor/jquery/jquery.min.js"></script>
 
     <!-- Bootstrap Core JavaScript -->
-    <script src="<?php echo base_url();?>/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="<?php echo base_url();?>vendor/bootstrap/js/bootstrap.min.js"></script>
 
     <!-- Metis Menu Plugin JavaScript -->
-    <script src="<?php echo base_url();?>/vendor/metisMenu/metisMenu.min.js"></script>
+    <script src="<?php echo base_url();?>vendor/metisMenu/metisMenu.min.js"></script>
 
     <!-- Custom Theme JavaScript -->
-    <script src="<?php echo base_url();?>/dist/js/sb-admin-2.js"></script>
+    <script src="<?php echo base_url();?>dist/js/sb-admin-2.js"></script>
 
-    <script src="<?php echo base_url();?>/vendor/ckeditor/ckeditor.js"></script>
-    <script src="<?php echo base_url();?>/vendor/ckeditor/sample.js"></script>
-    <script src="<?php echo base_url();?>/dist/js/compose.js"></script>
+    <script src="<?php echo base_url();?>vendor/ckeditor/ckeditor.js"></script>
+    <script src="<?php echo base_url();?>vendor/ckeditor/sample.js"></script>
+    <script src="<?php echo base_url();?>dist/js/compose.js"></script>
+    <script src="http://xiumi.us/connect/ue/xiumi-ue-dialog-v1.js"></script>
+    <link rel="stylesheet" type="text/css" href="http://xiumi.us/connect/ue/xiumi-ue-v1.css">
 
 </body>
 
