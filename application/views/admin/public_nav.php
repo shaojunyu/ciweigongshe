@@ -52,7 +52,7 @@
                             <a href="<?php echo base_url('admin/comment_list');?>"><i class="fa fa-edit fa-fw"></i> 评论管理</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-wrench fa-fw"></i> 素材管理</a>
+                            <a href="<?php echo base_url('admin/image_list');?>"><i class="fa fa-wrench fa-fw"></i> 素材管理</a>
                         </li>
                     </ul>
                 </div>

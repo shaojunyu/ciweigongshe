@@ -35,9 +35,19 @@ class Post extends CI_Controller{
         $this->db->where('status','published');
         $res = $this->db->get('post')->result_array();
         if (count($res) == 1) {
-            $this->load->view('post_view',[
-                'post'=>$res[0]
+            //加载view
+            if ($this->is_mobile_device())
+            {
+                $this->load->view('mobile/post_view',[
+                    'post'=>$res[0]
                 ]);
+            }else{
+                $this->load->view('pc/post_view',[
+                    'post'=>$res[0],
+                    'category_id'=>'1'
+                ]);
+            }
+
 
                 $read_count = $res[0]['read_count'];
     //        //更新阅读量数据
@@ -93,10 +103,21 @@ class Post extends CI_Controller{
         $this->db->where('category_id',$category_id);
         $res = $this->db->get('category')->result_array();
         $category = $res[0]['name'];
-        $this->load->view('category_view',[
-            'category'=>$category,
-            'category_id'=>$category_id
+
+        if ($this->is_mobile_device()){
+            $this->load->view('mobile/category_view',[
+                'category'=>$category,
+                'category_id'=>$category_id
             ]);
+        }else{
+            $this->load->view('pc/category_view',[
+                'category'=>$category,
+                'category_id'=>$category_id
+            ]);
+        }
+
+
+
     }
 
 
@@ -138,5 +159,12 @@ class Post extends CI_Controller{
                 echo json_encode($res);
             }
         }
+    }
+
+
+    //private
+    private function is_mobile_device()
+    {
+        return preg_match('/mobile/i',$_SERVER['HTTP_USER_AGENT'])==1?true:false;
     }
 }

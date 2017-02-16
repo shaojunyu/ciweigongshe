@@ -20,7 +20,7 @@
 
 </header>
 
-<?php $this->load->view('menu'); ?>
+<?php $this->load->view('mobile/menu'); ?>
 
 
 <ol class="am-breadcrumb am-breadcrumb-slash my-breadcrumb-style">

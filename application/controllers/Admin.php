@@ -179,6 +179,11 @@ class Admin extends CI_controller
 		// var_dump($res->result_array());
 	}
 
+	public function image_list()
+    {
+
+    }
+
 ///////////////////////////////////////////////////////////////////////////////////////
 	//api
 	public function store_post()

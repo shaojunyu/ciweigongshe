@@ -22,6 +22,18 @@ class Welcome extends CI_Controller {
 	{
 		//$this->load->view('welcome_message');
 		// var_dump($_COOKIE);
-		$this->load->view('index_view');
+
+//		$this->load->view('index_view');
+//        var_dump($this->is_mobile_device());
+        if ($this->is_mobile_device()){
+            $this->load->view('mobile/index_view');
+        }else{
+            $this->load->view('pc/index_view');
+        }
 	}
+
+	private function is_mobile_device()
+    {
+        return preg_match('/mobile/i',$_SERVER['HTTP_USER_AGENT'])==1?true:false;
+    }
 }
