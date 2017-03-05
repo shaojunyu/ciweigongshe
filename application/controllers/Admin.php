@@ -292,4 +292,26 @@ class Admin extends CI_controller
 		]);
 		header('Location:'.base_url('admin/comment_list/unread'));
 	}
+
+	//素材管理
+	public function upload_image(){
+		$config['upload_path']      = './images/upload';
+        $config['allowed_types']    = 'gif|jpg|png';
+        $config['encrypt_name']     = true;
+        $this->load->library('upload', $config);
+
+        if ( ! $this->upload->do_upload('image'))
+        {
+            $error = array('error' => $this->upload->display_errors('',''));
+            echo json_encode(['error'=>$error]);
+            // $this->load->view('upload_form', $error);
+            // var_dump($error);
+        }
+        else
+        {
+            $data = array('upload_data' => $this->upload->data())['upload_data'];
+            echo json_encode(['success'=>true,'link'=>base_url('images/upload/'.$data['file_name'])]);
+            // $this->load->view('upload_success', $data);
+        }
+	}
 }
