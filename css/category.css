@@ -91,10 +91,6 @@ nav a:visited, nav a:focus {
 	margin-top: 30px;
 	border-top: 1px dotted #ccc;
 }
-.news-list {
-	width: 100%;
-	border-bottom: 1px dotted #ccc;
-}
 .news {
 	width: 30%;
 	float: left;

@@ -10,10 +10,12 @@
 <?php $this->load->view('pc/page_header',['category'=>$category_id]); ?>
 
 <div class="container">
-    <article>
+    <article id="post<?php echo $post['post_id']; ?>">
         <h1><?php echo $post['title']; ?></h1>
-        <p class="brief"><?php echo $post['abstract']; ?></p>
+        <h3 class="date"><?php echo $post['publish_at']; ?></h3>
+        <p class="abstract"><?php echo $post['abstract']; ?></p>
         <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg">
+        <div class="content" itemprop="articleBody"><?php echo $post['content']; ?></div>
         <!-- 分享 -->
         <div class="share">
             <div class="bdsharebuttonbox" data-tag="share_1">
@@ -43,12 +45,6 @@
                 with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
             };
         </script>
-
-
-        <p class="content">
-            <?php echo $post['content']; ?>
-
-        </p>
     </article>
 
     <div class="comment-edit">
@@ -63,7 +59,7 @@
             </fieldset>
             <p class="my-button-box">
                 <button type="button" id="published" class="am-btn am-btn-primary">提交</button>
-                <button type="button" id="cancel" class="am-btn am-btn-dange am-radius">取消</button>
+                <button type="reset" id="cancel" class="am-btn am-btn-dange am-radius">重置</button>
             </p>
             <input type="text" style="display: none;" name="post_id" id="post-id">
         </form>
@@ -82,13 +78,12 @@
                     <header class="am-comment-hd">
                         <div class="am-comment-meta">
                             <a href="#link-to-user" class="am-comment-author">匿名用户</a>
-                            评论于 <time>2016年12月16日</time>
+                            评论于 <time datetime="2016-12-16T00:00:00Z">2016年12月16日</time>
                         </div>
                     </header>
                     <div class="am-comment-bd">哈达和大叔的哈维斯的哈uh大</div>
                 </div>
             </li>
-
             <li class="am-comment">
                 <a href="#link-to-user-home">
                     <img src="images/tx.png" class="am-comment-avatar" width="48" height="48"/>
@@ -97,7 +92,7 @@
                     <header class="am-comment-hd">
                         <div class="am-comment-meta">
                             <a href="#link-to-user" class="am-comment-author">匿名用户</a>
-                            评论于 <time>2016年12月16日</time>
+                            评论于 <time datetime="2016-12-16T00:00:00Z">2016年12月16日</time>
                         </div>
                     </header>
                     <div class="am-comment-bd">哈达和大叔的哈维斯的哈uh大</div>

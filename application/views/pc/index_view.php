@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>刺猬公社</title>
-    <link rel="stylesheet" href="<?php echo base_url();?>css/style.css">
     <link rel="stylesheet" href="<?php echo base_url();?>css/amazeui.min.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>css/style.css">
 </head>
 <body>
 <?php $this->load->view('pc/page_header',['category'=>'0']); ?>
@@ -34,7 +34,7 @@
 
     <!-- news -->
     <div class="news-wrapper">
-        <?php
+         <?php
         $this->db->select('post_id,publish_at,title,image_url,abstract');
         $this->db->where('type','post');
         $this->db->where('status','published')->order_by('post_id','DESC')->limit(9);
@@ -42,26 +42,20 @@
         $i = 0;
         foreach ($res as $post) {
             $i = $i+1;
-            if ($i%3 == 1){ echo '<div class="news-list clearfix">'; }
         ?>
-            <div class="news">
+            <div class="news" id="post<?php echo $post['post_id'] ?>">
                 <a href="<?php echo base_url('/post/show/'.$post['post_id']); ?>" class="img"><img src="<?php echo $post['image_url']; ?>"></a>
-                <a class="category" href="javascript:;">hhh</a>
-                <br />
+                <h3 class="date"><?php echo $post['publish_at']?></h3>
                 <a class="title" href="<?php echo base_url('/post/show/'.$post['post_id']); ?>"><?php echo $post['title']; ?></a>
-                <p class="brief"><?php echo $post['abstract']; ?></p>
+                <p class="abstract"><?php echo $post['abstract']; ?></p>
+                <span class="category">test</span>
             </div>
-        <?php if ($i%3 == 0){ echo '</div>'; }
-         }?>
+        <?php }?>
     </div>
-
 </div>
 
 <button type="button" class="am-btn am-btn-default my-load">加载更多</button>
-<button class="am-btn am-btn-default my-loading">
-    <i class="am-icon-spinner am-icon-spin"></i>
-    加载中
-</button>
+<button class="am-btn am-btn-default my-loading"><i class="am-icon-spinner am-icon-spin"></i>加载中</button>
 
 <div data-am-widget="gotop" class="am-gotop am-gotop-fixed">
     <a href="#top" title="回到顶部">

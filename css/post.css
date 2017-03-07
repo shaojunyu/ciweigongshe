@@ -86,10 +86,11 @@ article {
 	width: 100%;
 }
 article img {
-	width: 100%;
+	width: auto;
+	height:auto;
 	max-height: 450px;
 }
-article .brief {
+article .abstract {
 	color: #777;
 	font-size: 18px;
 }

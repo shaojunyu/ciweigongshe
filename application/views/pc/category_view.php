@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>刺猬公社</title>
-    <link rel="stylesheet" href="<?php echo base_url();?>css/category.css">
     <link rel="stylesheet" href="<?php echo base_url();?>css/amazeui.min.css">
+    <link rel="stylesheet" href="<?php echo base_url();?>css/style.css">
 </head>
 <body>
 <?php $this->load->view('pc/page_header',['category'=>$category_id]); ?>
@@ -13,46 +13,41 @@
 
     <!-- news -->
     <div class="news-wrapper">
-        <div class="news-list clearfix">
-            <div class="news">
-                <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
-                <a class="title" href="javascript:;">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</a>
-                <p class="brief">哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈qdbajkefbaeksfbakwdhakefefjasdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefjasdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefjasdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefjasdjskfenekasjfweas</p>
-                <span class="date">1天前</span>
-            </div>
-            <div class="news">
-                <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
-                <a class="title" href="javascript:;">hhh</a>
-                <p class="brief">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
-                <span class="date">1天前</span>
-            </div>
-            <div class="news">
-                <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
-                <a class="title" href="javascript:;">hhh</a>
-                <p class="brief">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
-                <span class="date">1天前</span>
-            </div>
+        <div class="news">
+            <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
+            <a class="title" href="javascript:;">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</a>
+            <p class="brief">哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈qdbajkefbaeksfbakwdhakefefjasdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefjasdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefjasdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefjasdjskfenekasjfweas</p>
+            <span class="date">1天前</span>
         </div>
-
-        <div class="news-list clearfix">
-            <div class="news">
-                <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
-                <a class="title" href="javascript:;">hhh</a>
-                <p class="brief">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
-                <span class="date">1天前</span>
-            </div>
-            <div class="news">
-                <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
-                <a class="title" href="javascript:;">hhh</a>
-                <p class="brief">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
-                <span class="date">1天前</span>
-            </div>
-            <div class="news">
-                <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
-                <a class="title" href="javascript:;">hhh</a>
-                <p class="brief">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
-                <span class="date">1天前</span>
-            </div>
+        <div class="news">
+            <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
+            <a class="title" href="javascript:;">hhh</a>
+            <p class="brief">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
+            <span class="date">1天前</span>
+        </div>
+        <div class="news">
+            <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
+            <a class="title" href="javascript:;">hhh</a>
+            <p class="brief">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
+            <span class="date">1天前</span>
+        </div>
+        <div class="news">
+            <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
+            <a class="title" href="javascript:;">hhh</a>
+            <p class="brief">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
+            <span class="date">1天前</span>
+        </div>
+        <div class="news">
+            <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
+            <a class="title" href="javascript:;">hhh</a>
+            <p class="brief">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
+            <span class="date">1天前</span>
+        </div>
+        <div class="news" id="post47">
+            <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
+            <a class="title" href="javascript:;">hhh</a>
+            <p class="brief">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
+            <span class="date">1天前</span>
         </div>
     </div>
 
@@ -85,8 +80,8 @@
     <p>All Rights Reserved</p>
 </div>
 
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/amazeui.min.js"></script>
-<script type="text/javascript" src="js/category.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>js/jquery.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>js/amazeui.min.js"></script>
+<script type="text/javascript" src="<?php echo base_url();?>js/category.js"></script>
 </body>
 </html>

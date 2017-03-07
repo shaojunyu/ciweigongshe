@@ -1,4 +1,104 @@
-/* css reset */
+/* 
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com 
+Twitter: @rich_clark
+*/
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section { 
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000; 
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;   
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
 html, body {
 	min-width: 1200px;
     width: 100%;
@@ -28,7 +128,9 @@ ul, li {
 	clear: both;
 	zoom: 1;
 }
-
+body{
+	font-size: 0;
+}
 
 /* header */
 header {
@@ -48,8 +150,9 @@ nav {
 	background-color: #333;
 }
 nav ul {
-	width: 85%;
+	width: 80%;
 	margin: 0 auto;
+	padding: 0;
 }
 nav li {
 	float: left;
@@ -61,7 +164,6 @@ nav a {
 	display: block;
 	line-height: 50px;
 	padding: 0px 15px;
-	margin-right: 7px;
 }
 nav a:hover {
 	color: #fff;
@@ -81,6 +183,7 @@ nav a:visited, nav a:focus {
 	max-width: 1200px;
 	margin: 0 auto;
 	background-color: rgb(242,245,248);
+	font-size:0;
 }
 .am-slides img {
 	height: 470px;
@@ -97,25 +200,36 @@ nav a:visited, nav a:focus {
 }
 .news {
 	width: 30%;
-	float: left;
-	padding: 30px 0px;
+	margin:30px 5% 30px 0;
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+	border:1px solid #aaa;
+	display: inline-block;
+	vertical-align: middle;
 }
-.news-list .news:nth-child(1), .news-list .news:nth-child(2) {
-	margin-right: 5%;
+.news:nth-child(3n){
+	margin-right: 0;
+}
+.news a{
+	width:95%;
+	display: block;
+	margin:0 auto;
 }
 .news img {
 	width: 100%;
-	height: 200px;
+	height: 100%;
 }
 .img:hover img{
 	transform: scale(1.1,1.1);
 	-webkit-transform: scale(1.1,1.1);
 	-moz-transform: scale(1.1,1.1);
 }
-.img {
+.news .img {
 	display: block;
-	width: 100%;
-	height: 200px;
+	width: 95%;
+	height: 200px ;
+	margin: 3% auto;
 	overflow: hidden;
 }
 .img img{
@@ -124,12 +238,12 @@ nav a:visited, nav a:focus {
 	-moz-transition: all .3s;
 }
 .category {
-	display: inline-block;
+	width: 95%;
 	color: #9e2f50;
-	margin: 7px 0px;
+	margin: 3% auto;
 	font-weight: 600;
-	font-size: 15px;
-	border-bottom: 1px dotted transparent;
+	font-size: 16px;
+	display: block;
 }
 .title {
 	line-height: 20px;
@@ -138,21 +252,16 @@ nav a:visited, nav a:focus {
 	font-weight: 600;
 	border-bottom: 1px dotted transparent;
 }
-.news a.category:hover {
-	color: #333;
-	border-bottom: 1px dotted #333;
-}
 .news a.title:hover {
 	color: #2e6e9e;
-	border-bottom: 1px dotted #2e6e9e;
 }
 .news p {
-	width: 100%;
+	width: 95%;
 	font-size: 15px;
 	color: #333;
 	line-height: 20px;
 	height: 80px;
-	margin: 10px 0px;
+	margin: 10px auto;
 	display: -webkit-box;
     -webkit-line-clamp: 4;
     -webkit-box-orient: vertical;
@@ -160,14 +269,23 @@ nav a:visited, nav a:focus {
 	word-wrap: break-word;
 	word-break: break-all;
 }
-
+.news .date{
+	width: 95%;
+	margin: 0 auto;
+	line-height: 30px;
+	font-size: 16px;
+	display: block;
+	font-weight: 600;
+}
 button.my-load {
 	display: block;
 	margin: 40px auto;
+	font-size: 16px;
 }
 button.my-loading {
 	display: none;
 	margin: 40px auto;
+	font-size: 16px;
 }
 
 
