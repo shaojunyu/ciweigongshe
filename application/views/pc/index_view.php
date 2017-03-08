@@ -8,54 +8,58 @@
 </head>
 <body>
 <?php $this->load->view('pc/page_header',['category'=>'0']); ?>
-
 <div class="container">
-    <!-- Slider -->
-    <div data-am-widget="slider" class="am-slider am-slider-default" data-am-slider='{}' >
-        <ul class="am-slides">
-            <?php
-            $this->db->order_by('publish_at','DESC');
-            $this->db->where('type','slide');
-            $this->db->limit(6);
-            $this->db->select('post_id,title,image_url');
+    <div class="content-container">
+        <!-- Slider -->
+        <div data-am-widget="slider" class="am-slider am-slider-default" data-am-slider='{}' >
+            <ul class="am-slides">
+                <?php
+                $this->db->order_by('publish_at','DESC');
+                $this->db->where('type','slide');
+                $this->db->limit(6);
+                $this->db->select('post_id,title,image_url');
+                $res = $this->db->get('post')->result_array();
+                foreach ($res as $post) {
+                    ?>
+                    <li>
+                        <a href="<?php echo base_url('post/show/'.$post['post_id']); ?>">
+                            <img src="<?php echo $post['image_url']; ?>">
+                            <div class="am-slider-desc"><?php echo $post['title']; ?></div>
+                        </a>
+                    </li>
+
+                <?php } ?>
+            </ul>
+        </div>
+
+        <!-- news -->
+        <div class="news-wrapper">
+             <?php
+            $this->db->select('post_id,publish_at,title,image_url,abstract');
+            $this->db->where('type','post');
+            $this->db->where('status','published')->order_by('post_id','DESC')->limit(9);
             $res = $this->db->get('post')->result_array();
+            $i = 0;
             foreach ($res as $post) {
-                ?>
-                <li>
-                    <a href="<?php echo base_url('post/show/'.$post['post_id']); ?>">
-                        <img src="<?php echo $post['image_url']; ?>">
-                        <div class="am-slider-desc"><?php echo $post['title']; ?></div>
-                    </a>
-                </li>
-
-            <?php } ?>
-        </ul>
+                $i = $i+1;
+            ?>
+                <div class="news" id="post<?php echo $post['post_id'] ?>">
+                    <a href="<?php echo base_url('/post/show/'.$post['post_id']); ?>" class="img"><img src="<?php echo $post['image_url']; ?>"></a>
+                    <a class="category">category</a>
+                    <a class="title" href="<?php echo base_url('/post/show/'.$post['post_id']); ?>"><?php echo $post['title']; ?></a>
+                    <p class="abstract"><?php echo $post['abstract']; ?></p>
+                    <h3 class="date" datetime="<?php echo $post['publish_at']?>"><?php echo substr($post['publish_at'],0,10)?></h3>
+                </div>
+            <?php }?>
+        </div>
+        <button type="button" class="am-btn am-btn-default my-load">加载更多</button>
+        <button class="am-btn am-btn-default my-loading"><i class="am-icon-spinner am-icon-spin"></i>加载中</button>
     </div>
-
-    <!-- news -->
-    <div class="news-wrapper">
-         <?php
-        $this->db->select('post_id,publish_at,title,image_url,abstract');
-        $this->db->where('type','post');
-        $this->db->where('status','published')->order_by('post_id','DESC')->limit(9);
-        $res = $this->db->get('post')->result_array();
-        $i = 0;
-        foreach ($res as $post) {
-            $i = $i+1;
-        ?>
-            <div class="news" id="post<?php echo $post['post_id'] ?>">
-                <a href="<?php echo base_url('/post/show/'.$post['post_id']); ?>" class="img"><img src="<?php echo $post['image_url']; ?>"></a>
-                <h3 class="date"><?php echo $post['publish_at']?></h3>
-                <a class="title" href="<?php echo base_url('/post/show/'.$post['post_id']); ?>"><?php echo $post['title']; ?></a>
-                <p class="abstract"><?php echo $post['abstract']; ?></p>
-                <span class="category">test</span>
-            </div>
-        <?php }?>
+    <div class="slider-container">
+        
     </div>
 </div>
 
-<button type="button" class="am-btn am-btn-default my-load">加载更多</button>
-<button class="am-btn am-btn-default my-loading"><i class="am-icon-spinner am-icon-spin"></i>加载中</button>
 
 <div data-am-widget="gotop" class="am-gotop am-gotop-fixed">
     <a href="#top" title="回到顶部">

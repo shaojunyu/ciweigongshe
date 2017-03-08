@@ -14,8 +14,7 @@ $(function() {
             $("nav").css("position", "");
         }
     });
-
-
+    createListLine($('.news:nth-child(3n+1)'));
     //加载更多
     $(".my-load").click(function() {
         $(this).css("display", "none");
@@ -53,6 +52,12 @@ function createNews(data, parent) {
         var docfrag = document.createDocumentFragment();
         var baseUrl = subBefore(window.location.href, 'ciweigongshe');
         var postUrl = baseUrl.concat('/post/show/', data[i].post_id);
+        if(($('.news').length % 3) === 0){
+            console.log($('.news').length);
+            $('<div/>', {
+                class: 'news-list-line'
+            }).appendTo(parent);
+        }
         //生成img
         var imgWrap = document.createElement('a');
         imgWrap.className = 'img';
@@ -61,11 +66,11 @@ function createNews(data, parent) {
         imgWrap.appendChild(img);
         imgWrap.href = postUrl;
         docfrag.appendChild(imgWrap);
-        //生成时间
-        var date = document.createElement('h3');
-        date.className = 'date';
-        date.innerText = data[i].publish_at;
-        docfrag.appendChild(date);
+        //生成category
+        var category = document.createElement('span');
+        category.className = 'category';
+        category.innerText = "category";
+        docfrag.appendChild(category);
         //生成titile
         var title = document.createElement('a');
         title.className = 'title';
@@ -77,11 +82,11 @@ function createNews(data, parent) {
         abstract.className = 'abstract';
         abstract.innerText = data[i].abstract;
         docfrag.appendChild(abstract);
-        //生成category
-        var category = document.createElement('span');
-        category.className = 'category';
-        category.innerText = "test";
-        docfrag.appendChild(category);
+        //生成时间
+        var date = document.createElement('h3');
+        date.className = 'date';
+        date.innerText = data[i].publish_at;
+        docfrag.appendChild(date);
         //插入parent
         $('<div/>', {
             class: 'news',
@@ -91,6 +96,13 @@ function createNews(data, parent) {
     }
 }
 
+function createListLine(ele) {
+    if(!ele.prev().hasClass('news-list-line')){
+        $('<div/>', {
+            class: 'news-list-line'
+        }).insertBefore(ele);
+    }
+}
 //模态框
 function showMsg(msg) {
     $(".am-modal-bd").html(msg);
