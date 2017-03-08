@@ -85,9 +85,7 @@ $this->db->where('status','approved');
 $this->db->limit(10);
 $this->db->order_by('comment_id','DESC');
 $res = $this->db->get('comment')->result_array();
-
 if (count($res) > 0) {
-
 ?>
 <!-- 评论列表 -->
 <ul class="am-comments-list am-comments-list-flip">

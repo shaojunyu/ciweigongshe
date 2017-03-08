@@ -50,7 +50,7 @@
           <div class="am-list-item-text"><?php echo $post['abstract']; ?></div>
         </div>
         <div class="my-clear"></div>
-        <span class="my-date"><?php echo $post['publish_at']; ?></span>
+        <span class="my-date"><?php echo substr($post['publish_at'],0,10); ?></span>
         </a>
       </li>
       <?php } ?>

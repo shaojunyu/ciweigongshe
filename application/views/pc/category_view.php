@@ -12,48 +12,20 @@
     <div class="content-container">
         <!-- news -->
         <div class="news-wrapper">
-            <div class="news" id="">
-                <a href="" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
-                <a class="category">category</a>
+
+    <?php
+    $query = $this->db->query("select post.post_id,title,image_url,abstract,publish_at from post inner join post_category on post.post_id = post_category.post_id where category_id = ".$category_id." and status = 'published' order by post.post_id DESC  limit 9 ");
+    $res = $query->result_array();
+    // var_dump($res);
+    foreach ($res as $post) {
+    ?>
+            <div class="news" id="post<?php echo $post['post_id']; ?>">
+                <a href="<?php echo base_url('post/show/'.$post['post_id']); ?>" class="img"><img src="<?php echo $post['image_url']; ?>"></a>
                 <a class="title" href="">hhh</a>
-                <p class="abstract">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
-                <span class="date">1天前</span>
+                <p class="abstract"><?php echo $post['abstract']; ?></p>
+                <span class="date"><?php echo substr($post['publish_at'],0,10); ?></span>
             </div>
-            <div class="news">
-                <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
-                <a class="category">category</a>
-                <a class="title" href="javascript:;">hhh</a>
-                <p class="brief">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
-                <span class="date">1天前</span>
-            </div>
-            <div class="news">
-                <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
-                <a class="category">category</a>
-                <a class="title" href="javascript:;">hhh</a>
-                <p class="brief">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
-                <span class="date">1天前</span>
-            </div>
-            <div class="news">
-                <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
-                <a class="category">category</a>
-                <a class="title" href="javascript:;">hhh</a>
-                <p class="brief">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
-                <span class="date">1天前</span>
-            </div>
-            <div class="news">
-                <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
-                <a class="category">category</a>
-                <a class="title" href="javascript:;">hhh</a>
-                <p class="brief">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
-                <span class="date">1天前</span>
-            </div>
-            <div class="news" id="post47">
-                <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
-                <a class="category">category</a>
-                <a class="title" href="javascript:;">hhh</a>
-                <p class="brief">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
-                <span class="date">1天前</span>
-            </div>
+<?php } ?>
         </div>
         <button type="button" class="am-btn am-btn-default my-load">加载更多</button>
         <button class="am-btn am-btn-default my-loading"><i class="am-icon-spinner am-icon-spin"></i>加载中</button>

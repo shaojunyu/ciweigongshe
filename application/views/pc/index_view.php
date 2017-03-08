@@ -35,7 +35,7 @@
         <!-- news -->
         <div class="news-wrapper">
              <?php
-            $this->db->select('post_id,publish_at,title,image_url,abstract');
+            $this->db->select('post_id,publish_at,title,author,image_url,abstract');
             $this->db->where('type','post');
             $this->db->where('status','published')->order_by('post_id','DESC')->limit(9);
             $res = $this->db->get('post')->result_array();
@@ -45,7 +45,7 @@
             ?>
                 <div class="news" id="post<?php echo $post['post_id'] ?>">
                     <a href="<?php echo base_url('/post/show/'.$post['post_id']); ?>" class="img"><img src="<?php echo $post['image_url']; ?>"></a>
-                    <a class="category">category</a>
+                    <a class="category"><?php echo $post['author'];?></a>
                     <a class="title" href="<?php echo base_url('/post/show/'.$post['post_id']); ?>"><?php echo $post['title']; ?></a>
                     <p class="abstract"><?php echo $post['abstract']; ?></p>
                     <h3 class="date" datetime="<?php echo $post['publish_at']?>"><?php echo substr($post['publish_at'],0,10)?></h3>

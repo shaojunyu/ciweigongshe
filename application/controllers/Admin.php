@@ -316,23 +316,36 @@ class Admin extends CI_controller
             	'title'=>'dsadas']);
             $this->db->insert('image',[
             	'origin_name'=>$data['orig_name'],
-            	'file_name'=>$data['file_name']
+            	'file_name'=>$data['file_name'],
+            	'raw_name'=>$data['raw_name']
             	]);
             // { "url":"图片地址", "title":"图片描述", "state":"上传状态" }
             // $this->load->view('upload_success', $data);
         }
 	}
 
-	public function delete_image($file_name)
+	public function delete_image($raw_name)
 	{
-		$this->db->where('file_name',$file_name)->delete('image');
+		if (empty($raw_name)) {
+			exit();
+		}
+		$this->db->where('raw_name',$raw_name)->delete('image');
 		// $this->db->delete('image','')
 		try {
-			unlink('./images/upload/'.$file_name);
+			$res = $this->db->where('raw_name',$raw_name)->select('file_name')->get('image')->result_array();
+			if (count($res) == 1) {
+				unlink('./images/upload/'.$res[0]['file_name']);
+			}
 		} catch (Exception $e) {
 			
 		}
 		echo "ok";
+		# code...
+	}
+
+	public function load_more_image($image_id)
+	{
+		$this->db->where();
 		# code...
 	}
 }

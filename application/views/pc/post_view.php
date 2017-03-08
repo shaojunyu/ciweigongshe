@@ -81,6 +81,16 @@
         <p class="comments-block">评论区</p>
         <!-- 评论列表 -->
         <ul class="am-comments-list am-comments-list-flip">
+
+<?php
+$this->db->where('post_id',$post['post_id']);
+$this->db->where('status','approved');
+$this->db->limit(10);
+$this->db->order_by('comment_id','DESC');
+$res = $this->db->get('comment')->result_array();
+if (count($res) > 0) {
+    foreach ($res as $comment) {
+?>
             <li class="am-comment">
                 <a href="#link-to-user-home">
                     <img src="<?php echo base_url();?>favicon.ico" class="am-comment-avatar" width="48" height="48"/>
@@ -88,53 +98,38 @@
                 <div class="am-comment-main">
                     <header class="am-comment-hd">
                         <div class="am-comment-meta">
-                            <a href="#link-to-user" class="am-comment-author">匿名用户</a>
-                            评论于 <time datetime="2016-12-16T00:00:00Z">2016年12月16日</time>
+                            <a href="#link-to-user" class="am-comment-author"><?php echo $comment['author']; ?></a>
+                            评论于 <time datetime="<?php echo $comment['create_at']; ?>"><?php echo $comment['create_at']; ?></time>
                         </div>
                     </header>
-                    <div class="am-comment-bd">哈达和大叔的哈维斯的哈uh大</div>
+                    <div class="am-comment-bd"> <?php echo $comment['content']; ?></div>
                 </div>
             </li>
-            <li class="am-comment">
-                <a href="#link-to-user-home">
-                    <img src="<?php echo base_url();?>favicon.ico" class="am-comment-avatar" width="48" height="48"/>
-                </a>
-                <div class="am-comment-main">
-                    <header class="am-comment-hd">
-                        <div class="am-comment-meta">
-                            <a href="#link-to-user" class="am-comment-author">匿名用户</a>
-                            评论于 <time datetime="2016-12-16T00:00:00Z">2016年12月16日</time>
-                        </div>
-                    </header>
-                    <div class="am-comment-bd">哈达和大叔的哈维斯的哈uh大</div>
-                </div>
-            </li>
+<?php }
+}?>
         </ul>
     </div>
 
     <div class="interested">
         <p class="interested-block">文章推荐</p>
+<?php
+$sql = "select post.post_id,post.title,post.image_url,post.publish_at,post.abstract,post.author from post where status = 'published' and post_id in
+(select distinct post_category.post_id from post_category where  post_category.category_id in 
+(select post_category.category_id from post_category where post_id = ".$post['post_id'].") and post_id != ".$post['post_id'].") order by post_id DESC limit 3";
+$query = $this->db->query($sql);
+$res = $query->result_array();
+// var_dump($res);
+foreach ($res as $relative_post) {
+?>
         <div class="news" id="">
-            <a href="" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
-            <a class="category">category</a>
-            <a class="title" href="">hhh</a>
-            <p class="abstract">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
-            <span class="date">1天前</span>
+            <a href="<?php echo base_url('post/show/'.$relative_post['post_id']); ?>" class="img"><img src="<?php echo $relative_post['image_url']; ?>"></a>
+            <a class="category"><?php echo $relative_post['author']; ?></a>
+            <a class="title" href=""><?php echo $relative_post['title']; ?></a>
+            <p class="abstract"><?php echo $relative_post['abstract']; ?></p>
+            <span class="date"><?php echo substr($post['publish_at'],0,10)?></span>
         </div>
-        <div class="news" id="">
-            <a href="" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
-            <a class="category">category</a>
-            <a class="title" href="">hhh</a>
-            <p class="abstract">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
-            <span class="date">1天前</span>
-        </div>
-        <div class="news" id="">
-            <a href="" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
-            <a class="category">category</a>
-            <a class="title" href="">hhh</a>
-            <p class="abstract">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
-            <span class="date">1天前</span>
-        </div>
+<?php } ?>
+
     </div>
 </div>
 
