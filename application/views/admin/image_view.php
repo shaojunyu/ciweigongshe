@@ -22,13 +22,12 @@
 
     <!-- DataTables Responsive CSS -->
     <link href="<?php echo base_url();?>vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
-
     <!-- Custom CSS -->
     <link href="<?php echo base_url();?>dist/css/sb-admin-2.css" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="<?php echo base_url();?>vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
+    
     <link rel="stylesheet" href="<?php echo base_url();?>/dist/css/post-list.css">
     <link rel="stylesheet" href="<?php echo base_url();?>/dist/css/unite.css">
 
@@ -112,9 +111,11 @@ foreach ($res as $image) {
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
+            <button type="button" class="am-btn am-btn-default my-load">加载更多</button>
+            <button class="am-btn am-btn-default my-loading"><i class="fa fa-spinner" aria-hidden="true"></i>加载中</button>
         </div>
         <!-- /#page-wrapper -->
-
+    
     </div>
     <!-- /#wrapper -->
 
@@ -134,6 +135,7 @@ foreach ($res as $image) {
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script type="text/javascript">
+        var loadMorePostNumber =12;
         $(document).ready(function () {
             //删除图片
             $('button[data-target="#deleteImg"]').on('click',function () {
@@ -158,11 +160,80 @@ foreach ($res as $image) {
                 $('.show-image-link').attr('src',imgLink);
                 $('.img-link').text(imgLink);
             });
+            //
+            $(".my-load").click(function() {
+                $(this).css("display", "none");
+                $(".my-loading").css("display", "block");
+                var lastImgId = $('img[alt="Responsive image"]:last').attr('image_id');
+                var str = subBefore(window.location.href, '/admin');
+                var postUrl = str.concat('/load_more_image/', lastImgId);
+                $.post(postUrl, function(data) {
+                    if (data.length > 0) {
+                        $(".my-loading").css("display", "none");
+                        if (data.length == loadMorePostNumber) $(".my-load").css("display", "block");
+                        console.log(data);
+                        createNews(data,$('.col-lg-12'));
+                    } else {
+                        $(".my-loading").css("display", "none");
+                    }
+                }, 'json');
+            });
         });
         function subBefore(sourceStr, paraStr) {
             var index = sourceStr.indexOf(paraStr);
             if (index == -1) return sourceStr;
             else return sourceStr.substr(0, index + paraStr.length);
+        }
+        function createNews(data, parent) {
+            for (var i = 0; i < data.length; i++) {
+                var docfrag = document.createDocumentFragment();
+                //生成img
+                var wrap = document.createElement('div');
+                wrap.className = 'panel panel-default';
+                var name = document.createElement('div');
+                name.innerText = data[i].file_name;
+                name.className = 'panel-heading';
+                wrap.appendChild(name);
+                //生成category
+                var imgWrap = document.createElement('div');
+                imgWrap.className = 'panel-body';
+                imgWrap.setAttribute('style','max-height: 220px; overflow: hidden;');
+                //生成titile
+                var img = document.createElement('img');
+                img.className = 'img-responsive';
+                img.setAttribute('alt','Responsive image');
+                img.setAttribute('file_name',data[i].file_name);
+                img.src = data[i].link;
+                imgWrap.appendChild(img);
+                wrap.appendChild(imgWrap);
+                
+                //生成abstract
+                var footer = document.createElement('div');
+                footer.className = 'panel-footer';
+                var button1 = document.createElement('button');
+                button1.setAttribute('type','button');
+                button1.setAttribute('data-toggle','modal');
+                button1.setAttribute('data-target','#imgLinks');
+                button1.className = 'btn btn-primary btn-sm';
+                button1.innerText = '查看图片';
+                footer.appendChild(button1);
+                var button2 = document.createElement('button');
+                button2.setAttribute('type','button');
+                button2.setAttribute('data-toggle','modal');
+                button2.setAttribute('data-target','#deleteImg');
+                button2.setAttribute('hash',data[i].hash);
+                button2.className = 'btn btn-danger btn-sm';
+                button2.innerText = "删除图片";
+                footer.appendChild(button2);
+                wrap.appendChild(footer);
+
+                docfrag.appendChild(wrap);
+                //插入parent
+                $('<div/>', {
+                    class: 'col-lg-3',
+                    html: docfrag
+                }).appendTo(parent);
+            }
         }
     </script>
 </body>

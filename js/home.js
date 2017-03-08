@@ -50,7 +50,7 @@ function subBefore(sourceStr, paraStr) {
 function createNews(data, parent) {
     for (var i = 0; i < data.length; i++) {
         var docfrag = document.createDocumentFragment();
-        var baseUrl = subBefore(window.location.href, 'ciweigongshe');
+        var baseUrl = subBefore(window.location.href, '/ciweigongshe');
         var postUrl = baseUrl.concat('/post/show/', data[i].post_id);
         if(($('.news').length % 3) === 0){
             console.log($('.news').length);
