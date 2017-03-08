@@ -24,9 +24,9 @@ $(function() {
         $(this).css("display", "none");
         $(".my-loading").css("display", "block");
         var lastNewsId = $('.news:last').attr('id').replace(/[^0-9]/g, "");
-        var str = subBefore(window.location.href, '/ciweigongshe');
+        // var str = subBefore(window.location.href, '/ciweigongshe');
         var catId = getCatId(window.location.href);
-        var postUrl = str.concat('/post/load_more/', lastNewsId, '/', catId);
+        var postUrl = '../load_more/'.concat(lastNewsId, '/', catId);
         console.log(postUrl);
         $.post(postUrl, function(data) {
             if (data.length > 0) {
