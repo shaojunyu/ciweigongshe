@@ -181,7 +181,7 @@ class Admin extends CI_controller
 
 	public function image_list()
     {
-
+    	$this->load->view('admin/image_view');
     }
 
 ///////////////////////////////////////////////////////////////////////////////////////
@@ -300,7 +300,7 @@ class Admin extends CI_controller
         $config['encrypt_name']     = true;
         $this->load->library('upload', $config);
 
-        if ( ! $this->upload->do_upload('image'))
+        if ( ! $this->upload->do_upload('upfile'))
         {
             $error = array('error' => $this->upload->display_errors('',''));
             echo json_encode(['error'=>$error]);
@@ -310,8 +310,29 @@ class Admin extends CI_controller
         else
         {
             $data = array('upload_data' => $this->upload->data())['upload_data'];
-            echo json_encode(['success'=>true,'link'=>base_url('images/upload/'.$data['file_name'])]);
+            echo json_encode([
+            	'state'=>'SUCCESS',
+            	'url'=>'images/upload/'.$data['file_name'],
+            	'title'=>'dsadas']);
+            $this->db->insert('image',[
+            	'origin_name'=>$data['orig_name'],
+            	'file_name'=>$data['file_name']
+            	]);
+            // { "url":"图片地址", "title":"图片描述", "state":"上传状态" }
             // $this->load->view('upload_success', $data);
         }
+	}
+
+	public function delete_image($file_name)
+	{
+		$this->where('file_name',$file_name)->delete('image');
+		// $this->db->delete('image','')
+		try {
+			unlink('./images/upload/'.$file_name);
+		} catch (Exception $e) {
+			
+		}
+		echo "ok";
+		# code...
 	}
 }

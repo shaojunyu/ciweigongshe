@@ -136,8 +136,8 @@
         UMEDITOR_HOME_URL : URL
 
         //图片上传配置区
-        ,imageUrl:URL+"php/imageUp.php"             //图片上传提交地址
-        ,imagePath:URL + "php/"                     //图片修正地址，引用了fixedImagePath,如有特殊需求，可自行配置
+        ,imageUrl:URL+"../admin/upload_image"             //图片上传提交地址
+        ,imagePath:URL + "../"                     //图片修正地址，引用了fixedImagePath,如有特殊需求，可自行配置
         ,imageFieldName:"upfile"                   //图片数据的key,若此处修改，需要在后台对应文件修改对应参数
 
 
@@ -173,8 +173,8 @@
 
         //,initialContent:'欢迎使用UMEDITOR!'    //初始化编辑器的内容,也可以通过textarea/script给值，看官网例子
 
-        //,initialFrameWidth:500 //初始化编辑器宽度,默认500
-        //,initialFrameHeight:500  //初始化编辑器高度,默认500
+        ,initialFrameWidth:1000 //初始化编辑器宽度,默认500
+        ,initialFrameHeight:800  //初始化编辑器高度,默认500
 
         //,autoClearinitialContent:true //是否自动清除编辑器初始内容，注意：如果focus属性设置为true,这个也为真，那么编辑器一上来就会触发导致初始化的内容看不到了
 
