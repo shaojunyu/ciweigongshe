@@ -62,7 +62,7 @@ foreach ($res as $image) {
                                 <?php echo $image['origin_name']; ?>
                             </div>
                             <div class="panel-body" style="max-height: 220px; overflow: hidden;">
-                            <img src="<?php echo base_url('images/upload/'.$image['file_name']); ?>" class="img-responsive" alt="Responsive image" file_name="<?php echo $image['file_name'];  ?>">
+                            <img src="<?php echo base_url('images/upload/'.$image['file_name']); ?>" class="img-responsive" alt="Responsive image" file_name="<?php echo $image['file_name'];  ?>" image_id="<?php echo $image['id']; ?>">
                             </div>
                             <div class="panel-footer">
                                 <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#imgLinks">获取链接</button>
@@ -85,7 +85,7 @@ foreach ($res as $image) {
                                     </div>
                                     <!-- /.modal-dialog -->
                                 </div>
-                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImg" id="<?php echo $image['raw_name'] ?>">删除</button>
+                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImg" hash="<?php echo $image['raw_name'] ?>">删除</button>
                                 <div class="modal fade" id="deleteImg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
