@@ -354,7 +354,7 @@ class Admin extends CI_controller
 
 	public function load_more_image($image_id)
 	{
-		$res = $this->db->where('id <',$image_id)->limit(12)->get('image')->result_array();
+		$res = $this->db->where('id <',$image_id)->order_by('id','DESC')->limit(12)->get('image')->result_array();
 		// var_dump($res);
 		$r = [];
 		foreach ($res as $image) {
