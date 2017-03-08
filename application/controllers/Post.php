@@ -90,8 +90,9 @@ class Post extends CI_Controller{
     {
         $this->db->where('post_id',$post_id);
         $res = $this->db->get('post')->result_array();
-        $this->load->view('post_view',[
-           'post'=>$res[0]
+        $this->load->view('pc/post_view',[
+           'post'=>$res[0],
+           'category_id'=>'1'
         ]);
         # code...
     }
