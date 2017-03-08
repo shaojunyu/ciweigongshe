@@ -7,7 +7,7 @@ $(function() {
     var sort = [];
     var isShow = false;
     var articalContent = "";
-
+    
     $(".compose-artical").click(function() {
         if ($("#inputTitle").val() === "") {
             $(".show-msg").html("请输入文章标题！");
