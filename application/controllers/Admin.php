@@ -358,7 +358,7 @@ class Admin extends CI_controller
 		// var_dump($res);
 		$r = [];
 		foreach ($res as $image) {
-			$i['file_name'] = $image['file_name'];
+			$i['file_name'] = $image['origin_name'];
 			$i['id']=$image['id'];
 			$i['hash']=$image['raw_name'];
 			$i['link']=base_url('images/upload/'.$image['file_name']);
