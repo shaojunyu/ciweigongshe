@@ -188,6 +188,14 @@ class Admin extends CI_controller
 	//api
 	public function store_post()
 	{
+		$config['upload_path']      = './images/upload';
+        $config['allowed_types']    = 'gif|jpg|png';
+        $config['encrypt_name']     = true;
+        $this->load->library('upload', $config);
+        $this->upload->do_upload('upfile');
+        $data = array('upload_data' => $this->upload->data())['upload_data'];
+		var_dump($data);
+		exit();
 		try {
 			// var_dump($this->input->post());
 			// exit();
@@ -197,7 +205,7 @@ class Admin extends CI_controller
 				'abstract'=>$this->input->post('abstract'),
 				'content'=>$this->input->post('editorValue'),
 				'type'=>$this->input->post('type') == '' ? 'post':'slide',
-				'image_url'=>$this->input->post('image_url'),
+				// 'image_url'=>$this->input->post('image_url'),
 				'status'=>'draft'
 				]);
 
