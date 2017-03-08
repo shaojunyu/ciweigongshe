@@ -56,20 +56,56 @@ foreach ($res as $image) {
         continue;
     }
 ?>
-                <div class="col-lg-3">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <?php echo $image['origin_name']; ?>
-                        </div>
-                        <div class="panel-body" style="max-height: 220px; overflow: hidden;">
-                        <img src="<?php echo base_url('images/upload/'.$image['file_name']); ?>" class="img-responsive" alt="Responsive image" file_name="<?php echo $image['file_name'];  ?>">
-                        </div>
-                        <div class="panel-footer">
-                            <button type="button" class="btn btn-primary btn-sm">获取链接</button>
-                            <button type="button" class="btn btn-danger btn-sm">删除</button>
+                    <div class="col-lg-3">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <?php echo $image['origin_name']; ?>
+                            </div>
+                            <div class="panel-body" style="max-height: 220px; overflow: hidden;">
+                            <img src="<?php echo base_url('images/upload/'.$image['file_name']); ?>" class="img-responsive" alt="Responsive image" file_name="<?php echo $image['file_name'];  ?>">
+                            </div>
+                            <div class="panel-footer">
+                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#imgLinks">获取链接</button>
+                                <div class="modal fade" id="imgLinks" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+                                            </div>
+                                            <div class="modal-body">
+                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                                <button type="button" class="btn btn-primary">复制</button>
+                                            </div>
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                </div>
+                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImg">删除</button>
+                                <div class="modal fade" id="deleteImg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                                <h4 class="modal-title" id="myModalLabel">操作提醒</h4>
+                                            </div>
+                                            <div class="modal-body">确定要删除此图片吗？</div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                                <button type="button" class="btn btn-danger delete-img-true">删除</button>
+                                            </div>
+                                        </div>
+                                        <!-- /.modal-content -->
+                                    </div>
+                                    <!-- /.modal-dialog -->
+                                </div>
+                            </div>
                         </div>
                     </div>
-                </div>
 <?php } ?>
                 </div>
                 <!-- /.col-lg-12 -->
@@ -95,7 +131,24 @@ foreach ($res as $image) {
     <script src="<?php echo base_url();?>/dist/js/jqPaginator.min.js"></script>
 
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
-
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.delete-img-true').on('click',function () {
+                var imgId = $(this).parents('.col-lg-3').find('img.img-responsive').attr('file_name');
+                var baseUrl = subBefore(window.location.href, 'admin');
+                var postUrl = baseUrl.concat('/delete_image/',imgId);
+                console.log($(this));
+                // $.post(postUrl,function () {
+                //     console.log('dsfsdg');
+                // });
+            });
+        });
+        function subBefore(sourceStr, paraStr) {
+            var index = sourceStr.indexOf(paraStr);
+            if (index == -1) return sourceStr;
+            else return sourceStr.substr(0, index + paraStr.length);
+        }
+    </script>
 </body>
 
 </html>
