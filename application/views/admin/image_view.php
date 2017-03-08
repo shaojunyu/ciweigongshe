@@ -89,8 +89,6 @@ foreach ($res as $image) {
     <!-- Metis Menu Plugin JavaScript -->
     <script src="<?php echo base_url();?>/vendor/metisMenu/metisMenu.min.js"></script>
 
-    <!-- DataTables JavaScript -->
-    
 
     <!-- Custom Theme JavaScript -->
     <script src="<?php echo base_url();?>/dist/js/sb-admin-2.js"></script>
