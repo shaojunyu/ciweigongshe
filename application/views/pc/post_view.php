@@ -11,42 +11,44 @@
 
 <div class="container">
     <article id="post<?php echo $post['post_id']; ?>">
-        <h1><?php echo $post['title']; ?></h1>
-        <h3 class="date"><?php echo $post['publish_at']; ?></h3>
+        <h1 class="postTitle" itemprop="postSubject"><?php echo $post['title']; ?></h1>
+        <div class="post_meta">
+            <span class="date" datetime="<?php echo $post['publish_at']; ?>"><?php echo substr($post['publish_at'], 0, 10); ?></span>
+            <span class="author"><?php echo $post['author'];?></span>
+        </div>
         <p class="abstract"><?php echo $post['abstract']; ?></p>
         <img class="large-img" src="<?php echo $post['image_url']; ?>">
         <div class="content" itemprop="articleBody"><?php echo $post['content']; ?></div>
-        <!-- 分享 -->
-        <div class="share">
-            <div class="bdsharebuttonbox" data-tag="share_1">
-                <a class="bds_weixin" data-cmd="weixin"></a>
-                <a class="bds_tsina" data-cmd="tsina"></a>
-                <a class="bds_qzone" data-cmd="qzone" href="#"></a>
-                <a class="bds_count" data-cmd="count"></a>
-            </div>
-        </div>
-        <script>
-            window.onload = function () {
-                var bdText = $(".am-article-title").html();
-                var bdDesc = $(".am-article-lead").html();
-                var bdUrl = window.location.href;
-                var bdPic = $("img:eq(0)").attr("src");
-                window._bd_share_config = {
-                    common : {
-                        bdText : bdText,
-                        bdDesc : bdDesc,
-                        bdUrl : bdUrl,
-                        bdPic : bdPic
-                    },
-                    share : [{
-                        "bdSize" : 24
-                    }]
-                };
-                with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
-            };
-        </script>
     </article>
-
+    <!-- 分享 -->
+    <div class="share">
+        <div class="bdsharebuttonbox" data-tag="share_1">
+            <a class="bds_weixin" data-cmd="weixin"></a>
+            <a class="bds_tsina" data-cmd="tsina"></a>
+            <a class="bds_qzone" data-cmd="qzone" href="#"></a>
+            <a class="bds_count" data-cmd="count"></a>
+        </div>
+    </div>
+    <script>
+        window.onload = function () {
+            var bdText = $(".am-article-title").html();
+            var bdDesc = $(".am-article-lead").html();
+            var bdUrl = window.location.href;
+            var bdPic = $("img:eq(0)").attr("src");
+            window._bd_share_config = {
+                common : {
+                    bdText : bdText,
+                    bdDesc : bdDesc,
+                    bdUrl : bdUrl,
+                    bdPic : bdPic
+                },
+                share : [{
+                    "bdSize" : 24
+                }]
+            };
+            with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+        };
+    </script>
     <div class="comment-edit">
         <p class="comments-block">发表评论</p>
         <form id="my-form">

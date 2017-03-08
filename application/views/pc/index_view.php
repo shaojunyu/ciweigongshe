@@ -55,9 +55,6 @@
         <button type="button" class="am-btn am-btn-default my-load">加载更多</button>
         <button class="am-btn am-btn-default my-loading"><i class="am-icon-spinner am-icon-spin"></i>加载中</button>
     </div>
-    <div class="slider-container">
-        
-    </div>
 </div>
 
 
