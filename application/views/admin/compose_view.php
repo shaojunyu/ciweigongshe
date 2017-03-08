@@ -62,7 +62,7 @@
           <div class="form-group">
             <label for="inputImg" class="control-label" style="display: block;">封面图</label>
             <!-- <input type="text" name="image_url" class="form-control" id="inputImg" placeholder="输入封面图地址" style="display: none;"> -->
-            <figure class="img-wrap" style="width:500px;display: none;"><img src="" alt="封面图" class="btn view-img" id="upload-img"></figure>
+            <figure class="img-wrap" style="width:500px;display: none;"><img src="" alt="封面图" class="img-responsive" alt="Responsive image" id="upload-img"></figure>
             <input id="imgFile" type="file" accept="image/*" name="upfile" value="上传封面图片" style="display: none;" />
             <label for="imgFile" class="btn btn-primary upload-img">选择封面图片</label>
           </div>
