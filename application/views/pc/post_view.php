@@ -20,6 +20,15 @@
         <img class="large-img" src="<?php echo $post['image_url']; ?>">
         <div class="content" itemprop="articleBody"><?php echo $post['content']; ?></div>
     </article>
+    <div class="QrCode-wrap">
+        <div class="app-download-container">
+            <a href="" target="_blank">
+                <p>刺猬公社</p>
+                <figure><img src="" alt="QRCode"></figure>
+                <p>扫描关注</p>
+            </a>
+        </div>
+    </div>
     <!-- 分享 -->
     <div class="share">
         <div class="bdsharebuttonbox" data-tag="share_1">
@@ -74,7 +83,7 @@
         <ul class="am-comments-list am-comments-list-flip">
             <li class="am-comment">
                 <a href="#link-to-user-home">
-                    <img src="images/tx.png" class="am-comment-avatar" width="48" height="48"/>
+                    <img src="<?php echo base_url();?>favicon.ico" class="am-comment-avatar" width="48" height="48"/>
                 </a>
                 <div class="am-comment-main">
                     <header class="am-comment-hd">
@@ -88,7 +97,7 @@
             </li>
             <li class="am-comment">
                 <a href="#link-to-user-home">
-                    <img src="images/tx.png" class="am-comment-avatar" width="48" height="48"/>
+                    <img src="<?php echo base_url();?>favicon.ico" class="am-comment-avatar" width="48" height="48"/>
                 </a>
                 <div class="am-comment-main">
                     <header class="am-comment-hd">
@@ -104,32 +113,27 @@
     </div>
 
     <div class="interested">
-        <p class="interested-block">您可能感兴趣的</p>
-        <div class="news-list clearfix">
-            <div class="news">
-                <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
-                <a class="title" href="javascript:;">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</a>
-            </div>
-            <div class="news">
-                <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
-                <a class="title" href="javascript:;">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</a>
-            </div><div class="news">
-                <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
-                <a class="title" href="javascript:;">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</a>
-            </div>
+        <p class="interested-block">文章推荐</p>
+        <div class="news" id="">
+            <a href="" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
+            <a class="category">category</a>
+            <a class="title" href="">hhh</a>
+            <p class="abstract">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
+            <span class="date">1天前</span>
         </div>
-
-        <div class="news-list clearfix">
-            <div class="news">
-                <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
-                <a class="title" href="javascript:;">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</a>
-            </div><div class="news">
-                <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
-                <a class="title" href="javascript:;">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</a>
-            </div><div class="news">
-                <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
-                <a class="title" href="javascript:;">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</a>
-            </div>
+        <div class="news" id="">
+            <a href="" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
+            <a class="category">category</a>
+            <a class="title" href="">hhh</a>
+            <p class="abstract">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
+            <span class="date">1天前</span>
+        </div>
+        <div class="news" id="">
+            <a href="" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
+            <a class="category">category</a>
+            <a class="title" href="">hhh</a>
+            <p class="abstract">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
+            <span class="date">1天前</span>
         </div>
     </div>
 </div>

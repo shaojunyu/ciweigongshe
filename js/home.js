@@ -3,15 +3,19 @@ $(function() {
     //初始定位
     if ($(window).scrollTop() >= 60) {
         $("nav").css({ "position": "fixed", "top": "0" });
+        $(".QrCode-wrap").css("top", "60px");
     } else if ($(window).scrollTop() < 60) {
         $("nav").css("position", "");
+        $(".QrCode-wrap").css("top", "130px");
     }
     //滚动定位
     $(window).scroll(function() {
         if ($(window).scrollTop() >= 60) {
             $("nav").css({ "position": "fixed", "top": "0", "z-index": "999" });
+            $(".QrCode-wrap").css("top", "60px");
         } else if ($(window).scrollTop() < 60) {
             $("nav").css("position", "");
+            $(".QrCode-wrap").css("top", "130px");
         }
     });
     //添加虚线
@@ -81,7 +85,7 @@ function createNews(data, parent) {
         //生成时间
         var date = document.createElement('h3');
         date.className = 'date';
-        date.innerText = data[i].publish_at;
+        date.innerText = data[i].publish_at.substr(0,10);
         docfrag.appendChild(date);
         //插入parent
         $('<div/>', {

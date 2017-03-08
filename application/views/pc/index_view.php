@@ -56,6 +56,15 @@
         <button class="am-btn am-btn-default my-loading"><i class="am-icon-spinner am-icon-spin"></i>加载中</button>
     </div>
 </div>
+<div class="QrCode-wrap">
+    <div class="app-download-container">
+        <a href="" target="_blank">
+            <p>刺猬公社</p>
+            <figure><img src="" alt="QRCode"></figure>
+            <p>扫描关注</p>
+        </a>
+    </div>
+</div>
 
 
 <div data-am-widget="gotop" class="am-gotop am-gotop-fixed">
