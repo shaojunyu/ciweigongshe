@@ -65,48 +65,50 @@ foreach ($res as $image) {
                             <img src="<?php echo base_url('images/upload/'.$image['file_name']); ?>" class="img-responsive" alt="Responsive image" file_name="<?php echo $image['file_name'];  ?>" image_id="<?php echo $image['id']; ?>">
                             </div>
                             <div class="panel-footer">
-                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#imgLinks">获取链接</button>
-                                <div class="modal fade" id="imgLinks" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
-                                            </div>
-                                            <div class="modal-body">
-                                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                                                <button type="button" class="btn btn-primary">复制</button>
-                                            </div>
-                                        </div>
-                                        <!-- /.modal-content -->
-                                    </div>
-                                    <!-- /.modal-dialog -->
-                                </div>
-                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImg" hash="<?php echo $image['raw_name'] ?>">删除</button>
-                                <div class="modal fade" id="deleteImg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                                <h4 class="modal-title" id="myModalLabel">操作提醒</h4>
-                                            </div>
-                                            <div class="modal-body">确定要删除此图片吗？</div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                                                <button type="button"  class="btn btn-danger delete-img-true">删除</button>
-                                            </div>
-                                        </div>
-                                        <!-- /.modal-content -->
-                                    </div>
-                                    <!-- /.modal-dialog -->
-                                </div>
+                                <button type="button" class="btn btn-primary btn-sm" data-toggle="modal" data-target="#imgLinks">查看图片</button>
+                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImg" hash="<?php echo $image['raw_name'] ?>">删除图片</button>
                             </div>
                         </div>
                     </div>
 <?php } ?>
+                    <div class="modal fade" id="imgLinks" tabindex="-1" role="dialog" aria-labelledby="img-info" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="img-info">图片信息</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p class="img-name"></p>
+                                    <figure><img src="" alt="" class="show-image-link img-responsive" alt="Responsive image"></figure>
+                                    <p class="img-link"></p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                                    <button type="button" class="btn btn-primary">复制图片链接</button>
+                                </div>
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                    </div>
+                    <div class="modal fade" id="deleteImg" tabindex="-1" role="dialog" aria-labelledby="delete_img" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                    <h4 class="modal-title" id="delete_img">操作提醒</h4>
+                                </div>
+                                <div class="modal-body">确定要删除图片<span class="img-name"></span>?</div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                                    <button type="button"  class="btn btn-danger delete-img-true" data-dismiss="modal">删除</button>
+                                </div>
+                            </div>
+                            <!-- /.modal-content -->
+                        </div>
+                        <!-- /.modal-dialog -->
+                    </div>
                 </div>
                 <!-- /.col-lg-12 -->
             </div>
@@ -133,14 +135,28 @@ foreach ($res as $image) {
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script type="text/javascript">
         $(document).ready(function () {
-            $('.delete-img-true').on('click',function () {
-                var imgId = $(this).parents('.col-lg-3').find('img.img-responsive').attr('file_name');
+            //删除图片
+            $('button[data-target="#deleteImg"]').on('click',function () {
+                var imgHash = $(this).attr('hash');
                 var baseUrl = subBefore(window.location.href, 'admin');
-                var postUrl = baseUrl.concat('/delete_image/',imgId);
-                console.log($(this));
-                // $.post(postUrl,function () {
-                //     console.log('dsfsdg');
-                // });
+                var postUrl = baseUrl.concat('/delete_image/',imgHash);
+                $('.delete-img-true').attr('postUrl',postUrl);
+                $('.delete-img-true').attr('hash',imgHash);
+                $('span.img-name').text($(this).parents('.col-lg-3').find('.panel-heading').text());
+            });
+            $('.delete-img-true').on('click',function () {
+                var postUrl = $(this).attr('postUrl');
+                var imgHash = $(this).attr('hash');
+                $.post(postUrl,function () {
+                    $('button[hash="' + imgHash + '"][data-target="#deleteImg"]').parents('.col-lg-3').remove();
+                });
+            });
+            //图片信息
+            $('button[data-target="#imgLinks"]').on('click',function () {
+                var imgLink = $(this).parents('.col-lg-3').find('.img-responsive').attr('src');
+                $('p.img-name').text($(this).parents('.col-lg-3').find('.panel-heading').text());
+                $('.show-image-link').attr('src',imgLink);
+                $('.img-link').text(imgLink);
             });
         });
         function subBefore(sourceStr, paraStr) {

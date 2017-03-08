@@ -60,9 +60,11 @@
             <input type="text" name="author" class="form-control" id="inputAuthor" placeholder="文章作者">
           </div>
           <div class="form-group">
-            <label for="inputImg" class="control-label">封面图地址</label>
-            <input type="text" name="image_url" class="form-control" id="inputImg" placeholder="输入封面图地址">
-            <button type="button" class="btn btn-primary view-img">查看封面图片</button>
+            <label for="inputImg" class="control-label" style="display: block;">封面图</label>
+            <!-- <input type="text" name="image_url" class="form-control" id="inputImg" placeholder="输入封面图地址" style="display: none;"> -->
+            <figure class="img-wrap" style="width:500px;display: none;"><img src="" alt="封面图" class="btn view-img" id="upload-img"></figure>
+            <input id="imgFile" type="file" accept="image/*" name="upfile" value="上传封面图片" style="display: none;" />
+            <label for="imgFile" class="btn btn-primary upload-img">选择封面图片</label>
           </div>
           <label class="control-label">文章摘要</label>
           <textarea class="form-control summary" name="abstract" rows="4"></textarea>
@@ -149,8 +151,40 @@
     <script src="<?php echo base_url();?>dist/js/sb-admin-2.js"></script>
 
     <script src="<?php echo base_url();?>dist/js/compose.js"></script>
-
-
+    <script type="text/javascript">
+        function getImgURL(node) {    
+            var imgURL = "";      
+            try{     
+                var file = null;  
+                if(node.files && node.files[0] ){  
+                    file = node.files[0];   
+                }else if(node.files && node.files.item(0)) {                                  
+                    file = node.files.item(0);     
+                }     
+                //Firefox 因安全性问题已无法直接通过input[file].value 获取完整的文件路径  
+                try{  
+                    //Firefox7.0   
+                    imgURL =  file.getAsDataURL();    
+                    //alert("//Firefox7.0"+imgRUL);                           
+                }catch(e){  
+                    //Firefox8.0以上                                
+                    imgRUL = window.URL.createObjectURL(file);  
+                    //alert("//Firefox8.0以上"+imgRUL);  
+                }  
+             }catch(e){      //这里不知道怎么处理了，如果是遨游的话会报这个异常                   
+                //支持html5的浏览器,比如高版本的firefox、chrome、ie10  
+                if (node.files && node.files[0]) {                            
+                    var reader = new FileReader();   
+                    reader.onload = function (e) {                                        
+                        imgURL = e.target.result;    
+                    };  
+                    reader.readAsDataURL(node.files[0]);   
+                }    
+             }  
+            //imgurl = imgURL;
+            return imgURL;  
+        }
+    </script>
 
 </body>
 

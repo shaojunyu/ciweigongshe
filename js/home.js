@@ -25,7 +25,7 @@ $(function() {
         $(this).css("display", "none");
         $(".my-loading").css("display", "block");
         var lastNewsId = $('.news:last').attr('id').replace(/[^0-9]/g, "");
-        var str = subBefore(window.location.href, 'ciweigongshe');
+        var str = subBefore(window.location.href, '/ciweigongshe');
         var postUrl = str.concat('/post/load_more/', lastNewsId);
         console.log(postUrl);
         $.post(postUrl, function(data) {

@@ -14,7 +14,7 @@ $(function() {
         }
     });
     $('#published').on('click', function(event) {
-        var baseUrl = subBefore(window.location.href, 'ciweigongshe');
+        var baseUrl = subBefore(window.location.href, '/ciweigongshe');
         var postId = getPostId(window.location.href);
         var name = $('#nickname').val();
         var comment = $('textarea.comment').val();
