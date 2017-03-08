@@ -3,15 +3,19 @@ $(function() {
     //初始定位
     if ($(window).scrollTop() >= 60) {
         $("nav").css({ "position": "fixed", "top": "0" });
+        $(".QrCode-wrap").css("top", "60px");
     } else if ($(window).scrollTop() < 60) {
         $("nav").css("position", "");
+        $(".QrCode-wrap").css("top", "130px");
     }
     //滚动定位
     $(window).scroll(function() {
         if ($(window).scrollTop() >= 60) {
             $("nav").css({ "position": "fixed", "top": "0", "z-index": "999" });
+            $(".QrCode-wrap").css("top", "60px");
         } else if ($(window).scrollTop() < 60) {
             $("nav").css("position", "");
+            $(".QrCode-wrap").css("top", "130px");
         }
     });
     createListLine($('.news:nth-child(3n+1)'));
@@ -67,10 +71,10 @@ function createNews(data, parent) {
         imgWrap.href = postUrl;
         docfrag.appendChild(imgWrap);
         //生成category
-        var category = document.createElement('span');
-        category.className = 'category';
-        category.innerText = "category";
-        docfrag.appendChild(category);
+        // var category = document.createElement('span');
+        // category.className = 'category';
+        // category.innerText = "category";
+        // docfrag.appendChild(category);
         //生成titile
         var title = document.createElement('a');
         title.className = 'title';
@@ -85,7 +89,7 @@ function createNews(data, parent) {
         //生成时间
         var date = document.createElement('h3');
         date.className = 'date';
-        date.innerText = data[i].publish_at;
+        date.innerText = data[i].publish_at.substr(0,10);
         docfrag.appendChild(date);
         //插入parent
         $('<div/>', {

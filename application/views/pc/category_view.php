@@ -12,11 +12,11 @@
     <div class="content-container">
         <!-- news -->
         <div class="news-wrapper">
-            <div class="news">
-                <a href="javascript:;" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
+            <div class="news" id="">
+                <a href="" class="img"><img src="http://s.amazeui.org/media/i/demos/bing-1.jpg"></a>
                 <a class="category">category</a>
-                <a class="title" href="javascript:;">哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈</a>
-                <p class="brief">哈哈哈哈哈哈啊哈哈哈哈哈哈哈哈哈哈哈哈哈哈哈qdbajkefbaeksfbakwdhakefefjasdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefjasdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefjasdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefjasdjskfenekasjfweas</p>
+                <a class="title" href="">hhh</a>
+                <p class="abstract">asdjskfenekasjfweasjfubekafbhakfcbakefuwqdbajkefbaeksfbakwdhakefefj</p>
                 <span class="date">1天前</span>
             </div>
             <div class="news">
@@ -59,7 +59,15 @@
         <button class="am-btn am-btn-default my-loading"><i class="am-icon-spinner am-icon-spin"></i>加载中</button>
     </div>
 </div>
-
+<div class="QrCode-wrap">
+    <div class="app-download-container">
+        <a href="" target="_blank">
+            <p>刺猬公社</p>
+            <figure><img src="" alt="QRCode"></figure>
+            <p>扫描关注</p>
+        </a>
+    </div>
+</div>
 
 <div data-am-widget="gotop" class="am-gotop am-gotop-fixed">
     <a href="#top" title="回到顶部">
