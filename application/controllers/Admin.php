@@ -194,8 +194,9 @@ class Admin extends CI_controller
         $this->load->library('upload', $config);
         $this->upload->do_upload('upfile');
         $data = array('upload_data' => $this->upload->data())['upload_data'];
-		var_dump($data);
-		exit();
+		// var_dump($data);
+		// $this->db->insert();
+		// exit();
 		try {
 			// var_dump($this->input->post());
 			// exit();
@@ -205,7 +206,7 @@ class Admin extends CI_controller
 				'abstract'=>$this->input->post('abstract'),
 				'content'=>$this->input->post('editorValue'),
 				'type'=>$this->input->post('type') == '' ? 'post':'slide',
-				// 'image_url'=>$this->input->post('image_url'),
+				'image_url'=>base_url('images/upload/'.$data['file_name']),
 				'status'=>'draft'
 				]);
 
@@ -278,7 +279,7 @@ class Admin extends CI_controller
 		$this->db->update('post',[
 			'status'=>'closed'
 		]);
-		header('Location:'.base_url('admin/post_list/closed'));
+		header('Location:'.base_url('admin/post_list/draft'));
 	}
 
 
