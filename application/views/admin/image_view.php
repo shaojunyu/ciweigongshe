@@ -85,7 +85,7 @@ foreach ($res as $image) {
                                     </div>
                                     <!-- /.modal-dialog -->
                                 </div>
-                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImg">删除</button>
+                                <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#deleteImg" id="<?php echo $image['raw_name'] ?>">删除</button>
                                 <div class="modal fade" id="deleteImg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
@@ -96,7 +96,7 @@ foreach ($res as $image) {
                                             <div class="modal-body">确定要删除此图片吗？</div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
-                                                <button type="button" class="btn btn-danger delete-img-true">删除</button>
+                                                <button type="button"  class="btn btn-danger delete-img-true">删除</button>
                                             </div>
                                         </div>
                                         <!-- /.modal-content -->
