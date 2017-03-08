@@ -325,7 +325,7 @@ class Admin extends CI_controller
 
 	public function delete_image($file_name)
 	{
-		$this->where('file_name',$file_name)->delete('image');
+		$this->db->where('file_name',$file_name)->delete('image');
 		// $this->db->delete('image','')
 		try {
 			unlink('./images/upload/'.$file_name);
