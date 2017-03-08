@@ -14,7 +14,7 @@
         <h1><?php echo $post['title']; ?></h1>
         <h3 class="date"><?php echo $post['publish_at']; ?></h3>
         <p class="abstract"><?php echo $post['abstract']; ?></p>
-        <img src="http://s.amazeui.org/media/i/demos/bing-1.jpg">
+        <img class="large-img" src="<?php echo $post['image_url']; ?>">
         <div class="content" itemprop="articleBody"><?php echo $post['content']; ?></div>
         <!-- 分享 -->
         <div class="share">

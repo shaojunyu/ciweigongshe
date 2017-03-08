@@ -48,10 +48,9 @@ nav {
 	background-color: #333;
 }
 nav ul {
-	width: 80%;
 	margin: 0 auto;
 	padding: 0;
-    max-width:1200px;
+    width:960px;
 }
 nav li {
 	float: left;
@@ -78,8 +77,7 @@ nav a:visited, nav a:focus {
 /* container */
 .container {
 	padding-top: 20px;
-	width: 80%;
-	max-width: 1200px;
+	width: 960px;
 	margin: 0 auto;
 	background-color: rgb(242,245,248);
 }
@@ -98,6 +96,13 @@ article .abstract {
 article p {
 	word-wrap: break-word;
 	word-break: break-all;
+}
+article section {
+	word-wrap: break-word;
+	word-break: break-all;
+}
+article .large-img {
+	width:100%;
 }
 .share {
 	border-top: 1px solid #cec6b9;

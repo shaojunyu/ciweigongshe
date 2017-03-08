@@ -35,6 +35,15 @@ $(function() {
             }
         } else if (!name) {
             alert('请输入昵称或者勾选匿名用户！');
+        } else {
+            $.post(postUrl, {
+                'name':name,
+                'post_id':postId,
+                'content':comment
+            },function() {
+                clearForm($('#my-form'));
+                alert("评论成功，后台管理员正在审核，请等待！");
+            });
         }
         forbiddenEvent(event);
     });
