@@ -5,7 +5,6 @@ $(function () {
       $(this).hide();
       $(".my-loading").css("display", "block");
       $(".my-loading").show();
-
       // ajax获取新的文章
       var lastPostId = $(".am-list li").last().attr("data-post-id");
       $.ajax({

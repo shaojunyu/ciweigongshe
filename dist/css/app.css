@@ -1,6 +1,10 @@
 /* Write your styles */
+html{
+	font-size: 62.5%;
+}
 body {
 	background-color: #ccc;
+	font-family:"Microsoft YaHei","微软雅黑","MicrosoftJhengHei","华文细黑","STHeiti","MingLiu";
 }
 header.am-header {
 	height: 5rem;
@@ -13,6 +17,28 @@ header.am-header {
 	height: 4rem;
 	line-height: 4rem;
 	top: -4.5rem;
+}
+.am-header{
+	height: auto;
+}
+.am-menu-nav {
+	padding: 0;
+	margin: 0;
+	font-size: 0;
+	line-height: 30px;
+}
+.am-menu-nav .nav-list{
+	width:14.28%;
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+}
+.am-menu-nav a{
+	padding: 0;
+	font-size: 1.4rem;
+	color: #fff;
+	font-weight: normal;
+	line-height: 30px;
 }
 .wrapper {
 	width: 100%;
@@ -27,7 +53,7 @@ header.am-header {
 }
 .my-date {
 	height: 1.5rem;
-	font-size: 1.1rem;
+	font-size: 1.2rem;
 	color: #ac4c66;
 }
 .my-title {
@@ -35,13 +61,23 @@ header.am-header {
 }
 .my-news-title {
 	color: #9e2f50;
-	font-size: 1.42rem;
+	font-size: 1.4rem;
 	margin-right: 5px;
 	display: inline!important;
 }
 .my-single-item {
 	margin-bottom: -1rem;
 	border-top: 1px solid #dedede;
+}
+.am-viewport .am-slider-desc{
+	font-weight: normal;
+	background-color: rgba(0,0,0,.5);
+}
+.am-list-news-bd h3.am-list-item-hd{
+	font-weight: 600;
+}
+.am-list-item-text{
+	font-weight: normal;
 }
 .am-list-news-bd .am-list>li {
 	background-color: rgb(242,245,248);

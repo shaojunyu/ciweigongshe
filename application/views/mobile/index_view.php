@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>刺猬公社——内容产业第一报道媒体</title>
+  <title>刺猬公社</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,11 +16,33 @@
 <div class="wrapper">
 
 <!-- Header -->
-<header data-am-widget="header" class="am-header am-header-default">
-  
-</header>
+<nav data-am-widget="header" class="am-header am-header-default">
+  <ul class="am-menu-nav">
+      <li class="nav-list">
+        <a href="<?php echo base_url('post/category/1'); ?>">栏目</a>
+      </li>
+      <li class="nav-list">
+        <a href="<?php echo base_url(''); ?>">首页</a>
+      </li>
+      <li class="nav-list">
+        <a href="<?php echo base_url('post/category/3'); ?>">深度</a>
+      </li>
+      <li class="nav-list">
+        <a href="<?php echo base_url('post/category/4'); ?>" >人物</a>
+      </li>
+      <li class="nav-list">
+        <a href="<?php echo base_url('post/category/5'); ?>">推荐</a>
+      </li>
+      <li class="nav-list">
+        <a href="<?php echo base_url('post/category/6'); ?>">招聘</a>
+      </li>
+      <li class="nav-list">
+        <a href="<?php echo base_url('post/category/6'); ?>">等等</a>
+      </li>
+  </ul>
+</nav>
 
-<?php $this->load->view('mobile/menu'); ?>
+
 
 <!-- Slider -->
 <div data-am-widget="slider" class="am-slider am-slider-default" data-am-slider='{}' >
@@ -28,7 +50,7 @@
   <?php
   $this->db->order_by('publish_at','DESC');
   $this->db->where('type','slide');
-  $this->db->limit(6);
+  $this->db->limit(3);
   $this->db->select('post_id,title,image_url');
   $res = $this->db->get('post')->result_array();
   foreach ($res as $post) {
@@ -70,7 +92,7 @@
           <div class="am-list-item-text"><?php echo $post['abstract']; ?> </div>
         </div>
         <div class="my-clear"></div>
-        <span class="my-date"><?php echo $post['publish_at']; ?></span>
+        <span class="my-date" datetime="<?php echo $post['publish_at']; ?>"><?php echo substr($post['publish_at'],0 ,10); ?></span>
         </a>
       </li>
       <?php } ?>
