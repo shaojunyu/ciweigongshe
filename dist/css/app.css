@@ -76,8 +76,12 @@ header.am-header {
 .am-list-news-bd h3.am-list-item-hd{
 	font-weight: 600;
 }
-.am-list-item-text{
+.am-list-news-default .am-list .am-list-item-desced .am-list-item-text{
 	font-weight: normal;
+	line-height: 2rem;
+	min-height: 8rem;
+	max-height: 8rem;
+	-webkit-line-clamp:4;
 }
 .am-list-news-bd .am-list>li {
 	background-color: rgb(242,245,248);

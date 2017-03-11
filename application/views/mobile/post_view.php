@@ -16,11 +16,31 @@
 <body>
 <div class="wrapper">
 <!-- Header -->
-<header data-am-widget="header" class="am-header am-header-default">
-
-</header>
-
-<?php $this->load->view('mobile/menu'); ?>
+<nav data-am-widget="header" class="am-header am-header-default">
+  <ul class="am-menu-nav">
+      <li class="nav-list">
+        <a href="<?php echo base_url('post/category/1'); ?>">栏目</a>
+      </li>
+      <li class="nav-list">
+        <a href="<?php echo base_url(''); ?>">首页</a>
+      </li>
+      <li class="nav-list">
+        <a href="<?php echo base_url('post/category/3'); ?>">深度</a>
+      </li>
+      <li class="nav-list">
+        <a href="<?php echo base_url('post/category/4'); ?>" >人物</a>
+      </li>
+      <li class="nav-list">
+        <a href="<?php echo base_url('post/category/5'); ?>">推荐</a>
+      </li>
+      <li class="nav-list">
+        <a href="<?php echo base_url('post/category/6'); ?>">招聘</a>
+      </li>
+      <li class="nav-list">
+        <a href="<?php echo base_url('post/category/6'); ?>">等等</a>
+      </li>
+  </ul>
+</nav>
 
 
 <ol class="am-breadcrumb am-breadcrumb-slash my-breadcrumb-style">
@@ -41,7 +61,7 @@
   </div>
 
   <div class="am-article-bd">
-    <p class="am-article-lead"><?php echo $post['abstract']; ?></p>
+    <p class=""><?php echo $post['abstract']; ?></p>
     <br/>
     <div class="author-info">by <?php echo $post['author']; ?></div>
     <br/>
