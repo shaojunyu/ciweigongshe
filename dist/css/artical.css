@@ -49,6 +49,11 @@ header.am-header {
 .am-article-title{
 	font-size: 2.1rem;
 }
+.am-article-bd{
+	width: 100%;
+    display: inline-block;
+    text-align: justify;
+}
 .my-clear {
 	width: 0;
 	height: 0;
