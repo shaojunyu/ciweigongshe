@@ -71,7 +71,18 @@
 
             <div><label class="control-label" style="padding: 7px 10px 0 0; vertical-align: middle;">文章分类</label></div>
            <div class="category-box">
+<?php
+$res = $this->db->get('category')->result_array();
+foreach ($res as $c) {
+?>
             <label class="checkbox-inline">
+              <input type="checkbox" name="category[]" value="<?php echo $c['category_id']; ?>"> <?php echo $c['name']; ?>
+            </label>
+
+<?php 
+}
+?>
+<!--             <label class="checkbox-inline">
               <input type="checkbox" name="category[]" value="1"> FEED流
             </label>
             <label class="checkbox-inline">
@@ -88,7 +99,7 @@
             </label>
             <label class="checkbox-inline">
               <input type="checkbox" name="category[]" value="6"> 会议/培训
-            </label>
+            </label> -->
            </div>
           <div>  
             <div><label class="control-label" style="padding: 7px 10px 0 0; vertical-align: middle;">展示选择</label></div>
