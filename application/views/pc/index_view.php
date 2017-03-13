@@ -16,7 +16,7 @@
                 <?php
                 $this->db->order_by('publish_at','DESC');
                 $this->db->where('type','slide');
-                $this->db->limit(6);
+                $this->db->limit(3);
                 $this->db->select('post_id,title,image_url');
                 $res = $this->db->get('post')->result_array();
                 foreach ($res as $post) {
