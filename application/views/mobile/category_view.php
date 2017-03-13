@@ -15,12 +15,6 @@
 </head>
 <body>
 <div class="wrapper">
-
-<!-- Header -->
-<header data-am-widget="header" class="am-header am-header-default">
-  
-</header>
-
 <?php $this->load->view('mobile/menu'); ?>
   
 <ol class="am-breadcrumb am-breadcrumb-slash my-breadcrumb-style">
