@@ -90,7 +90,7 @@
 </div>
 
 <?php
-if (count($res) > 10) {
+if (count($res) >= 10) {
 ?>
   <button type="button" class="am-btn am-btn-default my-load">加载更多</button>
   <button class="am-btn am-btn-default my-loading">

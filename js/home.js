@@ -1,4 +1,4 @@
-var loadMorePostNumber = 6;
+var loadMorePostNumber = 12;
 $(function() {
     //初始定位
     if ($(window).scrollTop() >= 60) {
@@ -30,9 +30,8 @@ $(function() {
         $.post(postUrl, function(data) {
             if (data.length > 0) {
                 $(".my-loading").css("display", "none");
-                if (data.length == loadMorePostNumber) $(".my-load").css("display", "block");
+                if (data.length >= loadMorePostNumber) $(".my-load").css("display", "block");
                 createNews(data, $('.news-wrapper'));
-                
             } else {
                 $(".my-loading").css("display", "none");
             }
@@ -49,10 +48,8 @@ function subBefore(sourceStr, paraStr) {
 function createNews(data, parent) {
     for (var i = 0; i < data.length; i++) {
         var docfrag = document.createDocumentFragment();
-        var baseUrl = subBefore(window.location.href, '/ciweigongshe');
-        var postUrl = baseUrl.concat('/post/show/', data[i].post_id);
+        var postUrl = './post/show/'.concat(data[i].post_id);
         if(($('.news').length % 3) === 0){
-            console.log($('.news').length);
             $('<div/>', {
                 class: 'news-list-line'
             }).appendTo(parent);
@@ -84,7 +81,11 @@ function createNews(data, parent) {
         //生成时间
         var date = document.createElement('h3');
         date.className = 'date';
-        date.innerText = data[i].publish_at.substr(0,10);
+        console.log(data[i].publish_at);
+        if(data[i].publish_at) {
+            date.innerText = data[i].publish_at.substr(0,10);
+            date.setAttribute('datetime',data[i].publish_at);
+        }
         docfrag.appendChild(date);
         //插入parent
         $('<div/>', {
