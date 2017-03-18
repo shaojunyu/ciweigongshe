@@ -60,7 +60,7 @@
     <div class="app-download-container">
         <a href="" target="_blank">
             <p>刺猬公社</p>
-            <figure><img src="" alt="QRCode"></figure>
+            <figure><img src="http://www.ciweigongshe.net/705276324787205976.jpg" alt="QRCode"></figure>
             <p>扫描关注</p>
         </a>
     </div>
