@@ -41,7 +41,11 @@
     <br/>
     <div class="author-info">by <?php echo $post['author']; ?></div>
     <br/>
-    <?php echo $post['content']; ?>
+    <?php
+      $content = preg_replace('/white-space: nowrap;/', '', $post['content']);
+      $content = preg_replace('/<p><span style=""><br><\/span><\/p>/', '', $content);
+      echo $content;
+     ?>
   </div>
 </article>
 

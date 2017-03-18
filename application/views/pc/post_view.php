@@ -18,7 +18,14 @@
         </div>
         <p class="abstract"><?php echo $post['abstract']; ?></p>
         <img class="large-img" src="<?php echo $post['image_url']; ?>">
-        <div class="content" itemprop="articleBody"><?php echo $post['content']; ?></div>
+        <div class="content" itemprop="articleBody">
+        <?php //
+            // echo $post['content']; 
+            $content = preg_replace('/white-space: nowrap;/', '', $post['content']);
+            $content = preg_replace('/<p><span style=""><br><\/span><\/p>/', '', $content);
+            echo $content;
+        ?>
+        </div>
     </article>
     <div class="QrCode-wrap">
         <div class="app-download-container">
