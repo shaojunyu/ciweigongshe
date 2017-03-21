@@ -39,8 +39,8 @@
     <img src="<?php echo $post['image_url']; ?>">
   </div>
   <div class="am-article-bd">
-    <p class="" style="font-style: italic; color: grey;"><?php echo $post['abstract']; ?></p>
-    <div class="author-info">作者| <?php echo $post['author']; ?></div>
+    <p class="" style="font-style: italic; color: grey; margin-top: 15px;"><?php echo $post['abstract']; ?></p>
+    <div class="author-info">作者 | <?php echo $post['author']; ?></div>
     <?php
       $content = preg_replace('/white-space: nowrap;/', '', $post['content']);
       $content = preg_replace('/<p><span style=""><br><\/span><\/p>/', '', $content);
