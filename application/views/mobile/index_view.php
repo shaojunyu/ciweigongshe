@@ -64,7 +64,7 @@
             <img src="<?php echo $post['image_url']; ?>" alt=""/>
         </div>
         <div class="am-u-sm-7  am-list-main">
-          <div class="am-list-item-text"><?php echo $post['abstract']; ?> </div>
+          <div class="am-list-item-text" style="margin-top: 0px;"><?php echo $post['abstract']; ?> </div>
         </div>
         <div class="my-clear"></div>
         <span class="my-date" datetime="<?php echo $post['publish_at']; ?>"><?php echo substr($post['publish_at'],0 ,10); ?></span>

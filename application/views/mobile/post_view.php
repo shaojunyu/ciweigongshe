@@ -33,14 +33,14 @@
 <!-- artical -->
 <article class="am-article my-artical-style">
   <div class="am-article-hd">
-    <h1 class="am-article-title"><?php echo $post['title']; ?></h1>
+    <h1 class="am-article-title"><b><?php echo $post['title']; ?></b></h1>
   </div>
-
+  <div>
+    <img src="<?php echo $post['image_url']; ?>">
+  </div>
   <div class="am-article-bd">
-    <p class=""><?php echo $post['abstract']; ?></p>
-    <br/>
-    <div class="author-info">by <?php echo $post['author']; ?></div>
-    <br/>
+    <p class="" style="font-style: italic; color: grey;"><?php echo $post['abstract']; ?></p>
+    <div class="author-info">作者| <?php echo $post['author']; ?></div>
     <?php
       $content = preg_replace('/white-space: nowrap;/', '', $post['content']);
       $content = preg_replace('/<p><span style=""><br><\/span><\/p>/', '', $content);

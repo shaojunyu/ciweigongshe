@@ -21,7 +21,7 @@
     ?>
             <div class="news" id="post<?php echo $post['post_id']; ?>">
                 <a href="<?php echo base_url('post/show/'.$post['post_id']); ?>" class="img"><img src="<?php echo $post['image_url']; ?>"></a>
-                <a class="title" href="">hhh</a>
+                <a class="title" href=""><?php echo $post['title']; ?></a>
                 <p class="abstract"><?php echo $post['abstract']; ?></p>
                 <span class="date"><?php echo substr($post['publish_at'],0,10); ?></span>
             </div>
