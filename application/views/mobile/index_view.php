@@ -59,7 +59,7 @@
      <!--缩略图在标题下方居左-->
       <li class="am-g am-list-item-desced am-list-item-thumbed am-list-item-thumb-bottom-left" data-post-id="<?php echo $post['post_id'];?>">
         <a href="<?php echo base_url('/post/show/'.$post['post_id']); ?>">
-        <h3 class="am-list-item-hd"><?php echo $post['title']; ?></h3>
+        <h3 class="am-list-item-hd" style="font-size: 105%"><?php echo $post['title']; ?></h3>
         <div class="am-u-sm-5 am-list-thumb">
             <img src="<?php echo $post['image_url']; ?>" alt=""/>
         </div>

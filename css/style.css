@@ -189,8 +189,10 @@ nav a:visited, nav a:focus {
 	height: 420px;
 }
 .am-slider-desc{
-    font-size: 23px;
+    font-size: 1.75rem;
+    line-height: 2.5rem;
     font-weight: normal;
+    margin: auto;
 }
 .news-wrapper {
     margin-top:40px;
@@ -241,9 +243,9 @@ nav a:visited, nav a:focus {
 }
 .title {
 	line-height: 20px;
-    height: 40px;
+    height: 42px;
 	color: #333;
-	font-size: 16px;
+	font-size: 18px;
 	font-weight: 600;
     overflow: hidden;
     word-wrap: break-word;

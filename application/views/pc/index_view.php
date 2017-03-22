@@ -24,7 +24,7 @@
                     <li>
                         <a href="<?php echo base_url('post/show/'.$post['post_id']); ?>">
                             <img src="<?php echo $post['image_url']; ?>">
-                            <div class="am-slider-desc"><?php echo $post['title']; ?></div>
+                            <div class="am-slider-desc" style="padding: 20px;"><?php echo $post['title']; ?></div>
                         </a>
                     </li>
 

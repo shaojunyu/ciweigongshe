@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>刺猬公社——内容产业第一报道媒体</title>
+  <title><?php echo $post['title']; ?>-刺猬公社</title>
   <meta name="description" content="">
   <meta name="keywords" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -40,6 +40,7 @@
   </div>
   <div class="am-article-bd">
     <p class="" style="font-style: italic; color: grey; margin-top: 15px;"><?php echo $post['abstract']; ?></p>
+    <br>
     <div class="author-info">作者 | <?php echo $post['author']; ?></div>
     <?php
       $content = preg_replace('/white-space: nowrap;/', '', $post['content']);

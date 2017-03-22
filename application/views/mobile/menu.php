@@ -1,5 +1,5 @@
 <nav data-am-widget="header" class="am-header am-header-default">
-  <ul class="am-menu-nav">
+  <ul class="am-menu-nav " >
       <li class="nav-list">
         <a href="<?php echo base_url(''); ?>">首页</a>
       </li>

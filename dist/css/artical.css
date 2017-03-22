@@ -180,6 +180,7 @@ fieldset {
 }
 
 article img {
+	display: ;
 	width: 100%;
 	min-height: 16rem;
 	max-height: 18rem;
