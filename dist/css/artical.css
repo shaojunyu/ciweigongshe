@@ -180,15 +180,16 @@ fieldset {
 }
 
 article img {
-	display: ;
+	/*display: ;*/
 	width: 100%;
-	min-height: 16rem;
-	max-height: 18rem;
+	height: auto;
+	/*min-height: 16rem;*/
+	/*max-height: 18rem;*/
 }
 @media screen and (max-width: 2000px) {
 	article img {
-		min-height: 26rem;
-		max-height: 28rem;
+		/*min-height: 26rem;*/
+		/*max-height: 28rem;*/
 	}
 	.am-gallery-default .am-gallery-item img {
 		height: 12rem;
@@ -205,8 +206,8 @@ article img {
 }
 @media screen and (max-width: 768px) {
 	article img {
-		min-height: 26rem;
-		max-height: 28rem;
+		/*min-height: 26rem;*/
+		/*max-height: 28rem;*/
 	}
 	.am-gallery-default .am-gallery-item img {
 		height: 12rem;
@@ -223,8 +224,8 @@ article img {
 }
 @media screen and (max-width: 640px) {
 	article img {
-		min-height: 23rem;
-		max-height: 25rem;
+		/*min-height: 23rem;*/
+		/*max-height: 25rem;*/
 	}
 	.am-gallery-default .am-gallery-item img {
 		height: 11.5rem;
@@ -241,8 +242,8 @@ article img {
 }
 @media screen and (max-width: 435px) {
 	article img {
-		min-height: 21rem;
-		max-height: 23rem;
+		/*min-height: 21rem;*/
+		/*max-height: 23rem;*/
 	}
 	.am-gallery-default .am-gallery-item img {
 		height: 10.5rem;
@@ -259,8 +260,8 @@ article img {
 }
 @media screen and (max-width: 375px) {
 	article img {
-		min-height: 18rem;
-		max-height: 20rem;
+		/*min-height: 18rem;*/
+		/*max-height: 20rem;*/
 	}
 	.am-gallery-default .am-gallery-item img {
 		height: 8.5rem;

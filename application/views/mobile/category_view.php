@@ -11,7 +11,7 @@
   <meta name="category_id" content= "<?php echo $category_id; ?>">
   <meta http-equiv="Cache-Control" content="no-siteapp" />
   <link rel="stylesheet" href="<?php echo base_url();?>/dist/css/amazeui.min.css">
-  <link rel="stylesheet" href="<?php echo base_url();?>/dist/css/app.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>/dist/css/app.css?da">
 </head>
 <body>
 <div class="wrapper">

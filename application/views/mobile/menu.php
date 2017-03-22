@@ -11,5 +11,8 @@ foreach ($res as $c) {
         <a href="<?php echo base_url('post/category/'.$c['category_id']); ?>"><?php echo $c['name'] ?></a>
       </li>
 <?php } ?>
+      <li class="nav-list">
+        <a href="<?php echo base_url('search'); ?>">搜索</a>
+      </li>
   </ul>
 </nav>

@@ -10,7 +10,7 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="Cache-Control" content="no-siteapp" />
   <link rel="stylesheet" href="<?php echo base_url();?>/dist/css/amazeui.min.css">
-  <link rel="stylesheet" href="<?php echo base_url();?>/dist/css/app.css">
+  <link rel="stylesheet" href="<?php echo base_url();?>/dist/css/app.css?da">
 </head>
 <body>
 <div class="wrapper">
