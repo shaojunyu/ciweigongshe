@@ -1,3 +1,12 @@
-.phpintel/
-.idea/
-application/controllers/read_count_per_day.csv
+/node_modules
+/public/hot
+/public/storage
+/storage/*.key
+/vendor
+/.idea
+/.vagrant
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
+.env
