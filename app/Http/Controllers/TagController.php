@@ -74,5 +74,6 @@ class TagController extends Controller
     public function deleteTag($object_id)
     {
         Tag::where('object_id',$object_id)->delete();
+        return JsonResponse::create(['code'=>0]);
     }
 }
