@@ -17,7 +17,8 @@ class TagController extends Controller
 
     public function getTagList()
     {
-        return Tag::all();
+        $tags = \App\Tag::all();
+        return view('admin/tags', ['tags' => $tags]);
     }
 
     public function addTag(Request $request)
