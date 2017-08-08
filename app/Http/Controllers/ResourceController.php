@@ -173,6 +173,10 @@ class ResourceController extends Controller
         }
 //        return $request->input('key');
     }
+
+    public function renderUploadPage() {
+        return view('admin/upload');
+    }
 }
 
 class OssObject{

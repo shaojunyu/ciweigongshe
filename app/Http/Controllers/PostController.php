@@ -34,12 +34,14 @@ class PostController extends Controller
             ->select('post.*', 'author.name as author',(DB::raw("COUNT( DISTINCT post_favorite.id) AS favorite")))
             ->groupBy('post.object_id')
             ->get();
-        return JsonResponse::create([
-            'pageSize'=>$pageSize,
-            'currentPage'=>$currentPage,
-            'totalPage'=>ceil(Post::count()/$pageSize),
-            'data'=>$res
-        ]);
+
+        return view('admin/posts', ['posts' => $res]);
+//        return JsonResponse::create([
+//            'pageSize'=>$pageSize,
+//            'currentPage'=>$currentPage,
+//            'totalPage'=>ceil(Post::count()/$pageSize),
+//            'data'=>$res
+//        ]);
     }
 
     public function addPost(Request $request)

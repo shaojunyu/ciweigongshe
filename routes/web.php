@@ -28,11 +28,14 @@ Route::get('/token',function (){
 });
 
 //Author
+Route::get('admin/authorList', 'AuthorController@authorList');
 Route::get('admin/getAuthor/{objectId}','AuthorController@getAuthor');
 Route::get('admin/getAuthorList','AuthorController@getAuthorList');
 Route::get('admin/deleteAuthor/{objectId}','AuthorController@deleteAuthor');
-Route::post('admin/addAuthor','AuthorController@addAuthor');
-Route::post('admin/updateAuthor','AuthorController@updateAuthor');
+Route::get('admin/addAuthor','AuthorController@getAddAuthor');
+Route::post('admin/addAuthor','AuthorController@postAddAuthor');
+Route::get('admin/updateAuthor/{objectId}','AuthorController@getUpdateAuthor');
+Route::post('admin/updateAuthor','AuthorController@postUpdateAuthor');
 //
 
 //Tag
@@ -68,6 +71,7 @@ Route::post('admin/rejectComment/{object_id}');
 
 //
 //Resource
+Route::get('admin/upload', 'ResourceController@renderUploadPage');
 Route::get('admin/getImageList','ResourceController@getImageList');
 Route::get('admin/getVideoList','ResourceController@getVideoList');
 Route::get('admin/deleteResource','ResourceController@deleteResource');

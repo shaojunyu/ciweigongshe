@@ -10,7 +10,11 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- switchery CSS -->
-    <link href="{{ asset('fe/vendors/bower_components/switchery/dist/switchery.min.css') }}" rel="stylesheet" type="text/css">
+    <link href="{{ asset('fe/vendors/bower_components/jquery-toast-plugin/dist/jquery.toast.min.css') }}"
+          rel="stylesheet" type="text/css">
+
+    <link href="{{ asset('fe/vendors/bower_components/switchery/dist/switchery.min.css') }}" rel="stylesheet"
+          type="text/css">
 
     <!-- Custom CSS -->
     <link href="{{ asset('fe/dist/css/style.css') }}" rel="stylesheet" type="text/css">
@@ -42,7 +46,7 @@
                     <a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="fe/dist/img/user1.png"
                                                                                          alt="user_auth"
                                                                                          class="user-auth-img img-circle"><span
-                            class="user-online-status"></span></a>
+                                class="user-online-status"></span></a>
                     <ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="flipInX"
                         data-dropdown-out="flipOutX">
                         <li>
@@ -80,11 +84,8 @@
 
     <!-- Main Content -->
     <div class="page-wrapper">
-        <div class="container-fluid">
-           @yield('content')
-        </div>
-
-        <!-- Footer -->
+    @yield('content')
+    <!-- Footer -->
         <footer class="footer container-fluid pl-30 pr-30">
             <div class="row">
                 <div class="col-sm-12">
@@ -120,16 +121,15 @@
 </div>
 
 
-
-
 <!-- JavaScript -->
 
 <!-- jQuery -->
 <script src="{{ asset('fe/vendors/bower_components/jquery/dist/jquery.min.js') }}"></script>
 <script src="{{ asset('fe/vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
 <script src="{{ asset('fe/dist/js/dropdown-bootstrap-extended.js') }}"></script>
-<script src="{{ asset('fe/vendors/bower_components/owl.carousel/dist/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('fe/vendors/bower_components/switchery/dist/switchery.min.js') }}"></script>
+<script src="{{ asset('fe/vendors/bower_components/jquery-toast-plugin/dist/jquery.toast.min.js') }}"></script>
+{{--<script src="{{ asset('fe/vendors/bower_components/owl.carousel/dist/owl.carousel.min.js') }}"></script>--}}
+{{--<script src="{{ asset('fe/vendors/bower_components/switchery/dist/switchery.min.js') }}"></script>--}}
 <script src="{{ asset('fe/dist/js/init.js') }}"></script>
 <script src="{{ asset('fe/dist/js/custom.js') }}"></script>
 
