@@ -8,7 +8,7 @@
             </div>
             <!-- 面包屑导航 -->
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                <a href="/admin/addAuthor">
+                <a href="?view=addAuthor">
                     <button class="btn btn-primary btn-rounded btn-icon left-icon pull-right">
                         <i class="fa fa-plus"></i>
                         <span>添加作者</span>
@@ -40,7 +40,7 @@
                                 </div>
                             </div>
                             <div class="pull-right">
-                                <a class="pull-left inline-block mr-15" href="/admin/updateAuthor/{{$author->object_id}}">
+                                <a class="pull-left inline-block mr-15" href="?view=updateAuthor&author_id={{$author->object_id}}">
                                     <i class="zmdi zmdi-edit txt-light"></i>
                                 </a>
                                 <a class="pull-left inline-block mr-15 cw_delete_btn"

@@ -15,9 +15,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin', function () {
-    return View('admin.index');
-})->middleware('auth')->name('admin');
+Route::get('/admin','AdminController@index')->name('admin');
+//    return View('admin.index');
 
 Auth::routes();
 

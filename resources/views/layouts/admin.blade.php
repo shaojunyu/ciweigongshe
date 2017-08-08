@@ -32,7 +32,7 @@
         <div class="mobile-only-brand pull-left">
             <div class="nav-header pull-left">
                 <div class="logo-wrap">
-                    <a href="index.html">
+                    <a href="admin">
                         <img class="brand-img" src="fe/dist/img/logo.png" alt="brand"/>
                         <span class="brand-text">刺猬公社后台</span>
                     </a>
@@ -71,7 +71,7 @@
                 <i class="zmdi zmdi-more"></i>
             </li>
             <li>
-                <a href="documentation.html">
+                <a href="?view=author">
                     <div class="pull-left">
                         <i class="zmdi zmdi-book mr-20"></i>
                         <span class="right-nav-text">作者管理</span>
