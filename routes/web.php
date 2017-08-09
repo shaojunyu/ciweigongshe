@@ -16,7 +16,6 @@ Route::get('/', function () {
 });
 
 Route::get('/admin','AdminController@index')->name('admin');
-//    return View('admin.index');
 
 Auth::routes();
 
@@ -78,8 +77,14 @@ Route::get('admin/getUploadToken/{type?}','ResourceController@getUploadToken');
 //Route::post('admin/uploadAck','ResourceController@uploadAck');
 
 
+//User
+Route::get('wechatLogin','UserController@wechatLogin');
+
 //public access
 Route::get('/post/{object_id}','PublicController@showPost');
 Route::get('/postList','PublicController@postList');
 Route::get('/newsList','PublicController@newsList');
 Route::get('/search','PublicController@search');
+Route::post('/comment','PublicController@comment');
+Route::get('/slide','PublicController@slide');
+Route::get('/hotPost','PublicController@hotPost');
