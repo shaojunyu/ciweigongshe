@@ -76,9 +76,12 @@ Route::get('admin/deleteResource','ResourceController@deleteResource');
 Route::get('admin/getUploadToken/{type?}','ResourceController@getUploadToken');
 //Route::post('admin/uploadAck','ResourceController@uploadAck');
 
-
 //User
 Route::get('wechatLogin','UserController@wechatLogin');
+Route::get('myself','UserController@myself');
+Route::get('getUserInfo','UserController@getUserInfo');
+Route::post('favoriteAuthor','UserController@favoriteAuthor');
+Route::post('favoritePost','UserController@favoritePost');
 
 //public access
 Route::get('/post/{object_id}','PublicController@showPost');
