@@ -81,7 +81,10 @@ Route::get('wechatLogin','UserController@wechatLogin');
 Route::get('myself','UserController@myself');
 Route::get('getUserInfo','UserController@getUserInfo');
 Route::post('favoriteAuthor','UserController@favoriteAuthor');
+Route::post('undoFavoriteAuthor','UserController@undoFavoriteAuthor');
 Route::post('favoritePost','UserController@favoritePost');
+Route::post('undoFavoritePost','UserController@undoFavoritePost');
+
 
 //public access
 Route::get('/post/{object_id}','PublicController@showPost');

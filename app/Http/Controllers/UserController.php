@@ -124,6 +124,29 @@ class UserController extends Controller
         return JsonResponse::create(['code'=>1,'message'=>'收藏成功!']);
     }
 
+    public function undoFavoriteAuthor(Request $request)
+    {
+        $user = Auth::user();
+        if (!$user)
+        {
+            return JsonResponse::create(['code'=>1,'message'=>'请先登陆!']);
+        }
+        $author_id = $request->input('author_id');
+        $validator = Validator::make($request->all(), [
+            'author_id'=>['required',Rule::exists('author','object_id')]
+        ]);
+        if ($validator->fails())
+        {
+            return JsonResponse::create(['code'=>1,'message'=>$validator->errors()]);
+        }
+
+        DB::table('user_favorite_author')
+            ->where('user_id',$user->id)
+            ->where('author_id',$author_id)
+            ->delete();
+        return JsonResponse::create(['code'=>1,'message'=>'取消收藏成功!']);
+    }
+
     public function favoritePost(Request $request)
     {
         $user = Auth::user();
@@ -153,5 +176,27 @@ class UserController extends Controller
             'post_id'=>$post_id
         ]);
         return JsonResponse::create(['code'=>1,'message'=>'收藏成功!']);
+    }
+
+    public function undoFavoritePost(Request $request)
+    {
+        $user = Auth::user();
+        if (!$user)
+        {
+            return JsonResponse::create(['code'=>1,'message'=>'请先登陆!']);
+        }
+        $post_id = $request->input('post_id');
+        $validator = Validator::make($request->all(), [
+            'post_id'=>['required',Rule::exists('post','object_id')]
+        ]);
+        if ($validator->fails())
+        {
+            return JsonResponse::create(['code'=>1,'message'=>$validator->errors()]);
+        }
+        DB::table('user_favorite_post')
+            ->where('user_id',$user->id)
+            ->where('post_id',$post_id)
+            ->delete();
+        return JsonResponse::create(['code'=>1,'message'=>'取消收藏成功!']);
     }
 }
